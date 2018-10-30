@@ -17,26 +17,26 @@ class Menu extends Component {
   }
 
   render() {
-      const menuItems = this.props.menu.items.map((item, index) => {
-        if (item.object === "custom") {
-            return (
-                <Link href={item.url} key={item.ID}>
-                    <a style={linkStyle}>{item.title}</a>
-                </Link>
-            );
-        }
-        const slug = this.getSlug(item.url);
-        const actualPage = item.object === "category" ? "category" : "post";
-        return (
-            <Link
-                as={`/${item.object}/${slug}`}
-                href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-                key={item.ID}
-            >
-                <a style={linkStyle}>{item.title}</a>
-            </Link>
-        );
-    });
+    //   const menuItems = this.props.menu.items.map((item, index) => {
+    //     if (item.object === "custom") {
+    //         return (
+    //             <Link href={item.url} key={item.ID}>
+    //                 <a style={linkStyle}>{item.title}</a>
+    //             </Link>
+    //         );
+    //     }
+    //     const slug = this.getSlug(item.url);
+    //     const actualPage = item.object === "category" ? "category" : "post";
+    //     return (
+    //         <Link
+    //             as={`/${item.object}/${slug}`}
+    //             href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+    //             key={item.ID}
+    //         >
+    //             <a style={linkStyle}>{item.title}</a>
+    //         </Link>
+    //     );
+    // });
 
 
     return(
@@ -44,7 +44,6 @@ class Menu extends Component {
           <Link href="/">
               <a style={linkStyle}>Home</a>
           </Link>
-          {menuItems}
       </div>
     )
   }
