@@ -46,12 +46,7 @@ class Index extends Component {
         return (
             <Layout>
                 <Menu menu={this.props.headerMenu} />
-                <img
-                    src="/static/images/wordpress-plus-react-header.png"
-                    width="815"
-                    style={headerImageStyle}
-                />
-                <h1></h1>
+                <h1>HELLO</h1>
             </Layout>
         );
     }
