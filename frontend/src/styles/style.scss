@@ -1,10 +1,11 @@
-@import 'theme-colors';
-$theme-font: 100% verdana, sans-serif;
+@import 'general/theme-colors';
+@import 'general/theme-fonts';
+$theme-font: 'Syne';
 
 body {
-  font: $theme-font;
+  font-family: $theme-font;
   background-color: $themeColor-Light;
   h1, h2 {
-      color: $themeColor-Dark
+      color: red;
   }
 }
