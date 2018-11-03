@@ -1,11 +1,5 @@
 @import 'general/theme-colors';
 @import 'general/theme-fonts';
-$theme-font: 'Syne';
+@import 'general/theme-general';
 
-body {
-  font-family: $theme-font;
-  background-color: $themeColor-Light;
-  h1, h2 {
-      color: red;
-  }
-}
+@import 'components/menu';

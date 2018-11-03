@@ -3,19 +3,9 @@ import Link from "next/link";
 import { Config } from "../config.js";
 import { series } from "../static/datas/series";
 
-
-const linkStyle = {
-    marginRight: 15
-};
-
 class Menu extends Component {
   constructor() {
       super();
-  }
-
-  getSlug(url) {
-      const parts = url.split("/");
-      return parts.length > 2 ? parts[parts.length - 2] : "";
   }
 
   render() {
@@ -27,10 +17,8 @@ class Menu extends Component {
         </Link>
       );
     });
-
-
-    return(
-      <div>
+  return(
+      <div className="menu">
         {menuItems}
       </div>
     )

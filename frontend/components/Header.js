@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import Head from "next/head";
-import Menu from "./Menu.js";
-import { Config } from "../config.js";
 import stylesheet from '../src/styles/style.scss'
 
 class Header extends Component {
@@ -22,7 +19,7 @@ class Header extends Component {
                     />
                     <meta charSet="utf-8" />
                     <title>
-                        WordPress + React Starter Kit Frontend by Postlight
+                        PHOTOS
                     </title>
                 </Head>
             </div>
