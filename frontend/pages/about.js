@@ -45,7 +45,6 @@ class Index extends Component {
         // });
         return (
             <Layout>
-                <Menu menu={this.props.headerMenu} />
                 <h1>ABOUT</h1>
             </Layout>
         );
