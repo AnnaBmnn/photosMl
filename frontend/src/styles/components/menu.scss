@@ -6,8 +6,10 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 100px;
+    z-index: 1;
 }
 
 .menu__item {
+    z-index: 200;
     position: relative;
 }

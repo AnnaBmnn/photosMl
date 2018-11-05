@@ -2,6 +2,11 @@
 @import 'general/theme-fonts';
 @import 'general/theme-general';
 
+// pages
+@import 'pages/home';
+
+
+// components
 @import 'components/menu';
 @import 'components/header';
 @import 'components/finderImage';

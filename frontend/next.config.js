@@ -17,6 +17,11 @@ module.exports = {
         use: ['babel-loader', 'raw-loader', 'postcss-loader']
       }
     ,
+    {
+      test: /\.svg$/,
+      loader: 'raw-loader'
+    }
+    ,
       {
         test: /\.s(a|c)ss$/,
         use: ['babel-loader', 'raw-loader', 'postcss-loader',

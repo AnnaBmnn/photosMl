@@ -1,0 +1,58 @@
+.finderImg__container {
+    position: relative;
+    width: 35vw;
+    height: 22vw;
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 100;
+    img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: scale(1.4) translate(-50%, -50%);
+    }
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        right: 0px;
+        width: 35vw;
+        z-index: 105;
+    }
+}
+
+.finderImageVietnam {
+    position: absolute;
+    opacity: 0;
+}
+
+.finderImageVietnam--1 {
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    z-index: 101;
+}
+
+.finderImageVietnam--2 {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    z-index: 102;
+}
+
+
+.finderImageVietnam--3 {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    z-index: 103;
+}
+
+.finderImageVietnam--4 {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    z-index: 104;
+}
