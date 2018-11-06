@@ -11,15 +11,11 @@ class FinderImage extends Component {
 
   paralaxImage(){
     const { width, height, clientX, clientY } = this.props;
-    // const imageRef = this.imageRef.current;
-    // console.log({imageRef, width, height, clientX, clientY});
     const middleScreenX = width*0.5;
     const middleScreenY = height*0.5;
     const moveX = -40+(middleScreenX - clientX)/(middleScreenX)*10;
     const moveY = -40+(middleScreenY - clientY)/(middleScreenY)*10;
-    // console.log({middleScreenX, distanceToMiddleX});
-    console.log({moveX, moveY});
-    const ctrans = `scale(1.3) translate(${moveX}%, ${moveY}%)`
+    const ctrans = `scale(1.3) translate(${moveX}%, ${moveY}%) `;
     return { 
       transform: ctrans
     }
@@ -27,9 +23,10 @@ class FinderImage extends Component {
 
   render() {
     const { url, className, isParalax } = this.props;
-    const styleImg = isParalax ? this.paralaxImage(): {transform: `scale(1.3) translate(${-50}%, ${-50}%)`};
+    // const styleImg = isParalax ? this.paralaxImage(): {transform: `scale(1.3) translate(${-50}%, ${-50}%)`};
+    const styleImg =  this.paralaxImage();
     return (
-        <div ref={this.props.innerRef} className={`finderImg__container ${className}`}>
+        <div ref={this.props.innerRef} className={`finderImg__container ${className}`} style={styleImg}>
           <SVGInline ref={this.imageRef} svg={ windowBar } />
           <img  src={url} style={styleImg}  />
         </div>

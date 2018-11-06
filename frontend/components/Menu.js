@@ -75,7 +75,7 @@ class Menu extends Component {
       this.setState({clientX: clientX, clientY: clientY})
     }
   }
-
+  
   animateForVietnam(){
     const menuRef = this.menuRef.current;
     const peopleRef = this.peopleRef.current;
