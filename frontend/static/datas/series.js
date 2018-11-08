@@ -9,7 +9,10 @@ const series = [
         id: "2",
         title: "Vietnam",
         slug: "vietnam",
-        pictures: ["static/images/vietnam/vietnam01.png"]
+        pictures: [
+            "static/images/vietnam/vietnam01.png",
+            "static/images/vietnam/vietnam02.png"
+        ]
     },
     {
         id: "3",

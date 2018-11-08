@@ -1,0 +1,41 @@
+.bigSize {
+    height: 2000px;
+}
+.container {
+    position: fixed;
+    height: 1000px;
+    width: 100vw;
+    background-color: $red;
+}
+
+.vietnam__item--1.finderImg__container {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+    height: 34%;
+    width: 40%;
+    img {
+        width: 100%;
+    }
+}
+.vietnam__item--2.finderImg__container {
+    position: absolute;
+    right: 25%;
+    top: 8%;
+    height: 34%;
+    width: 40%;
+    img {
+        width: 100%;
+    }
+}
+
+.vietnam__item--3.finderImg__container {
+    position: absolute;
+    right: 17%;
+    top: 25%;
+    height: 34%;
+    width: 40%;
+    img {
+        width: 100%;
+    }
+}

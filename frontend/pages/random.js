@@ -11,7 +11,6 @@ class Vietnam extends Component {
     render() {
         const serie = series.find(serie => serie.slug === "random");
         const {title, pictures} = serie;
-        console.log(serie);
         return (
             <Layout>
                 <Menu menu={this.props.headerMenu} />

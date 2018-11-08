@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Link from "next/link";
-import { TweenLite, TimelineLite } from "gsap";
+import { TimelineLite } from "gsap";
 import { series } from "../static/datas/series";
 import FinderImage from "./FinderImage";
 import { Z_BLOCK } from "zlib";
@@ -91,17 +91,18 @@ class Menu extends Component {
       .set(finderImageDeuxRef, {opacity: 1})
       .set(finderImageTroisRef, {opacity: 1})
       .set(finderImageQuatreRef, {opacity: 1})
-      .to(finderImageUnRef, 0.5, {bottom: "30%", right: "20%"})
-      .to(finderImageDeuxRef, 0.5, {bottom: "40%", left: "35%"}, "-=0.5")
-      .to(finderImageTroisRef, 0.5, {top: "60%", left: "50%"}, "-=0.5")
-      .to(finderImageQuatreRef, 0.5, {top: "40%", right: "40%"}, "-=0.5")
+      .to(finderImageUnRef, 0.5, {bottom: "20%", right: "34%"})
+      .to(finderImageDeuxRef, 0.5, {bottom: "25%", left: "58%"}, "-=0.5")
+      .to(finderImageTroisRef, 0.5, {top: "70%", left: "55%"}, "-=0.5")
+      .to(finderImageQuatreRef, 0.5, {top: "65%", right: "38%"}, "-=0.5")
       .play();
 
     this.vietnamMenuTimeline
       .set(vietnamRef, {zIndex: 200})
       .to(menuRef, 0.5, {backgroundColor: "#CE283F"})
-      .to(peopleRef, 0.3, {top:-100, opacity: 0.4}, "-=0.3")
-      .to(randomRef, 0.3, {top:100, opacity: 0.4},"-=0.3")
+      .to(peopleRef, 0.3, {opacity: 0.4}, "-=0.3")
+      .to(randomRef, 0.3, {opacity: 0.4},"-=0.3")
+      .to(vietnamRef, 0.3, {paddingTop: 150, paddingBottom: 150},"-=0.3")
       .play();
   }
 
@@ -140,6 +141,10 @@ class Menu extends Component {
         url={series[1].pictures[0]} 
         clientX={clientX}
         clientY={clientY}
+        signX={"-"}
+        signY={"-"}
+        posX={-50}
+        posY={-30}
         width={width}
         height={height}
         isParalax={isParalax}
@@ -150,6 +155,10 @@ class Menu extends Component {
         url={series[1].pictures[0]} 
         clientX={clientX}
         clientY={clientY}
+        signX={"+"}
+        signY={"-"}
+        posX={-50}
+        posY={-30}
         width={width}
         height={height}
         isParalax={isParalax}
@@ -157,9 +166,13 @@ class Menu extends Component {
       <FinderImage 
         className={"finderImageVietnam finderImageVietnam--3"} 
         ref={this.finderImageTroisRef} 
-        url={series[1].pictures[0]} 
+        url={series[1].pictures[0]}
+        signX={"+"}
+        signY={"+"}
         clientX={clientX}
         clientY={clientY}
+        posX={-55}
+        posY={-50}
         width={width}
         height={height}
         isParalax={isParalax}
@@ -170,6 +183,10 @@ class Menu extends Component {
         url={series[1].pictures[0]} 
         clientX={clientX}
         clientY={clientY}
+        signX={"-"}
+        signY={"+"}
+        posX={-50}
+        posY={-55}
         width={width}
         height={height}
         isParalax={isParalax}
