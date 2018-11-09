@@ -2,13 +2,14 @@
 @import 'general/theme-fonts';
 @import 'general/theme-general';
 
-// pages
-@import 'pages/home';
-@import 'pages/vietnam';
-
-
 // components
 @import 'components/menu';
 @import 'components/header';
 @import 'components/finderImage';
+@import 'components/filterImage';
 @import 'components/bigTitle';
+
+// pages
+@import 'pages/home';
+@import 'pages/vietnam';
+@import 'pages/vietnamTwo';

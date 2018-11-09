@@ -1,5 +1,5 @@
 .bigSize {
-    height: 2000px;
+    height: 2500px;
 }
 .container {
     position: fixed;
@@ -38,4 +38,19 @@
     img {
         width: 100%;
     }
+}
+
+.vietnam__item--4 {
+    position: absolute;
+    left: 10%;
+    top: 13%;
+    height: auto;
+    width: 40%;
+    z-index: 110;
+}
+
+.vietnam__container--bigTitle {
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
