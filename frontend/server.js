@@ -20,6 +20,11 @@ app
             const queryParams = { slug: req.params.slug, apiRoute: "vietnam" };
             app.render(req, res, actualPage, queryParams);
         });
+        server.get("/people", (req, res) => {
+            const actualPage = "/people";
+            const queryParams = { slug: req.params.slug, apiRoute: "vietnam" };
+            app.render(req, res, actualPage, queryParams);
+        });
         server.get("/random", (req, res) => {
             const actualPage = "/random";
             const queryParams = { slug: req.params.slug, apiRoute: "random" };

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Sunshines extends Component {
+class FilterImage extends Component {
   constructor(props) {
     super(props);
     this.imageRef = React.createRef();  
@@ -20,4 +20,4 @@ class Sunshines extends Component {
   }
 }
 
-export default Sunshines;
+export default ;

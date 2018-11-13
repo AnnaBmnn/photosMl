@@ -8,7 +8,14 @@ import { Z_BLOCK } from "zlib";
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.state = {hoverElement: false, width: 0, height: 0, clientX: 0, clientY: 0 };
+    this.state = { 
+      hoverElement: false,
+      isAnimated: false,
+      width: 0, 
+      height: 0, 
+      clientX: 0, 
+      clientY: 0
+    };
 
     // interactivity event
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -18,9 +25,11 @@ class Menu extends Component {
 
     // ref to the DOM node
     this.menuRef = React.createRef();
+    this.cursorRef = React.createRef();
     this.vietnamRef = React.createRef();
     this.randomRef = React.createRef();
     this.peopleRef = React.createRef();
+    this.peopleImgRef = React.createRef();
     this.finderImageUnRef = React.createRef();
     this.finderImageDeuxRef = React.createRef();
     this.finderImageTroisRef = React.createRef();
@@ -30,6 +39,7 @@ class Menu extends Component {
     // ref to the animation
     this.vietnamMenuTimeline = new TimelineLite();
     this.vietnamImageTimeline = new TimelineLite();
+    this.peopleTimeline = new TimelineLite();
   }
 
   componentDidMount() {
@@ -56,6 +66,14 @@ class Menu extends Component {
       this.vietnamMenuTimeline.reverse();
       this.vietnamImageTimeline.reverse();
     }
+
+    if(prevState.hoverElement !== "people" && hoverElement === "people"){
+      this.animateForPeople();
+
+    }
+    if(prevState.hoverElement === "people" && hoverElement !== "people"){
+      this.peopleTimeline.reverse();
+    }
   }
 
   handleMouseEnter(hoverElement){
@@ -67,15 +85,32 @@ class Menu extends Component {
   }
 
   handleMouseMove(e){
-    const { hoverElement } = this.state;
+    const { hoverElement, isCursorMoving } = this.state;
     const clientX = e.clientX;
     const clientY = e.clientY;
-
-    if( hoverElement === "vietnam" ){
+    if( hoverElement === "vietnam" ||  hoverElement === "people" ){
       this.setState({clientX: clientX, clientY: clientY})
     }
   }
   
+  animateForPeople(){
+    const menuRef = this.menuRef.current;
+    const cursorRef = this.cursorRef.current;
+    const peopleRef = this.peopleRef.current;
+    const vietnamRef = this.vietnamRef.current;
+    const randomRef = this.randomRef.current;
+    const peopleImgRef = this.peopleImgRef.current;
+    
+    this.peopleTimeline
+      .to(peopleRef, 0.1, {transform: "scaleY(8.4) scaleX(2.3)"})
+      .to(cursorRef, 0.1, {opacity: 1}, "-=0.1")
+      .to(peopleRef, 0.1, {color: "rgba(255,255,255, 1)"}, "-=0.1")
+      .to(peopleImgRef, 0.1, {opacity: 1}, "-=0.1")
+      .to(vietnamRef, 0.1, {transform: "translateY(200px)", color: "rgba(255,255,255,0.37)"}, "-=0.1")
+      .to(randomRef, 0.1, {transform: "translateY(200px)", color: "rgba(255,255,255,0.37)"}, "-=0.1")
+      .play();
+  }
+
   animateForVietnam(){
     const menuRef = this.menuRef.current;
     const peopleRef = this.peopleRef.current;
@@ -109,6 +144,7 @@ class Menu extends Component {
   render() {
     const { hoverElement, height, width, clientX, clientY } = this.state;
     const isParalax = hoverElement ? true : false;
+    console.log({clientX, clientY});
     const menuItems = series.map((item, index) => {
       let refItem = null;
       if (item.slug === "vietnam"){
@@ -135,6 +171,16 @@ class Menu extends Component {
     });
   return(
     <div className="menu" ref={this.menuRef} onMouseMove={this.handleMouseMove.bind(this)}>
+      <span 
+        style={
+          {
+            transform: `translateX(${clientX-100}px) translateY(${clientY-100}px)`
+          }
+        } 
+        class={`menu__cursor menu__cursor--blue `}
+        ref={this.cursorRef} 
+      />
+      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[0]}  />
       <FinderImage 
         className={"finderImageVietnam finderImageVietnam--1"} 
         ref={this.finderImageUnRef} 

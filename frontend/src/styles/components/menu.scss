@@ -2,15 +2,48 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 100px;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 .menu__item {
     z-index: 200;
     position: relative;
+    transform-origin: left;
     // width: fit-content;
+}
+
+.people__item {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+}
+
+.menu__cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
+    background-color: #09A1FF;
+    backface-visibility: hidden;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.isMoving {
+    width: 300px;
+    height: 300px;
 }

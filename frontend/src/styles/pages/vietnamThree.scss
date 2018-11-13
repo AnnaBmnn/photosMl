@@ -1,0 +1,43 @@
+.container--3 {
+    position: relative;
+    min-height: 100vh;
+    .finderImg__container {
+        position: absolute;
+        z-index: 108;
+        width: 45vw;
+        height: 33vw;
+        box-shadow:  0px 2px 4px 0px rgba(0,0,0,0.5);
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.vietnam__item--31 {
+    right: 15%;
+    bottom: 10%;
+}
+
+.vietnam__item--32 {
+    right: 22%;
+    bottom: 17%;
+}
+.vietnam__item--33 {
+    right: 29%;
+    bottom: 24%;
+}
+.vietnam__item--34 {
+    right: 36%;
+    bottom: 31%;
+}
+
+.vietnam__item--image31 {
+    width: 40vw;
+    height: auto;
+    z-index: 110;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

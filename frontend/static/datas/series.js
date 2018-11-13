@@ -3,7 +3,12 @@ const series = [
         id: "1",
         title: "People",
         slug: "people",
-        pictures: ["static/images/vietnam/vietnam01.png"]
+        pictures: [
+            "static/images/people/people01.png",
+            "static/images/people/people01.png",
+            "static/images/people/people01.png",
+            "static/images/people/people01.png",
+        ]
     },
     {
         id: "2",
@@ -16,7 +21,10 @@ const series = [
             "static/images/vietnam/vietnam04.png",
             "static/images/vietnam/vietnam05.png",
             "static/images/vietnam/vietnam06.png",
-            "static/images/vietnam/vietnam08.png"
+            "static/images/vietnam/vietnam08.png",
+            "static/images/vietnam/vietnam09.png",
+            "static/images/vietnam/vietnam23.png",
+            "static/images/vietnam/vietnam23.png",
         ]
     },
     {

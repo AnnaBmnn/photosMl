@@ -20,6 +20,10 @@ class Vietnam extends Component {
 		this.imageFinderUnRef = React.createRef();
 		this.imageFinderDeuxRef = React.createRef();
 		this.imageFinderTroisRef = React.createRef();
+		this.imageFinderTroisUnRef = React.createRef();
+		this.imageFinderTroisDeuxRef = React.createRef();
+		this.imageFinderTroisTroisRef = React.createRef();
+		this.imageFinderTroisQuatreRef = React.createRef();
 		this.bigTitleUnRef = React.createRef();
 		this.bigTitleDeuxRef = React.createRef();
 		this.bigTitleTroisRef = React.createRef();
@@ -27,9 +31,11 @@ class Vietnam extends Component {
 		this.containerRef = React.createRef();
 		this.containerUnRef = React.createRef();
 		this.containerDeuxRef = React.createRef();
+		this.containerTroisRef = React.createRef();
 		this.imageUnRef = React.createRef();
 		this.imageDeuxRef = React.createRef();
 		this.imageTroisRef = React.createRef();
+		this.imageTroisUnRef = React.createRef();
 		this.imageQuatreRef = React.createRef();
 		this.containerBigTitleRef = React.createRef();
 		this.containerMediumTitleRef = React.createRef();
@@ -59,9 +65,14 @@ class Vietnam extends Component {
 	initTimeline() {
 		const containerUnRef = this.containerUnRef.current;
 		const containerDeuxRef = this.containerDeuxRef.current;
+		const containerTroisRef = this.containerTroisRef.current;
 		const imageFinderUnRef = this.imageFinderUnRef.current;
 		const imageFinderDeuxRef = this.imageFinderDeuxRef.current;
 		const imageFinderTroisRef = this.imageFinderTroisRef.current;
+		const imageFinderTroisUnRef = this.imageFinderTroisUnRef.current;
+		const imageFinderTroisDeuxRef = this.imageFinderTroisDeuxRef.current;
+		const imageFinderTroisTroisRef = this.imageFinderTroisTroisRef.current;
+		const imageFinderTroisQuatreRef = this.imageFinderTroisQuatreRef.current;
 		const bigTitleUnRef = this.bigTitleUnRef.current;
 		const bigTitleDeuxRef = this.bigTitleDeuxRef.current;
 		const bigTitleTroisRef = this.bigTitleTroisRef.current;
@@ -69,6 +80,7 @@ class Vietnam extends Component {
 		const imageUnRef = this.imageUnRef.current;
 		const imageDeuxRef = this.imageDeuxRef.current;
 		const imageTroisRef = this.imageTroisRef.current;
+		const imageTroisUnRef = this.imageTroisUnRef.current;
 		const imageQuatreRef = this.imageQuatreRef.current;
 		const containerBigTitleRef = this.containerBigTitleRef.current;
 		const containerMediumTitleRef = this.containerMediumTitleRef.current;
@@ -103,6 +115,18 @@ class Vietnam extends Component {
 			.to(containerMediumTitleRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(containerMediumTitleRef, 5, {transform: "translateY(-100%)"}, "+=0.1")
 			.to(imageQuatreRef, 0.1, {opacity: 1}, "-=2")
+			.to(containerDeuxRef, 0.1, {className:"+=displayNone"})
+			.to(containerTroisRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageFinderTroisUnRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageFinderTroisDeuxRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageFinderTroisTroisRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageFinderTroisQuatreRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageFinderTroisUnRef, 0.1, {className: "+=isFilter"}, "+=0.6")
+			.to(imageFinderTroisDeuxRef, 0.1, {className: "+=isFilter"}, "-=0.1")
+			.to(imageFinderTroisTroisRef, 0.1, {className: "+=isFilter"}, "-=0.1")
+			.to(imageFinderTroisQuatreRef, 0.1, {className: "+=isFilter"}, "-=0.1")
+			.to(imageTroisUnRef, 0.1, {opacity: 1}, "+=0.6")
+
 			.pause();
 	}
 
@@ -244,6 +268,33 @@ class Vietnam extends Component {
 								url={series[1].pictures[6]} 
 								isParalax={false}
 							/>
+						</div>
+						<div className="container--3 opacityNull" ref={this.containerTroisRef}> 
+							<FinderImage 
+								className={"opacityNull vietnam__item--31"} 
+								ref={this.imageFinderTroisUnRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--32"} 
+								ref={this.imageFinderTroisDeuxRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--33"} 
+								ref={this.imageFinderTroisTroisRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--34"} 
+								ref={this.imageFinderTroisQuatreRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8]}/>
 						</div>
 					</div>
 
