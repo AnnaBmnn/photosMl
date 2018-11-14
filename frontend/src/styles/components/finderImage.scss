@@ -41,7 +41,23 @@
         }
     }
 }
-
+.finderImage__bar-svg {
+    transform: scaleX(2);
+}
+.finderImage__titleBar-svg {
+    #title {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 600;
+    }
+}
+.finderImage__trafficLight {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+}
 .finderImageVietnam {
     position: absolute;
     opacity: 0;
@@ -50,8 +66,8 @@
 
 .finderImageVietnam--1 {
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: 100%;
+    right: 100%;
     z-index: 101;
 }
 
@@ -66,7 +82,7 @@
 .finderImageVietnam--3 {
     position: absolute;
     top: 100%;
-    left: 100%;
+    left: 108%;
     z-index: 104;
 }
 
