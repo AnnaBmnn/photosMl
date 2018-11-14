@@ -15,7 +15,7 @@ class FinderImage extends Component {
     const middleScreenY = height*0.5;
     const moveX = posX+(middleScreenX - clientX)/(middleScreenX)*10;
     const moveY = posY+(middleScreenY - clientY)/(middleScreenY)*10;
-    const ctrans = `scale(1) translate(${moveX}%, ${moveY}%) `;
+    const ctrans = `scale(1) translate3d(${moveX}%, ${moveY}%, 1px) `;
     return { 
       transform: ctrans
     }
@@ -27,7 +27,7 @@ class FinderImage extends Component {
     const middleScreenY = height*0.5;
     const moveX = signX === "-" ? -40-Math.abs(middleScreenX - clientX)/(middleScreenX)*10 : -40+Math.abs(middleScreenX - clientX)/(middleScreenX)*10;
     const moveY = signY === "-" ? -40-Math.abs(middleScreenY - clientY)/(middleScreenY)*10 : -40+Math.abs(middleScreenY - clientY)/(middleScreenY)*10;
-    const ctrans = `scale(1) translate(${moveX}%, ${moveY}%) `;
+    const ctrans = `scale(1) translate3d(${moveX}%, ${moveY}%, 1px) `;
     return { 
       transform: ctrans
     }
@@ -35,7 +35,6 @@ class FinderImage extends Component {
 
   render() {
     const { url, className, isParalax, innerRef } = this.props;
-    // const styleImg = isParalax ? this.paralaxImage(): {transform: `scale(1.3) translate(${-50}%, ${-50}%)`};
     const styleImg =  this.paralaxImage();
     const styleImgContainer =  this.paralaxImageContainer();
     return (

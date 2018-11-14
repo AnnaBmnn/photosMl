@@ -37,7 +37,6 @@ class Menu extends Component {
     
 
     // ref to the animation
-    this.vietnamMenuTimeline = new TimelineLite();
     this.vietnamImageTimeline = new TimelineLite();
     this.peopleTimeline = new TimelineLite();
   }
@@ -57,24 +56,66 @@ class Menu extends Component {
 
   componentDidUpdate(prevProps, prevState){
     const { hoverElement } = this.state;
-
-    if(prevState.hoverElement !== "vietnam" && hoverElement === "vietnam"){
-      this.animateForVietnam();
-
+    let callback;
+    console.log({hoverElement});
+    if(prevState.hoverElement === "random" && hoverElement === "people"){
+      this.animateForPeople();
     }
-    if(prevState.hoverElement === "vietnam" && hoverElement !== "vietnam"){
-      this.vietnamMenuTimeline.reverse();
+    if(prevState.hoverElement === "people" && hoverElement === "random"){
+      this.peopleTimeline.reverse();      
+    }
+    if(prevState.hoverElement === "random" && hoverElement === "vietnam"){
+      this.animateForVietnam();
+    }
+    if(prevState.hoverElement === "vietnam" && hoverElement === "random"){
+      this.vietnamImageTimeline.reverse();      
+    }
+    if(prevState.hoverElement === "vietnam" && hoverElement === "people"){
+      callback = this.animateForPeople();
+      console.log("prev vietnam");
+      this.vietnamImageTimeline.eventCallback("onReverseComplete", callback);
       this.vietnamImageTimeline.reverse();
     }
-
-    if(prevState.hoverElement !== "people" && hoverElement === "people"){
-      this.animateForPeople();
-
+    if(prevState.hoverElement === "vietnam" && !hoverElement){
+      console.log("prev");
+      this.vietnamImageTimeline.eventCallback("onReverseComplete", null);
+      this.vietnamImageTimeline.reverse();
     }
-    if(prevState.hoverElement === "people" && hoverElement !== "people"){
+    if(!prevState.hoverElement  && hoverElement === "vietnam"){
+      this.animateForVietnam();
+    }
+    if(prevState.hoverElement === "people" && hoverElement === "vietnam"){
+      console.log("prev people");
+      callback = this.animateForVietnam();
+      this.peopleTimeline.eventCallback("onReverseComplete", callback);
       this.peopleTimeline.reverse();
     }
+    if(prevState.hoverElement === "people" && !hoverElement){
+      this.peopleTimeline.eventCallback("onReverseComplete", null);
+      this.peopleTimeline.reverse();
+    }
+    if(!prevState.hoverElement  && hoverElement === "people"){
+      this.animateForPeople();
+    }
+
+    // if(prevState.hoverElement !== "vietnam" && hoverElement === "vietnam"){
+    //   this.animateForVietnam();
+
+    // }
+    // if(prevState.hoverElement === "vietnam" && hoverElement !== "vietnam"){
+    //   this.vietnamMenuTimeline.reverse();
+    //   this.vietnamImageTimeline.reverse();
+    // }
+
+    // if(prevState.hoverElement !== "people" && hoverElement === "people"){
+    //   this.animateForPeople();
+
+    // }
+    // if(prevState.hoverElement === "people" && hoverElement !== "people"){
+    //   this.peopleTimeline.reverse();
+    // }
   }
+
 
   handleMouseEnter(hoverElement){
     this.setState({hoverElement: hoverElement});
@@ -94,6 +135,7 @@ class Menu extends Component {
   }
   
   animateForPeople(){
+    console.log("animate people");
     const menuRef = this.menuRef.current;
     const cursorRef = this.cursorRef.current;
     const peopleRef = this.peopleRef.current;
@@ -120,31 +162,28 @@ class Menu extends Component {
     const finderImageDeuxRef = this.finderImageDeuxRef.current;
     const finderImageTroisRef = this.finderImageTroisRef.current;
     const finderImageQuatreRef = this.finderImageQuatreRef.current;
-
+    console.log("animatevietnam");
     this.vietnamImageTimeline
       .set(finderImageUnRef, {opacity: 1})
       .set(finderImageDeuxRef, {opacity: 1})
       .set(finderImageTroisRef, {opacity: 1})
       .set(finderImageQuatreRef, {opacity: 1})
-      .to(finderImageUnRef, 0.5, {bottom: "20%", right: "34%"})
-      .to(finderImageDeuxRef, 0.5, {bottom: "25%", left: "58%"}, "-=0.5")
-      .to(finderImageTroisRef, 0.5, {top: "70%", left: "55%"}, "-=0.5")
-      .to(finderImageQuatreRef, 0.5, {top: "65%", right: "38%"}, "-=0.5")
-      .play();
-
-    this.vietnamMenuTimeline
       .set(vietnamRef, {zIndex: 200})
       .to(menuRef, 0.5, {backgroundColor: "#CE283F"})
-      .to(peopleRef, 0.3, {opacity: 0.4}, "-=0.3")
-      .to(randomRef, 0.3, {opacity: 0.4},"-=0.3")
-      .to(vietnamRef, 0.3, {paddingTop: 150, paddingBottom: 150},"-=0.3")
+      .to(peopleRef, 0.5, {opacity: 0.4}, "-=0.4")
+      .to(randomRef, 0.5, {opacity: 0.4},"-=0.4")
+      .to(vietnamRef, 0.5, {paddingTop: 150, paddingBottom: 150},"-=0.4")
+      .to(finderImageUnRef, 0.5, {bottom: "20%", right: "34%"},"-=0.4")
+      .to(finderImageDeuxRef, 0.5, {bottom: "25%", left: "58%"}, "-=0.4")
+      .to(finderImageTroisRef, 0.5, {top: "70%", left: "55%"}, "-=0.4")
+      .to(finderImageQuatreRef, 0.5, {top: "65%", right: "38%"}, "-=0.4")
       .play();
+
   }
 
   render() {
     const { hoverElement, height, width, clientX, clientY } = this.state;
     const isParalax = hoverElement ? true : false;
-    console.log({clientX, clientY});
     const menuItems = series.map((item, index) => {
       let refItem = null;
       if (item.slug === "vietnam"){
