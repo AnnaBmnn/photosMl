@@ -216,7 +216,7 @@ class Menu extends Component {
             transform: `translateX(${clientX-100}px) translateY(${clientY-100}px)`
           }
         } 
-        class={`menu__cursor menu__cursor--blue `}
+        className={`menu__cursor menu__cursor--blue `}
         ref={this.cursorRef} 
       />
       <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[0]}  />
