@@ -116,7 +116,7 @@ class Vietnam extends Component {
 			.to(imageTroisRef, 0.1, {className: "+=isFilter"}, "+=0.6")
 			.to(containerMediumTitleRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(containerMediumTitleRef, 5, {transform: "translateY(-100%)"}, "+=0.1")
-			.to(imageQuatreRef, 0.1, {opacity: 1}, "-=2")
+			.to(imageQuatreRef, 0.1, {opacity: 1}, "-=2.5")
 			.to(containerDeuxRef, 0.1, {className:"+=displayNone"})
 			.to(containerTroisRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(imageFinderTroisUnRef, 0.1, {opacity: 1}, "+=0.6")

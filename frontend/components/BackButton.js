@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import SVGInline from "react-svg-inline";
-import backSvg from "../static/images/common/back.svg";
+import backSvg from "../static/images/common/back2black.svg";
 
 
 class BackButton extends Component {
@@ -10,12 +10,11 @@ class BackButton extends Component {
   }
 
   render() {
-    const { text, className, innerRef } = this.props
     return(
+
         <Link href={"/"} >
             <a className="backButton__container">
-                <SVGInline className="backButton__svg backButton__svg--top" svg={ backSvg } />
-                <SVGInline className="backButton__svg backButton__svg--bottom" svg={ backSvg } />
+                <SVGInline className="backButton__svg" svg={ backSvg } />
             </a>
         </Link>
     )

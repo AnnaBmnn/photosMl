@@ -1,33 +1,10 @@
 .backButton__container {
     position: fixed;
-    left: 130px;
-    top: 70px;
-    width: 100px;
-    height: 10px;
+    left: 60px;
+    top: 40px;
+    width: 81px;
+    height: 81px;
     z-index: 1000;
     animation: rotateAnimation 3s infinite linear;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%; 
-        transform: translate3d(-50%, -50%, 1px);
-        height: 5px;
-        width: 5px;
-        border-radius: 50%;
-        background-color: white;
-    }
-}
-.backButton__svg {
-    position: absolute;
-    left: 0;
-}
-
-.backButton__svg--top {
-    bottom: 40%;
-}
-
-.backButton__svg--bottom {
-    top: 40%;
-    transform: rotateZ(180deg);
+    transform-origin: center;
 }
