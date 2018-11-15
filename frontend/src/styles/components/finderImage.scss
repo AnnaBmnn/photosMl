@@ -23,7 +23,7 @@
         left: 0px;
         right: 0px;
         // width: 100%;
-        z-index: 105;
+        z-index: 200;
     }
     .filter {
         position: absolute;
@@ -34,6 +34,7 @@
         background-color: $red;
         mix-blend-mode: darken;
         opacity: 0;
+        z-index: 180;
     }
     &.isFilter {
         .filter {
@@ -41,7 +42,7 @@
         }
     }
     .finderImg__windowBar {
-        z-index: 600;
+        z-index: 200;
     }
     .finderImage__bar-svg {
         transform: scaleX(2);

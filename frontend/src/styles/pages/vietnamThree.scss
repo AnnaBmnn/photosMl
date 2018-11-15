@@ -1,9 +1,10 @@
 .container--3 {
     position: relative;
     min-height: 100vh;
+    z-index: 1000;
     .finderImg__container {
         position: absolute;
-        z-index: 108;
+        // z-index: 108;
         width: 45vw;
         height: 33vw;
         img {

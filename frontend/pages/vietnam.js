@@ -106,7 +106,8 @@ class Vietnam extends Component {
 			.to(imageUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(containerBigTitleRef, 0.1, {opacity: "1"}, "+=0.6")
 			.to(containerBigTitleRef, 6, {transform: "translateY(-78%)"})
-			.to(containerUnRef, 0.1, {className:"+=displayNone"})
+			.to(containerUnRef, 0.1, {opacity: 0})
+			.to(containerUnRef, 0.1, {display:"none"}, "-=0.1")
 			.to(containerDeuxRef, 0.1, {opacity: 1})
 			.to(imageDeuxRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageDeuxRef, 0.1, {className: "+=isFilter"}, "+=0.6")
@@ -116,7 +117,7 @@ class Vietnam extends Component {
 			.to(containerMediumTitleRef, 5, {transform: "translateY(-100%)"}, "+=0.1")
 			.to(imageQuatreRef, 0.1, {opacity: 1}, "-=2")
 			.to(containerDeuxRef, 0.1, {className:"+=displayNone"})
-			.to(containerTroisRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(containerTroisRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(imageFinderTroisUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageFinderTroisDeuxRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageFinderTroisTroisRef, 0.1, {opacity: 1}, "+=0.6")
@@ -138,6 +139,67 @@ class Vietnam extends Component {
 			<Layout>
 				<div className="bigSize" ref={this.containerRef}>
 					<div className="container" ref={this.containerRef}>
+					<div className="container--2 opacityNull" ref={this.containerDeuxRef}> 
+							<FilterImage 
+								className={"vietnam__item--5 opacityNull"} 
+								ref={this.imageDeuxRef} 
+								url={series[1].pictures[4]} 
+								isParalax={false}
+							/>
+							<FilterImage 
+								className={"vietnam__item--6 opacityNull"} 
+								ref={this.imageTroisRef} 
+								url={series[1].pictures[5]} 
+								isParalax={false}
+							/>
+							<div className="vietnam__container--mediumTitle " ref={this.containerMediumTitleRef}>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+								<h3>YUMMY</h3>
+							</div>
+							<FilterImage 
+								className={"vietnam__item--7 opacityNull"} 
+								ref={this.imageQuatreRef} 
+								url={series[1].pictures[6]} 
+								isParalax={false}
+							/>
+						</div>
+						<div className="container--3 opacityNull" ref={this.containerTroisRef}> 
+							<FinderImage 
+								className={"opacityNull vietnam__item--31"} 
+								ref={this.imageFinderTroisUnRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--32"} 
+								ref={this.imageFinderTroisDeuxRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--33"} 
+								ref={this.imageFinderTroisTroisRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<FinderImage 
+								className={"opacityNull vietnam__item--34"} 
+								ref={this.imageFinderTroisQuatreRef} 
+								url={series[1].pictures[7]} 
+								isParalax={false}
+							/>
+							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8]}/>
+						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
 								className={"opacityNull vietnam__item--1"} 
@@ -235,67 +297,9 @@ class Vietnam extends Component {
 								/>
 							</div>
 						</div>
-						<div className="container--2 opacityNull" ref={this.containerDeuxRef}> 
-							<FilterImage 
-								className={"vietnam__item--5 opacityNull"} 
-								ref={this.imageDeuxRef} 
-								url={series[1].pictures[4]} 
-								isParalax={false}
-							/>
-							<FilterImage 
-								className={"vietnam__item--6 opacityNull"} 
-								ref={this.imageTroisRef} 
-								url={series[1].pictures[5]} 
-								isParalax={false}
-							/>
-							<div className="vietnam__container--mediumTitle " ref={this.containerMediumTitleRef}>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-								<h3>YUMMY</h3>
-							</div>
-							<FilterImage 
-								className={"vietnam__item--7 opacityNull"} 
-								ref={this.imageQuatreRef} 
-								url={series[1].pictures[6]} 
-								isParalax={false}
-							/>
-						</div>
-						<div className="container--3 opacityNull" ref={this.containerTroisRef}> 
-							<FinderImage 
-								className={"opacityNull vietnam__item--31"} 
-								ref={this.imageFinderTroisUnRef} 
-								url={series[1].pictures[7]} 
-								isParalax={false}
-							/>
-							<FinderImage 
-								className={"opacityNull vietnam__item--32"} 
-								ref={this.imageFinderTroisDeuxRef} 
-								url={series[1].pictures[7]} 
-								isParalax={false}
-							/>
-							<FinderImage 
-								className={"opacityNull vietnam__item--33"} 
-								ref={this.imageFinderTroisTroisRef} 
-								url={series[1].pictures[7]} 
-								isParalax={false}
-							/>
-							<FinderImage 
-								className={"opacityNull vietnam__item--34"} 
-								ref={this.imageFinderTroisQuatreRef} 
-								url={series[1].pictures[7]} 
-								isParalax={false}
-							/>
-							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8]}/>
-						</div>
+
+
+					
 					</div>
 
 				</div>
