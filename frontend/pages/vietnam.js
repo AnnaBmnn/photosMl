@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import { TimelineMax } from "gsap";
-import Header from "../components/Header";
 import BigTitle from "../components/BigTitle";
 import FinderImage from "../components/FinderImage";
 import FilterImage from "../components/FilterImage";
+import BackButton from "../components/BackButton.js";
 
 
 class Vietnam extends Component {
@@ -139,7 +139,7 @@ class Vietnam extends Component {
 		return (
 			<Layout>
 				<div className="bigSize" ref={this.containerRef}>
-					{/* <Header/> */}
+					<BackButton/>
 					<div className="container" ref={this.containerRef}>
 					<div className="container--2 opacityNull" ref={this.containerDeuxRef}> 
 							<FilterImage 

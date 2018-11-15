@@ -1,10 +1,12 @@
 @import 'general/theme-colors';
 @import 'general/theme-fonts';
 @import 'general/theme-general';
+@import 'general/theme-animations';
 
 // components
 @import 'components/menu';
 @import 'components/header';
+@import 'components/backButton';
 @import 'components/finderImage';
 @import 'components/filterImage';
 @import 'components/bigTitle';
