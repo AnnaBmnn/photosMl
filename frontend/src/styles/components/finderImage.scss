@@ -40,28 +40,29 @@
             opacity: 1;
         }
     }
-}
-.finderImage__bar-svg {
-    transform: scaleX(2);
-}
-.finderImage__titleBar-svg {
-    #title {
+    .finderImg__windowBar {
+        z-index: 600;
+    }
+    .finderImage__bar-svg {
+        transform: scaleX(2);
+    }
+    .finderImage__titleBar-svg {
         position: absolute;
         top: 5px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 600;
     }
+    .finderImage__trafficLight {
+        position: absolute;
+        top: 5px;
+        left: 8px;
+    }
 }
-.finderImage__trafficLight {
-    position: absolute;
-    top: 5px;
-    left: 8px;
-}
+
 .finderImageVietnam {
     position: absolute;
     opacity: 0;
-
 }
 
 .finderImageVietnam--1 {
