@@ -1,0 +1,26 @@
+.container--5 {
+    position: relative;
+    min-height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.vietnam__squareColumn {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-25vh);
+}
+.vietnam__square {
+    width: 45vh;
+    height: 45vh;
+    margin: 3vh ;
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.vietnam__squareImg--mirror {
+    transform: scaleX(-1);
+}

@@ -35,6 +35,7 @@ class Vietnam extends Component {
 		this.containerDeuxRef = React.createRef();
 		this.containerTroisRef = React.createRef();
 		this.containerQuatreRef = React.createRef();
+		this.containerCinqRef = React.createRef();
 		this.imageUnRef = React.createRef();
 		this.imageDeuxRef = React.createRef();
 		this.imageTroisRef = React.createRef();
@@ -54,6 +55,9 @@ class Vietnam extends Component {
 		this.imageQuatreCinqRef = React.createRef();
 		this.imageQuatreSixRef = React.createRef();
 		this.imageQuatreSeptRef = React.createRef();
+		this.imageCinqUnRef = React.createRef();
+		this.imageCinqDeuxRef = React.createRef();
+		this.imageCinqTroisRef = React.createRef();
 
 		// ref to the animation
 		this.vietnamTimeline = new TimelineMax();
@@ -82,6 +86,7 @@ class Vietnam extends Component {
 		const containerDeuxRef = this.containerDeuxRef.current;
 		const containerTroisRef = this.containerTroisRef.current;
 		const containerQuatreRef = this.containerQuatreRef.current;
+		const containerCinqRef = this.containerCinqRef.current;
 		const imageFinderUnRef = this.imageFinderUnRef.current;
 		const imageFinderDeuxRef = this.imageFinderDeuxRef.current;
 		const imageFinderTroisRef = this.imageFinderTroisRef.current;
@@ -112,6 +117,9 @@ class Vietnam extends Component {
 		const imageQuatreCinqRef = this.imageQuatreCinqRef.current;
 		const imageQuatreSixRef = this.imageQuatreSixRef.current;
 		const imageQuatreSeptRef = this.imageQuatreSeptRef.current;
+		const imageCinqUnRef = this.imageCinqUnRef.current;
+		const imageCinqDeuxRef = this.imageCinqDeuxRef.current;
+		const imageCinqTroisRef = this.imageCinqTroisRef.current;
 
 
 		this.vietnamTimeline
@@ -144,6 +152,7 @@ class Vietnam extends Component {
 			.to(containerMediumTitleRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(containerMediumTitleRef, 5, {transform: "translateY(-100%)"}, "+=0.1")
 			.to(imageQuatreRef, 0.1, {opacity: 1}, "-=2.5")
+			.to(containerDeuxRef, 0.1, {opacity:0}, "+=0.6")
 			.to(containerDeuxRef, 0.1, {className:"+=displayNone"})
 			.to(containerTroisRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(imageFinderTroisUnRef, 0.1, {opacity: 1}, "+=0.6")
@@ -155,11 +164,12 @@ class Vietnam extends Component {
 			.to(imageFinderTroisTroisRef, 0.1, {className: "+=isFilter"}, "-=0.1")
 			.to(imageFinderTroisQuatreRef, 0.1, {className: "+=isFilter"}, "-=0.1")
 			.to(imageTroisUnRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(sunshinesUnRef, 1, {transform: "translate3d(0,0,1px)" }, "+=0.6")
-			.to(sunshinesDeuxRef, 1, {transform: "translate3d(0,0,1px)" }, "-=1")
-			.to(sunshinesTroisRef, 1, {transform: "translate3d(0,0,1px)" }, "-=1")
-			.to(sunshinesQuatreRef, 1, {transform: "translate3d(0,0,1px)" }, "-=1")
-			.to(sunshinesCinqRef, 1, {transform: "translate3d(0,0,1px)" }, "-=1")
+			.to(sunshinesUnRef, 3, {transform: "translate3d(0,0,1px)" }, "+=0.6")
+			.to(sunshinesDeuxRef, 3, {transform: "translate3d(0,0,1px)" }, "-=3")
+			.to(sunshinesTroisRef, 3, {transform: "translate3d(0,0,1px)" }, "-=3")
+			.to(sunshinesQuatreRef, 3, {transform: "translate3d(0,0,1px)" }, "-=3")
+			.to(sunshinesCinqRef, 3, {transform: "translate3d(0,0,1px)" }, "-=3")
+			.to(containerTroisRef, 0.1, {opacity: 0})
 			.to(containerTroisRef, 0.1, {className:"+=displayNone"})
 			.to(containerQuatreRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(imageQuatreDeuxRef, 0.1, {opacity: 1}, "+=0.6")
@@ -168,6 +178,13 @@ class Vietnam extends Component {
 			.to(imageQuatreCinqRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageQuatreSixRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageQuatreSeptRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(containerQuatreRef, 0.1, {opacity: 0})
+			.to(containerQuatreRef, 0.1, {className:"+=displayNone"})
+			.to(containerCinqRef, 0.1, {opacity: 1}, "+=0.1")
+			.to(imageCinqUnRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageCinqDeuxRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageCinqTroisRef, 0.1, {opacity: 1}, "-=0.1")
+
 			.pause();
 	}
 
@@ -249,13 +266,37 @@ class Vietnam extends Component {
 							</div>
 						</div>
 						<div className="container--4 opacityNull" ref={this.containerQuatreRef}> 
-							<img ref={this.imageQuatreUnRef} className={" vietnam__imageEmboite vietnam__image41"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreDeuxRef} className={"opacityNull vietnam__imageEmboite vietnam__image42"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreTroisRef} className={"opacityNull vietnam__imageEmboite vietnam__image43"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreQuatreRef} className={"opacityNull vietnam__imageEmboite vietnam__image44"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreCinqRef} className={"opacityNull vietnam__imageEmboite vietnam__image45"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreSixRef} className={"opacityNull vietnam__imageEmboite vietnam__image46"}  src={series[1].pictures[8]}/>
-							<img ref={this.imageQuatreSeptRef} className={"opacityNull vietnam__imageEmboite vietnam__image47"}  src={series[1].pictures[8]}/>
+							<img ref={this.imageQuatreUnRef} className={" vietnam__imageEmboite vietnam__image41"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreDeuxRef} className={"opacityNull vietnam__imageEmboite vietnam__image42"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreTroisRef} className={"opacityNull vietnam__imageEmboite vietnam__image43"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreQuatreRef} className={"opacityNull vietnam__imageEmboite vietnam__image44"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreCinqRef} className={"opacityNull vietnam__imageEmboite vietnam__image45"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreSixRef} className={"opacityNull vietnam__imageEmboite vietnam__image46"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreSeptRef} className={"opacityNull vietnam__imageEmboite vietnam__image47"}  src={series[1].pictures[9]}/>
+						</div>
+						<div className="container--5 opacityNull" ref={this.containerCinqRef}> 
+							<div className={"vietnam__squareColumn"}>
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqUnRef} >
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}   src={series[1].pictures[10]}/>
+								</div>
+								<div className={"vietnam__square "}>
+									<img  className={"vietnam__squareImg "}  src={series[1].pictures[10]}/>
+								</div>
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqDeuxRef} >
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[10]}/>
+								</div>
+							</div>
+							<div className={"vietnam__squareColumn"}>
+								<div className={"vietnam__square"}>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11]}/>
+								</div>
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqTroisRef} >
+									<img className={"vietnam__squareImg"}  src={series[1].pictures[11]}/>
+								</div>
+								<div className={"vietnam__square"}>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11]}/>
+								</div>
+							</div>
 						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
