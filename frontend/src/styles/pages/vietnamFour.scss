@@ -1,0 +1,30 @@
+.container--4 {
+    position: relative;
+    min-height: 100vh;
+    .vietnam__imageEmboite {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .vietnam__image42 {
+        transform: scale(0.86);
+    }
+    .vietnam__image43 {
+        transform: scale(.72);
+    }
+    .vietnam__image44 {
+        transform: scale(0.58);
+    }
+    .vietnam__image45 {
+        transform: scale(0.44);
+    }
+    .vietnam__image46 {
+        transform: scale(0.3);
+    }
+    .vietnam__image47 {
+        transform: scale(0.16);
+    }
+}

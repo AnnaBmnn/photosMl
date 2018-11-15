@@ -1,0 +1,12 @@
+.sunshines {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sunshines__sun {
+    font-size: 20vh;
+    height: 20vh;
+    width: fit-content;
+}

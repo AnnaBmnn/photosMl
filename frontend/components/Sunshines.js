@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class FilterImage extends Component {
+class Sunshines extends Component {
   constructor(props) {
     super(props);
     this.imageRef = React.createRef();  
@@ -8,16 +8,17 @@ class FilterImage extends Component {
   }
 
   render() {
-    const { url, className, innerRef } = this.props;
-
+    const { innerRef, className } = this.props;
     return (
-        <div ref={innerRef} className={`filterImg__container ${className}`}>
-          <img  src={url}  />
-          <div className="filter"></div>
+        <div ref={innerRef} className={`sunshines ${className}`}>
+          <span className="sunshines__sun">🌞</span>
+          <span className="sunshines__sun">🌞</span>
+          <span className="sunshines__sun">🌞</span>
+          <span className="sunshines__sun">🌞</span>
         </div>
 
     );
   }
 }
 
-export default ;
+export default React.forwardRef((props, ref) => (<Sunshines className={props.className} innerRef={ref ? ref : null} />));
