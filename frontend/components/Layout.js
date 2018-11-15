@@ -5,7 +5,7 @@ import Header from "./Header";
 const Layout = props => (
     <div>
         <Head />
-        {/* <Header /> */}
+        <Header />
         {props.children}
     </div>
 );
