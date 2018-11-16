@@ -1,0 +1,162 @@
+.container--7 {
+    position: relative;
+    height: 100vh;
+}
+
+.vietnam__item--71 {
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    bottom: -30px;
+}
+
+.vietnam__item--72 {
+    position: absolute;
+    top: 0;
+    z-index: 400;
+    height: 30%;
+    left: 13%;
+    top: 10%;
+}
+.vietnam__item--73 {
+    position: absolute;
+    left: 53%;
+    top: 20%;
+    height: 30%;
+    z-index: 400;
+}
+.vietnam__item--74 {
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    height: 30%;
+    z-index: 400;
+}
+.vietnam__item--75 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 1px);
+    z-index: 400;
+    width: 55%;
+}
+.vietnam__item--76 {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+}
+.vietnam__vroumContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 15vh;
+    right: 15%;
+}
+.vietnam__vroum {
+    line-height: 0.9;
+    margin: 0;
+    font-weight: 1000;
+    color: $yellow;
+    font-size: 6vw;
+    z-index: 500;
+}
+.vietnam__item--78 {
+    height: 44%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.vietnam__item--79 {
+    height: 40%;
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+}
+.vietnam__item--710 {
+    // opacity: 1;
+    height: 45%;
+    position: absolute;
+    bottom: 10%;
+    right: 100px;
+}
+.vietnam__item--712 {
+    height: 45%;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    z-index: 100;
+}
+.vietnam__item--711 {
+    height: 45%;
+    position: absolute;
+    top: 12%;
+    left: 30%;
+    z-index: 101;
+
+}
+.vietnam__item--713 {
+    height: 45%;
+    position: absolute;
+    bottom: 20%;
+    right: 100px;
+    z-index: 102;
+}
+.vietnam__item--714 {
+    height: 45%;
+    position: absolute;
+    bottom: 8%;
+    left: 23%;
+    z-index: 103;
+}
+.vietnam__hugeTitle {
+    color: $yellow;
+    line-height: 0.8;
+    margin: 0;
+    font-size: 10vh;
+    font-weight: 1000;
+    transform-origin: bottom left;
+    transform: scaleY(14.3) scaleX(3.2) translateX(100%);
+    position: absolute;
+    bottom: 0;
+    z-index: 104;
+}
+.vietnam__item--715 {
+    // opacity: 1;
+    height: 100%;
+    position: absolute;
+    bottom: 0%;
+    width: auto;
+    z-index: 200;
+}
+
+.vietnam__containerVideo {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15vh 40px;
+    box-sizing: border-box;
+    transform: translate3d(100px, 0px, 1px);
+    z-index: 200;
+}
+.vietnam__video--2 {
+    align-self: flex-end;
+}
+.vietnam__video {
+    // position: absolute;
+    z-index: 201;
+    // top: 0;
+    // left: 0;
+    height: 60vh;
+    video {
+        height: 100%;
+        width: auto;
+    }
+}

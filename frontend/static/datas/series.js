@@ -40,6 +40,8 @@ const series = [
             "static/images/vietnam/vietnam25.png",
             "static/images/vietnam/vietnam26.png",
             "static/images/vietnam/vietnam27.png",
+            "static/images/vietnam/vietnam28.png",
+            "static/images/vietnam/vietnam29.png",
         ]
     },
     {

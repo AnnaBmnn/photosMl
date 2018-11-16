@@ -38,6 +38,7 @@ class Vietnam extends Component {
 		this.containerQuatreRef = React.createRef();
 		this.containerCinqRef = React.createRef();
 		this.containerSixRef = React.createRef();
+		this.containerSevenRef = React.createRef();
 		this.imageUnRef = React.createRef();
 		this.imageDeuxRef = React.createRef();
 		this.imageTroisRef = React.createRef();
@@ -63,6 +64,32 @@ class Vietnam extends Component {
 		this.imageSixUnRef = React.createRef();
 		this.imageSixDeuxRef = React.createRef();
 		this.imageSixTroisRef = React.createRef();
+		this.ballSixUnRef = React.createRef();
+		this.ballSixDeuxRef = React.createRef();
+		this.imageSeptUnRef = React.createRef();
+		this.imageSeptDeuxRef = React.createRef();
+		this.imageSeptTroisRef = React.createRef();
+		this.imageSeptQuatreRef = React.createRef();
+		this.imageSeptCinqRef = React.createRef();
+		this.vroumSeptUnRef = React.createRef();
+		this.vroumSeptDeuxRef = React.createRef();
+		this.vroumSeptTroisRef = React.createRef();
+		this.vroumSeptQuatreRef = React.createRef();
+		this.imageSeptSixRef = React.createRef();
+		this.imageSeptSeptRef = React.createRef();
+		this.imageSeptHuitRef = React.createRef();
+		this.imageSeptNeufRef = React.createRef();
+		this.imageSeptDixRef = React.createRef();
+		this.imageSeptOnzeRef = React.createRef();
+		this.imageSeptDouzeRef = React.createRef();
+		this.imageSeptTreizeRef = React.createRef();
+		this.imageSeptQuatorzeRef = React.createRef();
+		this.imageSeptQuinzeRef = React.createRef();
+		this.hugeTitleSeptUnRef = React.createRef();
+		this.containerVideoSeptUnRef = React.createRef();
+		this.videoUnRef = React.createRef();
+		this.videoDeuxRef = React.createRef();
+		this.videoTroisRef = React.createRef();
 
 		// ref to the animation
 		this.vietnamTimeline = new TimelineMax();
@@ -93,6 +120,7 @@ class Vietnam extends Component {
 		const containerQuatreRef = this.containerQuatreRef.current;
 		const containerCinqRef = this.containerCinqRef.current;
 		const containerSixRef = this.containerSixRef.current;
+		const containerSevenRef = this.containerSevenRef.current;
 		const imageFinderUnRef = this.imageFinderUnRef.current;
 		const imageFinderDeuxRef = this.imageFinderDeuxRef.current;
 		const imageFinderTroisRef = this.imageFinderTroisRef.current;
@@ -129,6 +157,32 @@ class Vietnam extends Component {
 		const imageSixUnRef = this.imageSixUnRef.current;
 		const imageSixDeuxRef = this.imageSixDeuxRef.current;
 		const imageSixTroisRef = this.imageSixTroisRef.current;
+		const ballSixUnRef = this.ballSixUnRef.current;
+		const ballSixDeuxRef = this.ballSixDeuxRef.current;
+		const imageSeptUnRef = this.imageSeptUnRef.current;
+		const imageSeptDeuxRef = this.imageSeptDeuxRef.current;
+		const imageSeptTroisRef = this.imageSeptTroisRef.current;
+		const imageSeptQuatreRef = this.imageSeptQuatreRef.current;
+		const imageSeptCinqRef = this.imageSeptCinqRef.current;
+		const vroumSeptUnRef = this.vroumSeptUnRef.current;
+		const vroumSeptDeuxRef = this.vroumSeptDeuxRef.current;
+		const vroumSeptTroisRef = this.vroumSeptTroisRef.current;
+		const vroumSeptQuatreRef = this.vroumSeptQuatreRef.current;
+		const imageSeptSixRef = this.imageSeptSixRef.current;
+		const imageSeptSeptRef = this.imageSeptSeptRef.current;
+		const imageSeptHuitRef = this.imageSeptHuitRef.current;
+		const imageSeptNeufRef = this.imageSeptNeufRef.current;
+		const imageSeptDixRef = this.imageSeptDixRef.current;
+		const imageSeptOnzeRef = this.imageSeptOnzeRef.current;
+		const imageSeptDouzeRef = this.imageSeptDouzeRef.current;
+		const imageSeptTreizeRef = this.imageSeptTreizeRef.current;
+		const imageSeptQuatorzeRef = this.imageSeptQuatorzeRef.current;
+		const imageSeptQuinzeRef = this.imageSeptQuinzeRef.current;
+		const hugeTitleSeptUnRef = this.hugeTitleSeptUnRef.current;
+		const containerVideoSeptUnRef = this.containerVideoSeptUnRef.current;
+		const videoUnRef = this.videoUnRef.current;
+		const videoDeuxRef = this.videoDeuxRef.current;
+		const videoTroisRef = this.videoTroisRef.current;
 
 
 		this.vietnamTimeline
@@ -200,6 +254,57 @@ class Vietnam extends Component {
 			.to(imageSixUnRef, 0.1, {className: "+=isFilter"}, "-=0.1")
 			.to(imageSixDeuxRef, 0.1, {className: "+=isFilter"}, "+=0.6")
 			.to(imageSixTroisRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(ballSixUnRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(ballSixDeuxRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(containerSixRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(containerSixRef, 0.1, {className:"+=displayNone"})
+			.to(containerSevenRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptDeuxRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageSeptTroisRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptQuatreRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptUnRef, 0.1, {className: "+=isFilter"}, "+=0.6")
+			.to(imageSeptDeuxRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptTroisRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptQuatreRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptUnRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(vroumSeptQuatreRef, 0.2, {opacity: 1}, "+=0.6")
+			.to(vroumSeptTroisRef, 0.2, {opacity: 1}, "-=0.2")
+			.to(vroumSeptUnRef, 0.2, {opacity: 1}, "+=0.6")
+			.to(vroumSeptDeuxRef, 0.2, {opacity: 1}, "-=0.2")
+			.to(vroumSeptQuatreRef, 0.2, {opacity: 0}, "+=0.6")
+			.to(vroumSeptTroisRef, 0.2, {opacity: 0}, "-=0.2")
+			.to(vroumSeptUnRef, 0.2, {opacity: 0}, "+=0.6")
+			.to(vroumSeptDeuxRef, 0.2, {opacity: 0}, "-=0.2")
+			.to(imageSeptCinqRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptSixRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptSeptRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptSixRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptSeptRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptHuitRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptNeufRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptHuitRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptNeufRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptDixRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptDixRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptOnzeRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptDouzeRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageSeptTreizeRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageSeptQuatorzeRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageSeptDouzeRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptTreizeRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptQuatorzeRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(hugeTitleSeptUnRef, 6, {transform: "scaleY(14) scaleX(3.5) translateX(-150%)"}, "+=0.6")
+			.to(imageSeptQuinzeRef, 0.1, {opacity: 1}, "-=1.2")
+			.to(containerVideoSeptUnRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-100px, 0px, 1px"}, "+=0.6")
+			.add( function(){ 
+				videoUnRef.play();
+				videoDeuxRef.play();
+				videoTroisRef.play();
+			}, "-=6" )
 			.pause();
 	}
 
@@ -329,9 +434,49 @@ class Vietnam extends Component {
 							/>
 							<img ref={this.imageSixTroisRef} className={`vietnam__item--63 opacityNull`}  src={series[1].pictures[14]}/>
 							
-							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--61`} />
-							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--62`}  />
-						</div>						
+							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--61 opacityNull`} />
+							<Ball text={"xin chào"} ref={this.ballSixDeuxRef} className={`vietnam__ball--62 opacityNull`}  />
+						</div>	
+						<div className="container--7 opacityNull" ref={this.containerSevenRef}> 
+							<FilterImage 
+								url={series[1].pictures[15]} 
+								isParalax={false}
+								className={`vietnam__item--71`}
+								ref={this.imageSeptUnRef}
+							/>
+							<img ref={this.imageSeptDeuxRef} className={`vietnam__item--72 opacityNull`}  src={series[1].pictures[16]}/>
+							<img ref={this.imageSeptTroisRef} className={`vietnam__item--73 opacityNull`}  src={series[1].pictures[17]}/>
+							<img ref={this.imageSeptQuatreRef} className={`vietnam__item--74 opacityNull`}  src={series[1].pictures[18]}/>
+							<img ref={this.imageSeptCinqRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[19]}/>
+							<div className={`vietnam__vroumContainer`}>
+								<h3 ref={this.vroumSeptUnRef} className={`vietnam__vroum vietnam__vroum--1 opacityNull`}>vroum</h3>
+								<h3 ref={this.vroumSeptDeuxRef} className={`vietnam__vroum vietnam__vroum--2 opacityNull`}>vroum</h3>
+								<h3 ref={this.vroumSeptTroisRef} className={`vietnam__vroum vietnam__vroum--3 opacityNull`}>vroum</h3>
+								<h3 ref={this.vroumSeptQuatreRef} className={`vietnam__vroum vietnam__vroum--4 opacityNull`}>vroum</h3>
+							</div>
+							<img ref={this.imageSeptSixRef} className={`vietnam__item--76 opacityNull`}  src={series[1].pictures[21]}/>
+							<img ref={this.imageSeptSeptRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[20]}/>
+							<img ref={this.imageSeptHuitRef} className={`vietnam__item--78 opacityNull`}  src={series[1].pictures[22]}/>
+							<img ref={this.imageSeptNeufRef} className={`vietnam__item--79 opacityNull`}  src={series[1].pictures[23]}/>
+							<img ref={this.imageSeptDixRef} className={`vietnam__item--710 opacityNull`}  src={series[1].pictures[24]}/>
+							<img ref={this.imageSeptOnzeRef} className={`vietnam__item--711 opacityNull`}  src={series[1].pictures[25]}/>
+							<img ref={this.imageSeptDouzeRef} className={`vietnam__item--712 opacityNull`}  src={series[1].pictures[25]}/>
+							<img ref={this.imageSeptTreizeRef} className={`vietnam__item--713 opacityNull`}  src={series[1].pictures[25]}/>
+							<img ref={this.imageSeptQuatorzeRef} className={`vietnam__item--714 opacityNull`}  src={series[1].pictures[25]}/>
+							<h2 ref={this.hugeTitleSeptUnRef} className="vietnam__hugeTitle">vietnam</h2>
+							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26]}/>
+							<div ref={this.containerVideoSeptUnRef} className={`vietnam__containerVideo opacityNull`}>
+								<div className={`vietnam__video vietnam__video--1`}>
+									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mov" />
+								</div>
+								<div className={`vietnam__video vietnam__video--2`}>
+									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mov" />
+								</div>
+								<div className={`vietnam__video vietnam__video--3`}>
+									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mov" />
+								</div>
+							</div>
+						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
 								className={"opacityNull vietnam__item--1"} 
