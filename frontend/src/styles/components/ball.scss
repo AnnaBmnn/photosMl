@@ -1,0 +1,12 @@
+.ball {
+    width: 18vh;
+    height: 18vh;
+    line-height: 18vh;
+    border-radius: 50%;
+    text-align: center;
+    background-color: $yellow;
+    color: white;
+    font-size: 1vh;
+    text-transform: uppercase;
+    animation: 5s rotateAnimation linear infinite;
+}

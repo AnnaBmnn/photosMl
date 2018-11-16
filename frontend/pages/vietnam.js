@@ -8,6 +8,7 @@ import FinderImage from "../components/FinderImage";
 import FilterImage from "../components/FilterImage";
 import BackButton from "../components/BackButton.js";
 import Sunshines from "../components/Sunshines.js";
+import Ball from "../components/Ball.js";
 
 
 class Vietnam extends Component {
@@ -36,6 +37,7 @@ class Vietnam extends Component {
 		this.containerTroisRef = React.createRef();
 		this.containerQuatreRef = React.createRef();
 		this.containerCinqRef = React.createRef();
+		this.containerSixRef = React.createRef();
 		this.imageUnRef = React.createRef();
 		this.imageDeuxRef = React.createRef();
 		this.imageTroisRef = React.createRef();
@@ -58,6 +60,9 @@ class Vietnam extends Component {
 		this.imageCinqUnRef = React.createRef();
 		this.imageCinqDeuxRef = React.createRef();
 		this.imageCinqTroisRef = React.createRef();
+		this.imageSixUnRef = React.createRef();
+		this.imageSixDeuxRef = React.createRef();
+		this.imageSixTroisRef = React.createRef();
 
 		// ref to the animation
 		this.vietnamTimeline = new TimelineMax();
@@ -87,6 +92,7 @@ class Vietnam extends Component {
 		const containerTroisRef = this.containerTroisRef.current;
 		const containerQuatreRef = this.containerQuatreRef.current;
 		const containerCinqRef = this.containerCinqRef.current;
+		const containerSixRef = this.containerSixRef.current;
 		const imageFinderUnRef = this.imageFinderUnRef.current;
 		const imageFinderDeuxRef = this.imageFinderDeuxRef.current;
 		const imageFinderTroisRef = this.imageFinderTroisRef.current;
@@ -120,6 +126,9 @@ class Vietnam extends Component {
 		const imageCinqUnRef = this.imageCinqUnRef.current;
 		const imageCinqDeuxRef = this.imageCinqDeuxRef.current;
 		const imageCinqTroisRef = this.imageCinqTroisRef.current;
+		const imageSixUnRef = this.imageSixUnRef.current;
+		const imageSixDeuxRef = this.imageSixDeuxRef.current;
+		const imageSixTroisRef = this.imageSixTroisRef.current;
 
 
 		this.vietnamTimeline
@@ -184,7 +193,13 @@ class Vietnam extends Component {
 			.to(imageCinqUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageCinqDeuxRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageCinqTroisRef, 0.1, {opacity: 1}, "-=0.1")
-
+			.to(containerCinqRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(containerCinqRef, 0.1, {className:"+=displayNone"})
+			.to(containerSixRef, 0.1, {opacity: 1}, "+=0.1")
+			.to(imageSixDeuxRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageSixUnRef, 0.1, {className: "+=isFilter"}, "-=0.1")
+			.to(imageSixDeuxRef, 0.1, {className: "+=isFilter"}, "+=0.6")
+			.to(imageSixTroisRef, 0.1, {opacity: 1}, "-=0.1")
 			.pause();
 	}
 
@@ -298,6 +313,25 @@ class Vietnam extends Component {
 								</div>
 							</div>
 						</div>
+						<div className="container--6 opacityNull" ref={this.containerSixRef}> 
+							<FilterImage 
+								className={""} 
+								url={series[1].pictures[12]} 
+								isParalax={false}
+								className={`vietnam__item--61`}
+								ref={this.imageSixUnRef}
+							/>
+							<FilterImage 
+								url={series[1].pictures[13]} 
+								isParalax={false}
+								className={`vietnam__item--62 opacityNull`}
+								ref={this.imageSixDeuxRef}
+							/>
+							<img ref={this.imageSixTroisRef} className={`vietnam__item--63 opacityNull`}  src={series[1].pictures[14]}/>
+							
+							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--61`} />
+							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--62`}  />
+						</div>						
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
 								className={"opacityNull vietnam__item--1"} 
