@@ -41,6 +41,7 @@
     mix-blend-mode: difference;
     pointer-events: none;
     opacity: 0;
+    isolation: isolate;
 }
 
 .isMoving {

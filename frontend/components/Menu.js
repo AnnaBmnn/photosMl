@@ -135,7 +135,6 @@ class Menu extends Component {
   }
   
   animateForPeople(){
-    console.log("animate people");
     const menuRef = this.menuRef.current;
     const cursorRef = this.cursorRef.current;
     const peopleRef = this.peopleRef.current;
@@ -219,7 +218,7 @@ class Menu extends Component {
         className={`menu__cursor menu__cursor--blue `}
         ref={this.cursorRef} 
       />
-      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[0]}  />
+      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[0][0]}  />
       <FinderImage 
         className={"finderImageVietnam finderImageVietnam--1"} 
         ref={this.finderImageUnRef} 

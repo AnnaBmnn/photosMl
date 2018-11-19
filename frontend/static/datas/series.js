@@ -4,10 +4,17 @@ const series = [
         title: "People",
         slug: "people",
         pictures: [
-            "static/images/people/people01.png",
-            "static/images/people/people01.png",
-            "static/images/people/people01.png",
-            "static/images/people/people01.png",
+            ["static/images/people/people01.png", "#232525", "#E6B8A0"],
+            ["static/images/vietnam/vietnam02.png", "#C49988", "#36AFBB"],
+            ["static/images/people/people01.png", "#BCC3D5", "#F28B1C"],
+            ["static/images/people/people01.png", "blanc", "#2750DE"],
+            ["static/images/people/people01.png", "#E5DFDE", "#D76A58"],
+            ["static/images/people/people01.png", "#1F2526", "#778C90"],
+            ["static/images/people/people01.png", "#4A443B", "#778C90"],
+            ["static/images/people/people01.png", "#58675C", "#12C284"],
+            ["static/images/people/people01.png", "#893843", "#EB6B7C"],
+            ["static/images/people/people01.png", "blanc", "white"],
+            ["static/images/people/people01.png", "#EDCA83", "#1FBD3E"]
         ]
     },
     {

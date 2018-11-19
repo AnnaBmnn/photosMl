@@ -1,0 +1,42 @@
+.people__container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu__cursor {
+        width: 100px;
+        height: 100px;
+        // background-blend-mode: difference;
+        isolation: isolate;
+    }
+    .cursorText {
+        mix-blend-mode: normal;
+        z-index: 100;
+        mix-blend-mode: normal;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .people__imgContainer {
+        width: 40%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .people__img {
+        max-height: 100%;
+        max-width: 100%;;
+        object-fit: contain;
+    }
+}
