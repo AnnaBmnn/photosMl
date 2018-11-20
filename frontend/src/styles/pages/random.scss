@@ -1,0 +1,13 @@
+.random__container {
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .random__title {
+        font-size: 26px;
+        font-weight: 1000;
+    }
+}

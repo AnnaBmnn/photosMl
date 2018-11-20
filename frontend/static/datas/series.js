@@ -56,7 +56,17 @@ const series = [
         id: "3",
         title: "Random",
         slug: "random",
-        pictures: ["url1", "url2"]
+        pictures: [
+            "static/images/vietnam/vietnam01.png", 
+            "static/images/vietnam/vietnam29.png",
+            "static/images/vietnam/vietnam02.png",
+            "static/images/vietnam/vietnam04.png",
+            "static/images/vietnam/vietnam12.png",
+            "static/images/vietnam/vietnam23.png",
+            "static/images/vietnam/vietnam29.png",
+            "static/images/people/PEOPLE_12.png",
+            "static/images/people/PEOPLE_01.png"
+        ]
     }
 ]
 
