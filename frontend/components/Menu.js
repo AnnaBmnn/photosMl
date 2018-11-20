@@ -97,23 +97,6 @@ class Menu extends Component {
     if(!prevState.hoverElement  && hoverElement === "people"){
       this.animateForPeople();
     }
-
-    // if(prevState.hoverElement !== "vietnam" && hoverElement === "vietnam"){
-    //   this.animateForVietnam();
-
-    // }
-    // if(prevState.hoverElement === "vietnam" && hoverElement !== "vietnam"){
-    //   this.vietnamMenuTimeline.reverse();
-    //   this.vietnamImageTimeline.reverse();
-    // }
-
-    // if(prevState.hoverElement !== "people" && hoverElement === "people"){
-    //   this.animateForPeople();
-
-    // }
-    // if(prevState.hoverElement === "people" && hoverElement !== "people"){
-    //   this.peopleTimeline.reverse();
-    // }
   }
 
 
@@ -161,7 +144,6 @@ class Menu extends Component {
     const finderImageDeuxRef = this.finderImageDeuxRef.current;
     const finderImageTroisRef = this.finderImageTroisRef.current;
     const finderImageQuatreRef = this.finderImageQuatreRef.current;
-    console.log("animatevietnam");
     this.vietnamImageTimeline
       .set(finderImageUnRef, {opacity: 1})
       .set(finderImageDeuxRef, {opacity: 1})
@@ -218,7 +200,7 @@ class Menu extends Component {
         className={`menu__cursor menu__cursor--blue `}
         ref={this.cursorRef} 
       />
-      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[0][0]}  />
+      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[9][0]}  />
       <FinderImage 
         className={"finderImageVietnam finderImageVietnam--1"} 
         ref={this.finderImageUnRef} 
