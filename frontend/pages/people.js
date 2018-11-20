@@ -11,8 +11,12 @@ class People extends Component {
           middleWidth: 0, 
           clientX: 0, 
           clientY: 0,
-          indexCurrentImage: 0
+          indexCurrentImage: 0,
+          cursorColor : "",
+          bgColor : "",
+          photoSrc : ""
         };
+        
         // interactivity event
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -24,16 +28,15 @@ class People extends Component {
         this.serie = series.find(serie => serie.slug === "people");
         this.pictures = this.serie.pictures;
         this.innerTextCursor = "";
-        this.cursorColor = "";
-        this.bgColor = "";
-        this.photoSrc = "";
     }
 
     handleClick(e){
         const { indexCurrentImage } = this.state;
         const length = this.pictures.length;
         const direction = this.nextOrPrev();
+
         let indexNewCurrent;
+
         if(direction === "next"){
             indexNewCurrent = indexCurrentImage + 1;
         }
@@ -41,36 +44,35 @@ class People extends Component {
             indexNewCurrent = indexCurrentImage - 1;
         }
         indexNewCurrent = (( indexNewCurrent % length) + length) % length;
-	    indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
-        this.setState({indexCurrentImage : indexNewCurrent});
-        this.updateStyle();
+        indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
+        this.setState({indexCurrentImage : indexNewCurrent}, () => this.updateStyle());
     }
+
     handleMouseMove(e){
         const clientX = e.clientX;
         const clientY = e.clientY;
         this.setState({clientX: clientX, clientY: clientY})
     }
+
     componentWillMount(){
-        // this.setState({indexCurrentImage : 0});
-        // this.updateStyle();
-        this.handleClick();
+        this.updateStyle();
     }
+
     componentDidUpdate(prevProps, prevState){
         const { clientX, indexCurrentImage } = this.state;
         if(prevState.clientX !== clientX){
             this.innerTextCursor = this.nextOrPrev();
         }
-
     }
+
     updateStyle(){
         const { indexCurrentImage } = this.state;
-        this.cursorColor = this.pictures[indexCurrentImage][2];
-        this.bgColor = this.pictures[indexCurrentImage][1];
-        this.photoSrc = this.pictures[indexCurrentImage][0];
-        console.log({indexCurrentImage});
-        console.log(this.cursorColor);
-        console.log(this.bgColor);
+
+        this.setState({cursorColor : this.pictures[indexCurrentImage][2]});
+        this.setState({bgColor : this.pictures[indexCurrentImage][1]});
+        this.setState({photoSrc : this.pictures[indexCurrentImage][0]});
     }
+
     nextOrPrev(){
         const { middleWidth, clientX } = this.state;
         if( clientX  < middleWidth ){
@@ -92,7 +94,7 @@ class People extends Component {
         this.setState({ middleWidth: window.innerWidth*0.5 });
     }
     render() {
-        const { clientX, clientY } = this.state;
+        const { clientX, clientY, cursorColor, bgColor, photoSrc } = this.state;
         return (
             <Layout>
                 <div 
@@ -101,7 +103,7 @@ class People extends Component {
                     onMouseMove={this.handleMouseMove.bind(this)}
                     style={
                         {
-                            backgroundColor: this.bgColor
+                            backgroundColor: bgColor
                         }
                     } 
                 >
@@ -110,8 +112,8 @@ class People extends Component {
                         style={
                         {
                             opacity: 1,
-                            transform: `translateX(${clientX-50}px) translateY(${clientY-50}px)`,
-                            backgroundColor: this.cursorColor
+                            transform: `translateX(${clientX-100}px) translateY(${clientY-100}px)`,
+                            backgroundColor: cursorColor
                         }
                         } 
                         className={`menu__cursor`}
@@ -124,7 +126,7 @@ class People extends Component {
                         </span>
                     </span>
                     <div className={`people__imgContainer`}>
-                        <img className={`people__img`} src={this.photoSrc} />
+                        <img className={`people__img`} src={photoSrc} />
                     </div>
                 </div>
             </Layout>
