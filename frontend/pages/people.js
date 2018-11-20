@@ -111,7 +111,6 @@ class People extends Component {
                     <span 
                         style={
                         {
-                            opacity: 1,
                             transform: `translateX(${clientX-100}px) translateY(${clientY-100}px)`,
                             backgroundColor: cursorColor
                         }
