@@ -12,13 +12,14 @@
     .menu__cursor {
         width: 100px;
         height: 100px;
-        // background-blend-mode: difference;
+        background-blend-mode: difference;
         isolation: isolate;
     }
     .cursorText {
-        mix-blend-mode: normal;
+        user-select: none;
+        isolation: isolate;
         z-index: 100;
-        mix-blend-mode: normal;
+        mix-blend-mode: normal!important;
         color: white;
         font-size: 16px;
         text-align: center;
@@ -26,17 +27,23 @@
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
+        span {
+            user-select: none;
+
+        }
     }
     .people__imgContainer {
-        width: 40%;
-        height: 40%;
+        width: 50%;
+        height: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        user-select: none;
     }
     .people__img {
         max-height: 100%;
         max-width: 100%;;
         object-fit: contain;
+        user-select: none;
     }
 }

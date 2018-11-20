@@ -2,6 +2,7 @@ import Layout from "../components/Layout.js";
 import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
+import BackButton from "../components/BackButton.js";
 
 class People extends Component {
     constructor(props) {
@@ -104,6 +105,7 @@ class People extends Component {
                         }
                     } 
                 >
+                    <BackButton/>
                     <span 
                         style={
                         {
@@ -115,7 +117,11 @@ class People extends Component {
                         className={`menu__cursor`}
                         ref={this.cursorRef} 
                     >
-                        <span className={`cursorText`}>{this.innerTextCursor}</span>
+                        <span className={`cursorText`}>
+                            <span>
+                                {this.innerTextCursor}
+                            </span>
+                        </span>
                     </span>
                     <div className={`people__imgContainer`}>
                         <img className={`people__img`} src={this.photoSrc} />

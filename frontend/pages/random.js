@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
-import Menu from "../components/Menu.js";
-import { Config } from "../config.js";
+import BackButton from "../components/BackButton.js";
 import { series } from "../static/datas/series";
 
 class Vietnam extends Component {
@@ -13,7 +12,7 @@ class Vietnam extends Component {
         const {title, pictures} = serie;
         return (
             <Layout>
-                <Menu menu={this.props.headerMenu} />
+                <BackButton/>
                 <h1>{title}</h1>
             </Layout>
         );
