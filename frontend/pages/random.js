@@ -58,12 +58,26 @@ class Vietnam extends Component {
     }
 
     render() {
-        const serie = series.find(serie => serie.slug === "random");
-        const {title, pictures} = serie;
+        const { images } = this.state;
+        const imagesDiv = images.map((_image, index) => {
+            return (
+                <img
+                className={ `random_img` } 
+                    src={_image.image}
+                    style={
+                        {
+                          transform: `translateX(${_image.left}px) translateY(${_image.top}px)`
+                        }
+                    } 
+                />
+            );
+        });
+
         return (
             <Layout>
                 <div className={`random__container`} tabIndex="0" onKeyPress={this.handleKeyPress.bind(this)} >
                     <BackButton/>
+                    { imagesDiv }
                     <h2 className={`random__title`}>Tap a random letter</h2>
                 </div>
             </Layout>

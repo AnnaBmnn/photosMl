@@ -6,8 +6,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     .random__title {
+        background-color: white;
         font-size: 26px;
         font-weight: 1000;
+        z-index: 1000;
+        padding: 10px;
     }
+}
+.random_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: auto;
 }
