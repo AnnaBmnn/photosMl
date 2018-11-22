@@ -28,6 +28,8 @@ class Menu extends Component {
     this.cursorRef = React.createRef();
     this.vietnamRef = React.createRef();
     this.randomRef = React.createRef();
+    this.menuRandomRef = React.createRef();
+    this.menuRandomImgsRef = React.createRef();
     this.peopleRef = React.createRef();
     this.peopleImgRef = React.createRef();
     this.finderImageUnRef = React.createRef();
@@ -39,6 +41,7 @@ class Menu extends Component {
     // ref to the animation
     this.vietnamImageTimeline = new TimelineLite();
     this.peopleTimeline = new TimelineLite();
+    this.randomTimeline = new TimelineLite();
   }
 
   componentDidMount() {
@@ -59,16 +62,27 @@ class Menu extends Component {
     let callback;
     console.log({hoverElement});
     if(prevState.hoverElement === "random" && hoverElement === "people"){
+      this.randomTimeline.reverse();
       this.animateForPeople();
+
     }
     if(prevState.hoverElement === "people" && hoverElement === "random"){
-      this.peopleTimeline.reverse();      
+      this.peopleTimeline.reverse();  
+      this.animateForRandom();    
     }
     if(prevState.hoverElement === "random" && hoverElement === "vietnam"){
+      this.randomTimeline.reverse();
       this.animateForVietnam();
     }
+    if(!prevState.hoverElement  && hoverElement === "random"){
+      this.animateForRandom();    
+    }
+    if(prevState.hoverElement === "random" && !hoverElement){
+      this.randomTimeline.reverse();
+    }
     if(prevState.hoverElement === "vietnam" && hoverElement === "random"){
-      this.vietnamImageTimeline.reverse();      
+      this.vietnamImageTimeline.reverse();   
+      this.animateForRandom();    
     }
     if(prevState.hoverElement === "vietnam" && hoverElement === "people"){
       callback = this.animateForPeople();
@@ -117,6 +131,17 @@ class Menu extends Component {
     }
   }
   
+  animateForRandom(){
+    const randomRef = this.randomRef.current;
+    const menuRandomRef = this.menuRandomRef.current;
+    const menuRandomImgsRef = this.menuRandomImgsRef.current;
+
+    this.randomTimeline
+      .to(menuRandomRef, 0.1, {opacity: 0})
+      .to(menuRandomImgsRef, 0.1, {opacity: 1})
+      .play()
+  }
+
   animateForPeople(){
     const menuRef = this.menuRef.current;
     const cursorRef = this.cursorRef.current;
@@ -184,7 +209,22 @@ class Menu extends Component {
             onMouseEnter={this.handleMouseEnter.bind(this, item.slug)}
             onMouseLeave={this.handleMouseLeave.bind(this)}
           >
-            {item.title}
+            
+            {item.slug === "random" ?
+              <span>
+                <span ref={this.menuRandomRef} >{item.title}</span>
+                <span ref={this.menuRandomImgsRef} className="menuRandom">
+                  <img  src="static/images/random/random_r.png" />
+                  <img  src="static/images/random/random_a.png" />
+                  <img  src="static/images/random/random_n.png" />
+                  <img  src="static/images/random/random_d.png" />
+                  <img  src="static/images/random/random_o.png" />
+                  <img  src="static/images/random/random_m.png" />
+                </span>
+              </span>
+            :
+              <span>{item.title}</span>
+            }
           </a>
         </Link>
       );
