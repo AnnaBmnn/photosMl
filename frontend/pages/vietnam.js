@@ -15,7 +15,10 @@ import Ball from "../components/Ball.js";
 class Vietnam extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { scroll: 0 };
+		this.state = { 
+			isScrolled: false,
+			isLoaded: false
+		};
 
 		// interactivity event
 		this.handleScroll = this.handleScroll.bind(this);
@@ -98,6 +101,7 @@ class Vietnam extends Component {
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
+		window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
 		this.initTimeline();		
   }
 
@@ -106,12 +110,17 @@ class Vietnam extends Component {
 	}
 	
 	handleScroll(e){
+		const { isLoaded } = this.props;
 		const scroll = window.scrollY;
+		if( scroll !== 0 ){
+			this.setState({isScrolled: true});
+		}
 		const windowHeight = window.innerHeight;
 		const containerRef = this.containerRef.current;
 		const containerHeight = containerRef.getBoundingClientRect().height;
 		const ratio = (scroll)/(containerHeight-windowHeight);
 		this.vietnamTimeline.progress(ratio);
+
 	}
 
 	initTimeline() {
@@ -187,7 +196,6 @@ class Vietnam extends Component {
 
 
 		this.vietnamTimeline
-			.to(imageFinderUnRef, 0.1, {opacity: 1}, "+=0.3")
 			.to(bigTitleUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(bigTitleDeuxRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(bigTitleTroisRef, 0.1, {opacity: 1}, "+=0.6")
@@ -310,17 +318,22 @@ class Vietnam extends Component {
 	}
 
 	render() {
+		const {isLoaded, isScrolled} = this.state;
 		const serie = series.find(serie => serie.slug === "vietnam");
 		const {title, pictures} = serie;
-
+		console.log(!isLoaded);
 		return (
 			<Layout>
-				<LoadingScreen
-					moreClass={"loadingScreen--vietnam"}
-					emoji={"🇻🇳"}
-					text={"photographies of my trip in vietnam"}
-				/>
-				<div className="bigSize" ref={this.containerRef}>
+				{ !isLoaded || isScrolled == 0 ?
+					<LoadingScreen
+						moreClass={"loadingScreen--vietnam"}
+						emoji={"🇻🇳"}
+						text={"photographies of my trip in vietnam"}
+					/>
+					:
+					""
+				}
+				<div className={`bigSize ${isLoaded? "": "bigSize--notloaded"}`} ref={this.containerRef}>
 					<BackButton/>
 					<div className="container" ref={this.containerRef}>
 						<div className="container--2 opacityNull" ref={this.containerDeuxRef}> 
@@ -485,7 +498,7 @@ class Vietnam extends Component {
 						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
-								className={"opacityNull vietnam__item--1"} 
+								className={"vietnam__item--1"} 
 								ref={this.imageFinderUnRef} 
 								url={series[1].pictures[1]} 
 								isParalax={false}

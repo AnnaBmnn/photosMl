@@ -1,6 +1,9 @@
 .bigSize {
     height: 10000px;
 }
+.bigSize--notloaded {
+    height: 100vh;
+}
 .container {
     position: fixed;
     height: 1000px;
