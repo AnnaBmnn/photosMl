@@ -467,13 +467,13 @@ class Vietnam extends Component {
 							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26]}/>
 							<div ref={this.containerVideoSeptUnRef} className={`vietnam__containerVideo opacityNull`}>
 								<div className={`vietnam__video vietnam__video--1`}>
-									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--2`}>
-									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--3`}>
-									<video muted webkit-playsinline={true} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 							</div>
 						</div>

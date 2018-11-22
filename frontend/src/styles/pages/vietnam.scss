@@ -1,5 +1,5 @@
 .bigSize {
-    height: 6000px;
+    height: 10000px;
 }
 .container {
     position: fixed;
@@ -12,8 +12,8 @@
     position: absolute;
     right: 10%;
     top: 15%;
-    height: 34%;
-    width: 40%;
+    width: 500px;
+    height: 330px;
     img {
         width: 100%;
     }
@@ -22,8 +22,8 @@
     position: absolute;
     right: 25%;
     top: 8%;
-    height: 34%;
-    width: 40%;
+    width: 500px;
+    height: 330px;
     img {
         width: 100%;
     }
@@ -34,7 +34,8 @@
     right: 17%;
     top: 25%;
     height: 34%;
-    width: 40%;
+    width: 500px;
+    height: 330px;
     img {
         width: 100%;
     }
@@ -45,7 +46,7 @@
     left: 10%;
     top: 13%;
     height: auto;
-    width: 40%;
+    width: 500px;
     z-index: 110;
 }
 

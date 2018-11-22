@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper.js";
 import BackButton from "../components/BackButton.js";
 import { series } from "../static/datas/series";
 
-class Vietnam extends Component {
+class Random extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -20,6 +20,10 @@ class Vietnam extends Component {
         this.pictures = this.serie.pictures;
 
 
+        //ref to the dom
+		this.containerRef = React.createRef();
+
+
         // interactivity event
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -28,6 +32,13 @@ class Vietnam extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        this.containerRef.current.focus();
+    }
+
+    componentWillUnmount() {
+        const { images } = this.state;
+        images.splice(0, images.length);
+        window.removeEventListener('resize', this.updateWindowDimensions);
     }
 
     updateWindowDimensions() {
@@ -48,6 +59,7 @@ class Vietnam extends Component {
             image
         };
         images.push(newImage);
+        images.length > 50 ? images.splice(0,1) : "";
         this.setState({images});
         console.log(this.state);
 
@@ -75,7 +87,7 @@ class Vietnam extends Component {
 
         return (
             <Layout>
-                <div className={`random__container`} tabIndex="0" onKeyPress={this.handleKeyPress.bind(this)} >
+                <div ref={this.containerRef} className={`random__container`} tabIndex="2" onKeyPress={this.handleKeyPress.bind(this)} >
                     <BackButton/>
                     { imagesDiv }
                     <h2 className={`random__title`}>Tap a random letter</h2>
@@ -85,4 +97,4 @@ class Vietnam extends Component {
     }
 }
 
-export default PageWrapper(Vietnam);
+export default PageWrapper(Random);
