@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import { TimelineMax } from "gsap";
+import LoadingScreen from "../components/LoadingScreen";
 import BigTitle from "../components/BigTitle";
 import FinderImage from "../components/FinderImage";
 import FilterImage from "../components/FilterImage";
@@ -314,6 +315,11 @@ class Vietnam extends Component {
 
 		return (
 			<Layout>
+				<LoadingScreen
+					moreClass={"loadingScreen--vietnam"}
+					emoji={"🇻🇳"}
+					text={"photographies of my trip in vietnam"}
+				/>
 				<div className="bigSize" ref={this.containerRef}>
 					<BackButton/>
 					<div className="container" ref={this.containerRef}>

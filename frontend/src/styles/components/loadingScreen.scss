@@ -1,0 +1,38 @@
+.loadingScreen--vietnam {
+    color: $yellow;
+}
+
+.loadingScreen__container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingScreen__emojis {
+    margin-top: 30px;
+    display: flex;
+
+}
+
+.loadingScreen__emoji {
+    margin: 0px 15px;
+    &:nth-of-type(2){
+        animation: opacityLongAnimation 1.5s  linear infinite;
+    }
+    &:nth-of-type(3){
+        animation: opacitySmallAnimation 1.5s  linear infinite;
+    }
+}
+
+.loadingScreen__text {
+    width: 80%;
+    text-align: center;
+    font-size: 4.3rem;
+}

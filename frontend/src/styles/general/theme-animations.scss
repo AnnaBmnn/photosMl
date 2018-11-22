@@ -2,3 +2,19 @@
     from { transform: rotateZ(0deg) ; } 
     to { transform: rotateZ(360deg) ; } 
 }
+
+@keyframes opacityLongAnimation { 
+    0% { opacity: 1 ; } 
+    66% { opacity: 1 ; } 
+    67% { opacity: 0 ; } 
+    100% { opacity: 0 ; } 
+}
+
+@keyframes opacitySmallAnimation { 
+    0% { opacity: 0 ; } 
+    33% { opacity: 0 ; } 
+    34% { opacity: 1 ; }
+    66% { opacity: 1 ; } 
+    67% { opacity: 0 ; } 
+    100% { opacity: 0 ; } 
+}
