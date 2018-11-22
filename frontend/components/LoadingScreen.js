@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Link from "next/link";
-import { series } from "../static/datas/series";
+
 
 class LoadingScreen extends Component {
   constructor() {

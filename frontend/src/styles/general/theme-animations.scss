@@ -24,3 +24,8 @@
     26% { opacity: 0 ; }
     100% { opacity: 0 ; } 
 }
+
+@keyframes translateAnimation { 
+    from { transform: translateX(100%) ; } 
+    to { transform: translateX(-100%) ; } 
+}
