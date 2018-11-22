@@ -7,4 +7,7 @@
     z-index: 1000;
     animation: rotateAnimation 3s infinite linear;
     transform-origin: center;
+    &:hover {
+        animation: rotateAnimation 0.5s infinite linear ;
+    }
 }

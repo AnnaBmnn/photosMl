@@ -333,6 +333,14 @@ class Vietnam extends Component {
 					:
 					""
 				}
+				{/* { isLoaded && isScrolled == 0 ?
+					<ScrollingBanner
+						moreClass={`scrollingBanner--vietnam`}
+						text={"photographies of my trip in vietnam"}
+					/>
+					:
+					""
+				} */}
 				<div className={`bigSize ${isLoaded? "": "bigSize--notloaded"}`} ref={this.containerRef}>
 					<BackButton/>
 					<div className="container" ref={this.containerRef}>

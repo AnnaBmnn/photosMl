@@ -3,18 +3,24 @@
     to { transform: rotateZ(360deg) ; } 
 }
 
-@keyframes opacityLongAnimation { 
+@keyframes opacityFirstItemAnimation { 
     0% { opacity: 1 ; } 
-    66% { opacity: 1 ; } 
-    67% { opacity: 0 ; } 
+    75% { opacity: 1 ; } 
+    76% { opacity: 0 ; } 
     100% { opacity: 0 ; } 
 }
+@keyframes opacitySecondItemAnimation { 
+    0% { opacity: 1 ; } 
+    50% { opacity: 1 ; } 
+    51% { opacity: 0 ; } 
+    75% { opacity: 0 ; } 
+    76% { opacity: 0 ; } 
+    100% { opacity: 0 ; }  
+}
 
-@keyframes opacitySmallAnimation { 
-    0% { opacity: 0 ; } 
-    33% { opacity: 0 ; } 
-    34% { opacity: 1 ; }
-    66% { opacity: 1 ; } 
-    67% { opacity: 0 ; } 
+@keyframes opacityThirdItemAnimation { 
+    0% { opacity: 1 ; } 
+    25% { opacity: 1 ; } 
+    26% { opacity: 0 ; }
     100% { opacity: 0 ; } 
 }
