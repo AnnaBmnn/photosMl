@@ -49,8 +49,8 @@ class Random extends Component {
         const { height, width, images } = this.state;
         console.log(height);
         const length = this.pictures.length;
-        const top = this.getRandombetweenMinAndMax(0, height);
-        const left = this.getRandombetweenMinAndMax(0, width);
+        const top = this.getRandombetweenMinAndMax(0, height)-height*0.25;
+        const left = this.getRandombetweenMinAndMax(0, width)-width*0.25;
         const indexImg = Math.floor(this.getRandombetweenMinAndMax(0, length));
         const image = this.pictures[indexImg];
         const newImage = {
