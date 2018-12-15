@@ -57,15 +57,21 @@ const series = [
         title: "Random",
         slug: "random",
         pictures: [
-            "static/images/vietnam/vietnam01.png", 
-            "static/images/vietnam/vietnam29.png",
-            "static/images/vietnam/vietnam02.png",
-            "static/images/vietnam/vietnam04.png",
-            "static/images/vietnam/vietnam12.png",
-            "static/images/vietnam/vietnam23.png",
-            "static/images/vietnam/vietnam29.png",
-            "static/images/people/PEOPLE_12.png",
-            "static/images/people/PEOPLE_01.png"
+            "static/images/random/random_page/random_01.png",
+            "static/images/random/random_page/random_02.png",
+            "static/images/random/random_page/random_03.jpg",
+            "static/images/random/random_page/random_04.jpg",
+            "static/images/random/random_page/random_05.jpg",
+            "static/images/random/random_page/random_06.jpg",
+            "static/images/random/random_page/random_07.jpg",
+            "static/images/random/random_page/random_08.jpg",
+            "static/images/random/random_page/random_09.jpg",
+            "static/images/random/random_page/random_10.jpg",
+            "static/images/random/random_page/random_11.jpg",
+            "static/images/random/random_page/random_12.jpg",
+            "static/images/random/random_page/random_13.jpg",
+            "static/images/random/random_page/random_14.jpg",
+            "static/images/random/random_page/random_15.png"
         ]
     }
 ]

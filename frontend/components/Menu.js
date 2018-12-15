@@ -204,6 +204,7 @@ class Menu extends Component {
       return (
         <Link href={item.slug} key={item.ID}>
           <a 
+            key={item.ID}
             className="menu__item"
             ref={refItem? refItem : null}
             onMouseEnter={this.handleMouseEnter.bind(this, item.slug)}

@@ -39,6 +39,7 @@ class Random extends Component {
         const { images } = this.state;
         images.splice(0, images.length);
         window.removeEventListener('resize', this.updateWindowDimensions);
+        console.log("did unmount");
     }
 
     updateWindowDimensions() {

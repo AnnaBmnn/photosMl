@@ -498,7 +498,8 @@ class Vietnam extends Component {
 									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--2`}>
-									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
+
 								</div>
 								<div className={`vietnam__video vietnam__video--3`}>
 									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
