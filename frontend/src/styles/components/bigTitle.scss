@@ -8,4 +8,26 @@
 
 .bigTitle--yellow {
     color: $yellow;
+    position: absolute;
+    z-index: 10;
+}
+
+.bigTitle.vietnam__item--2 {
+    top: 0;
+}
+
+.bigTitle.vietnam__item--13 {
+    top: 0%;
+    transform: translateY(100%);
+}
+
+.bigTitle.vietnam__item--14 {
+    top: 0%;
+    transform: translateY(200%);
+}
+
+.bigTitle.vietnam__item--15 {
+    top: 0;
+    transform: translateY(300%);
+
 }

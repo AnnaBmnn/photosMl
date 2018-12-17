@@ -227,7 +227,7 @@ class Vietnam extends Component {
 		const that = this;
 
 		this.vietnamTimeline
-			.to(bigTitleUnRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(bigTitleUnRef, 0.1, {opacity: 1})
 			.to(bigTitleDeuxRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(bigTitleTroisRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(bigTitleQuatreRef, 0.1, {opacity: 1}, "+=0.6")
@@ -540,7 +540,7 @@ class Vietnam extends Component {
 						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
-								className={"vietnam__item--1"} 
+								className="vietnam__item--1" 
 								ref={this.imageFinderUnRef} 
 								url={series[1].pictures[1]} 
 								isParalax={false}
@@ -551,17 +551,17 @@ class Vietnam extends Component {
 								ref={this.bigTitleUnRef} 
 							/>
 							<BigTitle
-								className="vietnam__item--3 bigTitle--yellow opacityNull"
+								className="vietnam__item--3 vietnam__item--13 bigTitle--yellow opacityNull"
 								text={"vietnam"}
 								ref={this.bigTitleDeuxRef} 
 							/>
 							<BigTitle
-								className="vietnam__item--3 bigTitle--yellow opacityNull"
+								className="vietnam__item--3 vietnam__item--14 bigTitle--yellow opacityNull"
 								text={"vietnam"}
 								ref={this.bigTitleTroisRef} 
 							/>
 							<BigTitle
-								className="vietnam__item--3 bigTitle--yellow opacityNull"
+								className="vietnam__item--3 vietnam__item--15 bigTitle--yellow opacityNull"
 								text={"vietnam"}
 								ref={this.bigTitleQuatreRef} 
 							/>

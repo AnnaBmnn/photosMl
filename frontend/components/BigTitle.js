@@ -7,14 +7,15 @@ class BigTitle extends Component {
   }
 
   render() {
-    const { text, className, innerRef } = this.props
+    const { text, moreClass, innerRef } = this.props;
+    console.log(moreClass);
     return(
-        <h2 className={`bigTitle ${className}`} ref={innerRef} >{text}</h2>
+      <h2 className={`bigTitle ${moreClass}`} ref={innerRef} >{text}</h2>
     )
   }
 
 
 }
 
-export default React.forwardRef((props, ref) => (<BigTitle text={props.text} className={props.className} innerRef={ref} />));
+export default React.forwardRef((props, ref) => (<BigTitle text={props.text} moreClass={props.className} innerRef={ref} />));
 

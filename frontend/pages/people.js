@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import BackButton from "../components/BackButton.js";
+// import { CustomPIXIComponent, Stage } from "react-pixi-fiber";
 
 class People extends Component {
     constructor(props) {
@@ -95,6 +96,28 @@ class People extends Component {
     }
     render() {
         const { clientX, clientY, cursorColor, bgColor, photoSrc } = this.state;
+        const height = 450;
+        const width = 600;
+        const OPTIONS = {
+        backgroundColor: 0x1099bb
+        };
+        // const drawCircle = (x, y, r) => {
+        //     const g = new PIXI.Graphics();
+        //     g.clear();
+        //     g.beginFill();
+        //     g.drawCircle(x, y, r);
+        //     g.endFill();
+        //     return g;
+        //   };
+        // const Image = CustomPIXIComponent(
+        //     ({ src }) => PIXI.Sprite.fromImage(src),
+        //     "Image"
+        //   );
+        // const Mask = CustomPIXIComponent(({ draw }) => {
+        //     const container = new PIXI.Container();
+        //     container.mask = draw();
+        //     return container;
+        //   }, "Mask");
         return (
             <Layout>
                 <div 
@@ -108,6 +131,16 @@ class People extends Component {
                     } 
                 >
                     <BackButton/>
+                    {/* <Stage options={OPTIONS} width={width} height={height}>
+                        <Mask draw={() => drawCircle(width / 2, height / 2, 100)}>
+                        <Image
+                            anchor="0.5,0.5"
+                            src="https://unsplash.it/200"
+                            x={width / 2}
+                            y={height / 2}
+                        />
+                        </Mask>
+                    </Stage> */}
                     <span 
                         style={
                         {

@@ -23,7 +23,6 @@ class Random extends Component {
         //ref to the dom
 		this.containerRef = React.createRef();
 
-
         // interactivity event
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
