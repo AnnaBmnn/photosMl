@@ -1,0 +1,67 @@
+.about {
+    background-color: $lightYellow;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.about__container {
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: $lightYellow;
+}
+
+.about__container--2 {
+    flex-direction: column;
+    justify-content: space-around;
+    height: unset;
+}
+
+.about__dontTrustTitle {
+    font-size: 3rem;
+    text-align: center;
+    width: 40%;
+    line-height: 50px;
+}
+
+.about__explanation {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 60%;
+    text-transform: unset;
+    margin: 100px;
+}
+.about__fullLine {
+    width: 100%;
+    text-align: center;
+}
+.about__credit {
+    width: 70%;
+    display: flex;
+    .about__creditColumn {
+        width: 50%;
+    }
+    .about__creditTitle {
+        font-size: 3rem;
+        margin-bottom: 50px;
+
+    }
+}
+.about__creditGroup {
+    font-size: 1rem;
+    margin-bottom: 50px;
+    text-transform: unset;
+}
+
+.about__creditGroupTitle {
+    margin-bottom: 25px;
+    
+}
+
+.about__creditGroupText {
+    color: white;
+    display: block;
+}

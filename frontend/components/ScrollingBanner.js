@@ -15,6 +15,14 @@ class ScrollingBanner extends Component {
             <div className={`scrollingBanner__text`}>
                 <span>{text}</span>
             </div>
+            { moreClass === "scrollingBanner--about" ?
+                <div className={`scrollingBanner__text`}>
+                    <span>{text}</span>
+                </div> 
+                :
+                ""
+             }
+            
         </div>
     )
   }
