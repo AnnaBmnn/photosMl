@@ -18,7 +18,9 @@ class Vietnam extends Component {
 		super(props);
 		this.state = { 
 			isScrolled: false,
-			isLoaded: false
+			isLoaded: false,
+			scrollDirection: false,
+			lastScroll: 0
 		};
 
 		// interactivity event
@@ -92,6 +94,8 @@ class Vietnam extends Component {
 		this.imageSeptQuinzeRef = React.createRef();
 		this.hugeTitleSeptUnRef = React.createRef();
 		this.containerVideoSeptUnRef = React.createRef();
+		this.audioUnRef = React.createRef();
+		this.audioDeuxRef = React.createRef();
 		this.videoUnRef = React.createRef();
 		this.videoDeuxRef = React.createRef();
 		this.videoTroisRef = React.createRef();
@@ -112,16 +116,52 @@ class Vietnam extends Component {
 	
 	handleScroll(e){
 		const { isLoaded } = this.props;
+		const { lastScroll } = this.state;
 		const scroll = window.scrollY;
 		if( scroll !== 0 ){
 			this.setState({isScrolled: true});
+		} else {
+			this.setState({lastScroll: 0});
 		}
+		
+		this.setState({lastScroll: scroll});
+		if( scroll-lastScroll > 0 ){
+			this.setState({scrollDirection: "bottom"})
+		}
+		if( scroll-lastScroll < 0 ){
+			this.setState({scrollDirection: "top"})
+		}
+		
 		const windowHeight = window.innerHeight;
 		const containerRef = this.containerRef.current;
 		const containerHeight = containerRef.getBoundingClientRect().height;
 		const ratio = (scroll)/(containerHeight-windowHeight);
 		this.vietnamTimeline.progress(ratio);
+	}
 
+	playSong(songPlay){
+
+		const {scrollDirection} = this.state;
+		console.log(window);
+		console.log(scrollDirection);
+
+		if( scrollDirection == "bottom"  ){
+			console.log("not reverse");
+			songPlay.playbackRate = 1;
+			const playPromise = songPlay.play();
+			if (playPromise !== undefined) {
+				playPromise.then(_ => {
+				  // Automatic playback started!
+				  // Show playing UI.
+				})
+				.catch(error => {
+				  // Auto-play was prevented
+				  // Show paused UI.
+				  console.log(error);
+	  
+				});
+			  }
+		}
 	}
 
 	initTimeline() {
@@ -191,10 +231,12 @@ class Vietnam extends Component {
 		const imageSeptQuinzeRef = this.imageSeptQuinzeRef.current;
 		const hugeTitleSeptUnRef = this.hugeTitleSeptUnRef.current;
 		const containerVideoSeptUnRef = this.containerVideoSeptUnRef.current;
+		const audioUnRef = this.audioUnRef.current;
+		const audioDeuxRef = this.audioDeuxRef.current;
 		const videoUnRef = this.videoUnRef.current;
 		const videoDeuxRef = this.videoDeuxRef.current;
 		const videoTroisRef = this.videoTroisRef.current;
-
+		const that = this;
 
 		this.vietnamTimeline
 			.to(bigTitleUnRef, 0.1, {opacity: 1}, "+=0.6")
@@ -277,9 +319,7 @@ class Vietnam extends Component {
 			.to(imageSeptTroisRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptQuatreRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptUnRef, 0.1, {opacity: 0}, "-=0.1")
-			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
-			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
-			.to(imageSeptCinqRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageSeptCinqRef, 0.1, {opacity: 1})
 			.to(vroumSeptQuatreRef, 0.2, {opacity: 1}, "+=0.6")
 			.to(vroumSeptTroisRef, 0.2, {opacity: 1}, "-=0.2")
 			.to(vroumSeptUnRef, 0.2, {opacity: 1}, "+=0.6")
@@ -290,8 +330,9 @@ class Vietnam extends Component {
 			.to(vroumSeptDeuxRef, 0.2, {opacity: 0}, "-=0.2")
 			.to(imageSeptCinqRef, 0.1, {opacity: 0}, "+=0.6")
 			.to(imageSeptSixRef, 0.1, {opacity: 1}, "-=0.1")
+			.call(that.playSong, [audioUnRef, that.vietnamTimeline], that)
 			.to(imageSeptSeptRef, 0.1, {opacity: 1}, "-=0.1")
-			.to(imageSeptSixRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageSeptSixRef, 0.1, {opacity: 0}, "+=1.6")
 			.to(imageSeptSeptRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptHuitRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageSeptNeufRef, 0.1, {opacity: 1}, "-=0.1")
@@ -299,6 +340,7 @@ class Vietnam extends Component {
 			.to(imageSeptNeufRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptDixRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageSeptDixRef, 0.1, {opacity: 0}, "+=0.6")
+			.call(that.playSong, [audioDeuxRef, that.vietnamTimeline], that)
 			.to(imageSeptOnzeRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageSeptDouzeRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageSeptTreizeRef, 0.1, {opacity: 1}, "+=0.6")
@@ -342,6 +384,8 @@ class Vietnam extends Component {
 					:
 					""
 				}
+				<audio ref={this.audioUnRef} preload="none" src="static/audio/beach.m4a" ></audio>
+				<audio ref={this.audioDeuxRef}  preload="none" src="static/audio/street.m4a" ></audio>
 				<div className={`bigSize ${isLoaded? "": "bigSize--notloaded"}`} ref={this.containerRef}>
 					<BackButton/>
 					<div className="container" ref={this.containerRef}>
@@ -498,7 +542,7 @@ class Vietnam extends Component {
 									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--2`}>
-									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
 
 								</div>
 								<div className={`vietnam__video vietnam__video--3`}>
