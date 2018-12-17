@@ -18,9 +18,7 @@ class Vietnam extends Component {
 		super(props);
 		this.state = { 
 			isScrolled: false,
-			isLoaded: false,
-			scrollDirection: false,
-			lastScroll: 0
+			isLoaded: false
 		};
 
 		// interactivity event
@@ -120,16 +118,6 @@ class Vietnam extends Component {
 		const scroll = window.scrollY;
 		if( scroll !== 0 ){
 			this.setState({isScrolled: true});
-		} else {
-			this.setState({lastScroll: 0});
-		}
-		
-		this.setState({lastScroll: scroll});
-		if( scroll-lastScroll > 0 ){
-			this.setState({scrollDirection: "bottom"})
-		}
-		if( scroll-lastScroll < 0 ){
-			this.setState({scrollDirection: "top"})
 		}
 		
 		const windowHeight = window.innerHeight;

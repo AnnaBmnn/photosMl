@@ -241,7 +241,7 @@ class Menu extends Component {
         className={`menu__cursor menu__cursor--blue `}
         ref={this.cursorRef} 
       />
-      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[9][0]}  />
+      <img ref={this.peopleImgRef} className="people__item" src={series[0].pictures[12][0]}  />
       <FinderImage 
         className={"finderImageVietnam finderImageVietnam--1"} 
         ref={this.finderImageUnRef} 
