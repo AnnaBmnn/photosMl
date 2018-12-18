@@ -1,3 +1,7 @@
+.animate {
+    transition: transform 2000ms cubic-bezier(.19,1,.22,1);
+}
+
 @keyframes rotateAnimation { 
     from { transform: rotateZ(0deg) ; } 
     to { transform: rotateZ(360deg) ; } 

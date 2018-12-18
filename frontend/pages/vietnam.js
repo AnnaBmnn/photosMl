@@ -106,10 +106,10 @@ class Vietnam extends Component {
 		window.addEventListener('scroll', this.handleScroll);
 		window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
 		this.initTimeline();		
-  }
+  	}
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+  	componentWillUnmount() {
+    	window.removeEventListener('scroll', this.handleScroll);
 	}
 	
 	handleScroll(e){
