@@ -151,12 +151,11 @@ class Menu extends Component {
     const peopleImgRef = this.peopleImgRef.current;
     
     this.peopleTimeline
-      .to(peopleRef, 0.1, {transform: "scaleY(8.4) scaleX(2.3)"})
       .to(cursorRef, 0.1, {opacity: 1}, "-=0.1")
       .to(peopleRef, 0.1, {color: "rgba(255,255,255, 1)"}, "-=0.1")
       .to(peopleImgRef, 0.1, {opacity: 1}, "-=0.1")
-      .to(vietnamRef, 0.1, {transform: "translateY(200px)", color: "rgba(255,255,255,0.37)"}, "-=0.1")
-      .to(randomRef, 0.1, {transform: "translateY(200px)", color: "rgba(255,255,255,0.37)"}, "-=0.1")
+      .to(vietnamRef, 0.1, { color: "rgba(255,255,255,0.37)"}, "-=0.1")
+      .to(randomRef, 0.1, { color: "rgba(255,255,255,0.37)"}, "-=0.1")
       .play();
   }
 
@@ -170,20 +169,31 @@ class Menu extends Component {
     const finderImageTroisRef = this.finderImageTroisRef.current;
     const finderImageQuatreRef = this.finderImageQuatreRef.current;
     this.vietnamImageTimeline
-      .set(finderImageUnRef, {opacity: 1})
-      .set(finderImageDeuxRef, {opacity: 1})
-      .set(finderImageTroisRef, {opacity: 1})
-      .set(finderImageQuatreRef, {opacity: 1})
+      .to(menuRef, 0.3, {backgroundColor: "#CE283F"})
+      .to(finderImageUnRef, 0.3 ,{opacity: 1})
+      .set(finderImageDeuxRef, 0.3, {opacity: 1},"-=0.3")
+      .set(finderImageTroisRef, 0.3, {opacity: 1},"-=0.3")
+      .set(finderImageQuatreRef, 0.3, {opacity: 1},"-=0.3")
       .set(vietnamRef, {zIndex: 200})
-      .to(menuRef, 0.5, {backgroundColor: "#CE283F"})
       .to(peopleRef, 0.5, {opacity: 0.4}, "-=0.4")
       .to(randomRef, 0.5, {opacity: 0.4},"-=0.4")
-      .to(vietnamRef, 0.5, {paddingTop: 150, paddingBottom: 150},"-=0.4")
-      .to(finderImageUnRef, 0.5, {bottom: "20%", right: "34%"},"-=0.4")
-      .to(finderImageDeuxRef, 0.5, {bottom: "25%", left: "58%"}, "-=0.4")
-      .to(finderImageTroisRef, 0.5, {top: "70%", left: "55%"}, "-=0.4")
-      .to(finderImageQuatreRef, 0.5, {top: "65%", right: "38%"}, "-=0.4")
       .play();
+
+
+    // this.vietnamImageTimeline
+    //   .set(finderImageUnRef, {opacity: 1})
+    //   .set(finderImageDeuxRef, {opacity: 1})
+    //   .set(finderImageTroisRef, {opacity: 1})
+    //   .set(finderImageQuatreRef, {opacity: 1})
+    //   .set(vietnamRef, {zIndex: 200})
+    //   .to(menuRef, 0.5, {backgroundColor: "#CE283F"})
+    //   .to(peopleRef, 0.5, {opacity: 0.4}, "-=0.4")
+    //   .to(randomRef, 0.5, {opacity: 0.4},"-=0.4")
+    //   .to(finderImageUnRef, 0.5, {bottom: "20%", right: "34%"},"-=0.4")
+    //   .to(finderImageDeuxRef, 0.5, {bottom: "25%", left: "58%"}, "-=0.4")
+    //   .to(finderImageTroisRef, 0.5, {top: "70%", left: "55%"}, "-=0.4")
+    //   .to(finderImageQuatreRef, 0.5, {top: "65%", right: "38%"}, "-=0.4")
+    //   .play();
 
   }
 
@@ -205,7 +215,7 @@ class Menu extends Component {
         <Link href={item.slug} key={item.ID}>
           <a 
             key={item.ID}
-            className="menu__item"
+            className={`menu__item`}
             ref={refItem? refItem : null}
             onMouseEnter={this.handleMouseEnter.bind(this, item.slug)}
             onMouseLeave={this.handleMouseLeave.bind(this)}

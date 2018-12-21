@@ -1,5 +1,6 @@
 .animate {
     transition: transform 2000ms cubic-bezier(.19,1,.22,1);
+    transform-origin: left;
 }
 
 @keyframes rotateAnimation { 

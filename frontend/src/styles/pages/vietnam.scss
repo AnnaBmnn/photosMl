@@ -6,9 +6,10 @@
 }
 .container {
     position: fixed;
-    height: 1000px;
+    height: 100vh;
     width: 100vw;
     background-color: $red;
+
 }
 
 .vietnam__item--1.finderImg__container {
@@ -17,6 +18,11 @@
     top: 15%;
     width: 500px;
     height: 330px;
+    @include tablet {
+        width: 280px;
+        height: 198px;
+        right: 5%;
+    }
     img {
         width: 100%;
     }
@@ -27,6 +33,13 @@
     top: 8%;
     width: 500px;
     height: 330px;
+    @include tablet {
+        width: 280px;
+        height: 198px;
+        right: unset;
+        left: 5%;
+        top: 25%;
+    }
     img {
         width: 100%;
     }
@@ -39,6 +52,12 @@
     height: 34%;
     width: 500px;
     height: 330px;
+    @include tablet {
+        width: 280px;
+        height: 198px;
+        right: 5%;
+        top: 35%;
+    }
     img {
         width: 100%;
     }
@@ -51,6 +70,10 @@
     height: auto;
     width: 500px;
     z-index: 110;
+    @include tablet {
+        width: 80%;
+        top: 45%;
+    }
 }
 
 .vietnam__container--bigTitle {

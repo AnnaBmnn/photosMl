@@ -8,23 +8,48 @@
         min-width: 100vw;
         height: 100vh;
         object-fit: cover;
+        @include tablet {
+            height: 100vh;
+            width: auto;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
     }
     .vietnam__image42 {
-        transform: scale(0.86);
+        transform: scale(0.86) ;
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%) scale(0.86);
+        }
     }
     .vietnam__image43 {
         transform: scale(.72);
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%) scale(0.72);
+        }
     }
     .vietnam__image44 {
         transform: scale(0.58);
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%)  scale(0.58);
+        }
     }
     .vietnam__image45 {
         transform: scale(0.44);
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%)  scale(0.44);
+        }
     }
     .vietnam__image46 {
         transform: scale(0.3);
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%)  scale(0.3);
+        }
     }
     .vietnam__image47 {
         transform: scale(0.16);
+        @include tablet {
+            transform: translateX(-50%) translateY(-50%)  scale(0.16);
+        }
     }
 }

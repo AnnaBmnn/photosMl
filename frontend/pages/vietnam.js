@@ -104,7 +104,8 @@ class Vietnam extends Component {
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
-		window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
+		window.setTimeout(()=> this.setState({isLoaded: true}), 10)
+		// window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
 		this.initTimeline();		
   	}
 
@@ -336,10 +337,11 @@ class Vietnam extends Component {
 			.to(imageSeptDouzeRef, 0.1, {opacity: 0}, "+=0.6")
 			.to(imageSeptTreizeRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptQuatorzeRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(imageSeptOnzeRef, 0.1, {className:"+=fullHeight"}, "-=0.1")
 			.to(hugeTitleSeptUnRef, 6, {transform: "scaleY(14) scaleX(3.5) translateX(-150%)"}, "+=0.6")
 			.to(imageSeptQuinzeRef, 0.1, {opacity: 1}, "-=1.2")
 			.to(containerVideoSeptUnRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-100px, 0px, 1px"}, "+=0.6")
+			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-100%, 0px, 1px"}, "+=0.6")
 			.add( function(){ 
 				videoUnRef.play();
 				videoDeuxRef.play();

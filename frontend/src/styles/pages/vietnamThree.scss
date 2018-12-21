@@ -7,6 +7,14 @@
         // z-index: 108;
         width: 500px;
         height: 330px;
+        @include tablet {
+            right: unset;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0 auto;
+            width: 349px;
+            height: 241px;
+        }
         img {
             width: 100%;
             height: auto;
@@ -17,19 +25,31 @@
 .vietnam__item--31 {
     right: 15%;
     bottom: 10%;
+    @include tablet {
+        top: 20%;
+    }
 }
 
 .vietnam__item--32 {
     right: 22%;
     bottom: 17%;
+    @include tablet {
+        top: 31%;
+    }
 }
 .vietnam__item--33 {
     right: 29%;
     bottom: 24%;
+    @include tablet {
+        top: 42%;
+    }
 }
 .vietnam__item--34 {
     right: 36%;
     bottom: 31%;
+    @include tablet {
+        top: 53%;
+    }
 }
 
 .vietnam__item--image31 {
@@ -40,6 +60,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include tablet {
+        width: 90%;
+    }
 }
 
 .vietnam__containerSunshine {

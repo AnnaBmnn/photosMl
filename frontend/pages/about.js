@@ -39,7 +39,7 @@ class About extends Component {
 
     render() {
         const { diffScroll } = this.state;
-        const transformStyle =  { transform: `skewX(${diffScroll*0.18}deg)` }  ;
+        const transformStyle =  { transform: `skewY(${diffScroll*0.3}deg)` }  ;
         return (
             <Layout>
                 <div className="about">
@@ -60,7 +60,7 @@ class About extends Component {
                             and front-end developper
                             
                             <div className="about__fullLine">Anna Baumann.</div>
-                            
+                          
                         </div>
                         <div className="about__credit">
                             <div className="about__creditColumn animate" style={transformStyle}>

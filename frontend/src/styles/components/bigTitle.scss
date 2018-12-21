@@ -4,12 +4,22 @@
     line-height: 25vh;
     font-weight: 900;
     text-align: center;
+    @include tablet {
+        font-size: 24vw;
+        word-break: break-word;
+        line-height: 1;
+    }
 }
 
 .bigTitle--yellow {
     color: $yellow;
     position: absolute;
     z-index: 10;
+    @include tablet {
+        font-size: 24vw;
+        word-break: break-word;
+        line-height: 1;
+    }
 }
 
 .bigTitle.vietnam__item--2 {

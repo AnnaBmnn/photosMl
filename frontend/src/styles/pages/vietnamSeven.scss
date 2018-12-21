@@ -13,6 +13,14 @@
     img {
         min-width: 100%;
         height: 100vh;
+        @include tablet {
+            height: 100%;
+            width: unset;
+            transform: translate3d(-20%, 0, 1px); 
+        }
+    }
+    @include tablet {
+        width: unset;
     }
 }
 
@@ -23,6 +31,13 @@
     height: 30%;
     left: 13%;
     top: 10%;
+    @include tablet {
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 1px);
+        width: 317px;
+        height: 342px;
+    }
 }
 .vietnam__item--73 {
     position: absolute;
@@ -30,6 +45,9 @@
     top: 20%;
     height: 30%;
     z-index: 400;
+    @include tablet {
+        display: none;
+    }
 }
 .vietnam__item--74 {
     position: absolute;
@@ -37,6 +55,9 @@
     right: 5%;
     height: 30%;
     z-index: 400;
+    @include tablet {
+        display: none;
+    }
 }
 .vietnam__item--75 {
     position: absolute;
@@ -45,12 +66,19 @@
     transform: translate3d(-50%, -50%, 1px);
     z-index: 400;
     width: 55%;
+    @include tablet {
+        width: 90%;
+    }
 }
 .vietnam__item--76 {
     position: absolute;
     bottom: 0;
     width: 100vw;
     height: auto;
+    @include tablet {
+        height: 100vh;
+        width: auto;
+    }
 }
 .vietnam__vroumContainer {
     display: flex;
@@ -59,6 +87,15 @@
     position: absolute;
     bottom: 15vh;
     right: 15%;
+    @include tablet {
+        align-items: flex-end;
+        width: 90%;
+        bottom: 27vh;
+        right: 10%;
+        .vietnam__vroum {
+            font-size: 10vw;
+        }
+    }
 }
 .vietnam__vroum {
     line-height: 0.9;
@@ -73,12 +110,22 @@
     position: absolute;
     top: 5%;
     left: 10%;
+    @include tablet {
+        top: 0;
+        left: 0;
+        height: 50%;
+    }
 }
 .vietnam__item--79 {
     height: 40%;
     position: absolute;
     bottom: 5%;
     right: 10%;
+    @include tablet {
+        bottom: 0%;
+        left: 0;
+        height: 50%;
+    }
 }
 .vietnam__item--710 {
     // opacity: 1;
@@ -86,6 +133,13 @@
     position: absolute;
     bottom: 10%;
     right: 100px;
+    @include tablet {
+        width: 90%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 1px);
+    }
 }
 .vietnam__item--712 {
     height: 45%;
@@ -93,6 +147,11 @@
     top: 25%;
     left: 15%;
     z-index: 100;
+    @include tablet {
+        width: 100%;
+        top: 35%;
+        height: auto;
+    }
 }
 .vietnam__item--711 {
     height: 45%;
@@ -100,7 +159,19 @@
     top: 12%;
     left: 30%;
     z-index: 101;
-
+    @include tablet {
+        top: 22%;
+        width: 80%;
+        height: auto;
+    }
+}
+.fullHeight {
+    @include tablet {
+        height: 100vh;
+        width: auto;
+        top: 0;
+        left: -40%;
+    } 
 }
 .vietnam__item--713 {
     height: 45%;
@@ -108,6 +179,11 @@
     bottom: 20%;
     right: 100px;
     z-index: 102;
+    @include tablet {
+        bottom: 30%;
+        width: 80%;
+        height: auto;
+    }
 }
 .vietnam__item--714 {
     height: 45%;
@@ -115,6 +191,11 @@
     bottom: 8%;
     left: 23%;
     z-index: 103;
+    @include tablet {
+        bottom: 18%;
+        width: 80%;
+        height: auto;
+    }
 }
 .vietnam__hugeTitle {
     color: $yellow;
@@ -134,6 +215,11 @@
     bottom: 0%;
     width: 100%;
     z-index: 200;
+    @include tablet {
+        left: -180%;
+        width: auto;
+        height: 100%;
+    }
 }
 
 .vietnam__containerVideo {
@@ -148,6 +234,9 @@
     box-sizing: border-box;
     transform: translate3d(100px, 0px, 1px);
     z-index: 200;
+    @include tablet {
+        transform: translate3d(100%, 0px, 1px);
+    }
 }
 .vietnam__video--2 {
     align-self: flex-end;
@@ -161,5 +250,8 @@
     video {
         height: 100%;
         width: auto;
+    }
+    @include tablet {
+        margin: 0 50px;
     }
 }
