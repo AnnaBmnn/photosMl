@@ -41,6 +41,16 @@ class Random extends Component {
         console.log("did unmount");
     }
 
+    componentDidUpdate() {
+        const { width } = this.state;
+        if( width < 1000 ) {
+            window.addEventListener('click', this.handleKeyPress);
+        } else {
+            window.removeEventListener('click', this.handleKeyPress);
+
+        }
+    }
+
     updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height:  window.innerHeight });
     }
@@ -70,7 +80,8 @@ class Random extends Component {
     }
 
     render() {
-        const { images } = this.state;
+        const { images, width } = this.state;
+        const text = width < 1000 ? "Tap Tap Tap" : "Tap a random letter";
         const imagesDiv = images.map((_image, index) => {
             return (
                 <img
@@ -90,7 +101,7 @@ class Random extends Component {
                 <div ref={this.containerRef} className={`random__container`} tabIndex="2" onKeyPress={this.handleKeyPress.bind(this)} >
                     <BackButton/>
                     { imagesDiv }
-                    <h2 className={`random__title`}>Tap a random letter</h2>
+                    <h2 className={`random__title`}>{text}</h2>
                 </div>
             </Layout>
         );
