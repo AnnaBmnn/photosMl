@@ -65,6 +65,13 @@
             animation: translateAnimation 21s 14s linear infinite ;
         }
     }
+    @include tablet {
+        .scrollingBanner__text {
+            font-size: 20vw;
+            width: 200vw;
+
+        }
+    }
 }
 
 .scrollingBanner--about2 {
@@ -85,6 +92,11 @@
         &:nth-of-type(2){
             transform: translateX(100%);
             animation: translateAnimation 30s 15s linear infinite ;
+        }
+    }
+    @include tablet {
+        .scrollingBanner__text {
+            width: 330vw;
         }
     }
 }

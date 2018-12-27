@@ -69,13 +69,13 @@ class About extends Component {
                                     <div className="about__creditGroupTitle">
                                         Marie-Lise Ton
                                     </div>
-                                    <Link href={"/"} >
-                                        <a className="about__creditGroupText">
+                                    <Link href={"https://www.instagram.com/yo.marielise/?hl=fr"} >
+                                        <a target="_blank"  className="about__creditGroupText">
                                             Instagram
                                         </a>
                                     </Link>
-                                    <Link href={"/"} >
-                                        <a className="about__creditGroupText">
+                                    <Link href={"https://www.linkedin.com/in/marieliseton/"} >
+                                        <a className="about__creditGroupText" target="_blank">
                                             Linkedin
                                         </a>
                                     </Link>
@@ -84,14 +84,19 @@ class About extends Component {
                                     <div className="about__creditGroupTitle">
                                         Anna Baumann
                                     </div>
-                                    <Link href={"/"} >
-                                        <a className="about__creditGroupText">
+                                    <Link href={"https://www.instagram.com/bannabmnn/"}  >
+                                        <a className="about__creditGroupText" target="_blank">
                                             Instagram
                                         </a>
                                     </Link>
-                                    <Link href={"/"} >
-                                        <a className="about__creditGroupText">
+                                    <Link href={"https://www.linkedin.com/in/anna-baumann-34b56312a/"} >
+                                        <a className="about__creditGroupText" target="_blank">
                                             Linkedin
+                                        </a>
+                                    </Link>
+                                    <Link href={"https://annabaumann.fr/"} >
+                                        <a className="about__creditGroupText" target="_blank">
+                                            Site 
                                         </a>
                                     </Link>
                                 </div>

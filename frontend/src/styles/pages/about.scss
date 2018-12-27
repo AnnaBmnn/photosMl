@@ -25,6 +25,9 @@
     text-align: center;
     width: 40%;
     line-height: 50px;
+    @include tablet {
+        width: 80%;
+    }
 }
 
 .about__explanation {
@@ -34,14 +37,22 @@
     width: 60%;
     text-transform: unset;
     margin: 100px;
+    @include tablet {
+        margin: 50px 0 100px;
+        width: 80%;
+    }
 }
 .about__fullLine {
     width: 100%;
     text-align: center;
+    @include tablet {
+        text-align: left;
+    }
 }
 .about__credit {
     width: 70%;
     display: flex;
+
     .about__creditColumn {
         width: 50%;
     }
@@ -49,6 +60,16 @@
         font-size: 3rem;
         margin-bottom: 50px;
 
+    }
+    @include tablet {
+        width: 80%;
+        flex-direction: column;
+        .about__creditColumn {
+            width: 100%;
+        }
+        .about__creditTitle {
+            font-size: 10vw;
+        }
     }
 }
 .about__creditGroup {

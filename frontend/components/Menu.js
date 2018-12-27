@@ -171,9 +171,9 @@ class Menu extends Component {
     this.vietnamImageTimeline
       .to(menuRef, 0.3, {backgroundColor: "#CE283F"})
       .to(finderImageUnRef, 0.3 ,{opacity: 1})
-      .set(finderImageDeuxRef, 0.3, {opacity: 1},"-=0.3")
-      .set(finderImageTroisRef, 0.3, {opacity: 1},"-=0.3")
-      .set(finderImageQuatreRef, 0.3, {opacity: 1},"-=0.3")
+      .to(finderImageDeuxRef, 0.3, {opacity: 1},"-=0.3")
+      .to(finderImageTroisRef, 0.3, {opacity: 1},"-=0.3")
+      .to(finderImageQuatreRef, 0.3, {opacity: 1},"-=0.3")
       .set(vietnamRef, {zIndex: 200})
       .to(peopleRef, 0.5, {opacity: 0.4}, "-=0.4")
       .to(randomRef, 0.5, {opacity: 0.4},"-=0.4")

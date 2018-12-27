@@ -50,3 +50,21 @@
         user-select: none;
     }
 }
+
+.menu__cursor.menu__cursor--mobile {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    bottom: 15vh;
+    top: unset;
+}
+
+.menu__cursor--next {
+    right: 50%;
+    left: unset;
+    transform: translate3d(90%, 0, 1px);
+}
+.menu__cursor--prev {
+    left: 50%;
+    transform: translate3d(-90%, 0, 1px);
+}

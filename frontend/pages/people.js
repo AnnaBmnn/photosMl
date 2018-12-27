@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import BackButton from "../components/BackButton.js";
-// import { CustomPIXIComponent, Stage } from "react-pixi-fiber";
 
 class People extends Component {
     constructor(props) {
@@ -21,6 +20,9 @@ class People extends Component {
         // interactivity event
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleMouseMove = this.handleMouseMove.bind(this);
+        this.handleClickPrev = this.handleClickPrev.bind(this);
+        
 
         // ref to the DOM node
         this.cursorRef = React.createRef();
@@ -31,22 +33,31 @@ class People extends Component {
         this.innerTextCursor = "";
     }
 
-    handleClick(e){
-        const { indexCurrentImage } = this.state;
-        const length = this.pictures.length;
-        const direction = this.nextOrPrev();
+    handleClickPrev(e){
+        console.log("PREV");
+    }
 
+    handleClick(e){
+        const { indexCurrentImage, middleWidth } = this.state;
+        const length = this.pictures.length;
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        this.setState({clientX: clientX, clientY: clientY});
+        const direction = this.nextOrPrev();
+        // console.log(e);
         let indexNewCurrent;
 
-        if(direction === "next"){
-            indexNewCurrent = indexCurrentImage + 1;
+        if(middleWidth> 500) {
+            if(direction === "next"){
+                indexNewCurrent = indexCurrentImage + 1;
+            }
+            if(direction === "prev"){
+                indexNewCurrent = indexCurrentImage - 1;
+            }
+            indexNewCurrent = (( indexNewCurrent % length) + length) % length;
+            indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
+            this.setState({indexCurrentImage : indexNewCurrent}, () => this.updateStyle());
         }
-        if(direction === "prev"){
-            indexNewCurrent = indexCurrentImage - 1;
-        }
-        indexNewCurrent = (( indexNewCurrent % length) + length) % length;
-        indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
-        this.setState({indexCurrentImage : indexNewCurrent}, () => this.updateStyle());
     }
 
     handleMouseMove(e){
@@ -95,35 +106,13 @@ class People extends Component {
         this.setState({ middleWidth: window.innerWidth*0.5 });
     }
     render() {
-        const { clientX, clientY, cursorColor, bgColor, photoSrc } = this.state;
-        const height = 450;
-        const width = 600;
-        const OPTIONS = {
-        backgroundColor: 0x1099bb
-        };
-        // const drawCircle = (x, y, r) => {
-        //     const g = new PIXI.Graphics();
-        //     g.clear();
-        //     g.beginFill();
-        //     g.drawCircle(x, y, r);
-        //     g.endFill();
-        //     return g;
-        //   };
-        // const Image = CustomPIXIComponent(
-        //     ({ src }) => PIXI.Sprite.fromImage(src),
-        //     "Image"
-        //   );
-        // const Mask = CustomPIXIComponent(({ draw }) => {
-        //     const container = new PIXI.Container();
-        //     container.mask = draw();
-        //     return container;
-        //   }, "Mask");
+        const { clientX, clientY, cursorColor, bgColor, photoSrc, middleWidth } = this.state;
         return (
             <Layout>
                 <div 
                     className={`people__container`} 
                     onClick={this.handleClick.bind(this)} 
-                    onMouseMove={this.handleMouseMove.bind(this)}
+                    onMouseMove={this.handleMouseMove}
                     style={
                         {
                             backgroundColor: bgColor
@@ -131,17 +120,10 @@ class People extends Component {
                     } 
                 >
                     <BackButton/>
-                    {/* <Stage options={OPTIONS} width={width} height={height}>
-                        <Mask draw={() => drawCircle(width / 2, height / 2, 100)}>
-                        <Image
-                            anchor="0.5,0.5"
-                            src="https://unsplash.it/200"
-                            x={width / 2}
-                            y={height / 2}
-                        />
-                        </Mask>
-                    </Stage> */}
+                    { middleWidth*2 > 1000 ? 
                     <span 
+                        onClick={this.handleClick} 
+
                         style={
                         {
                             transform: `translateX(${clientX-100}px) translateY(${clientY-100}px)`,
@@ -156,7 +138,44 @@ class People extends Component {
                                 {this.innerTextCursor}
                             </span>
                         </span>
-                    </span>
+                    </span>                    
+                    :
+                    <div>
+                        <span 
+                            style={
+                            {
+                                backgroundColor: cursorColor
+                            }
+                            } 
+                            className={`menu__cursor menu__cursor--mobile menu__cursor--prev`}
+                            onClick={this.handleClickPrev} 
+                            
+                        >
+                            <span className={`cursorText`}>
+                                <span>
+                                    prev
+                                </span>
+                            </span>
+                        </span> 
+                        <span 
+                            style={
+                                {
+                                    backgroundColor: cursorColor
+                                }
+                            } 
+                            className={`menu__cursor menu__cursor--mobile  menu__cursor--next`}
+                            // onClick={ this.handleClickPrev.bind(this)} 
+                            // onClick={middleWidth >= 500 ? false : this.handleClick.bind(this)} 
+                        >
+                            <span className={`cursorText`} >
+                                <span>
+                                    next
+                                </span>
+                            </span>
+                        </span>
+                    </div> 
+                    }
+
                     <div className={`people__imgContainer`}>
                         <img className={`people__img`} src={photoSrc} />
                     </div>
