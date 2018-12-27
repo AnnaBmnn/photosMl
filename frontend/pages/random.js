@@ -98,7 +98,7 @@ class Random extends Component {
 
         return (
             <Layout>
-                <div ref={this.containerRef} className={`random__container`} tabIndex="2" onKeyPress={this.handleKeyPress.bind(this)} >
+                <div ref={this.containerRef} className={`random__container`} tabIndex="2" onKeyPress={this.handleKeyPress} >
                     <BackButton/>
                     { imagesDiv }
                     <h2 className={`random__title`}>{text}</h2>
