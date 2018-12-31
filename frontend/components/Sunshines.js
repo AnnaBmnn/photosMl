@@ -11,10 +11,10 @@ class Sunshines extends Component {
     const { innerRef, className } = this.props;
     return (
         <div ref={innerRef} className={`sunshines ${className}`}>
-          <span className="sunshines__sun">🌞</span>
-          <span className="sunshines__sun">🌞</span>
-          <span className="sunshines__sun">🌞</span>
-          <span className="sunshines__sun">🌞</span>
+          <span className="sunshines__sun"><img src="static/images/vietnam/sun_vietnam.png" /></span>
+          <span className="sunshines__sun"><img src="static/images/vietnam/sun_vietnam.png" /></span>
+          <span className="sunshines__sun"><img src="static/images/vietnam/sun_vietnam.png" /></span>
+          <span className="sunshines__sun"><img src="static/images/vietnam/sun_vietnam.png" /></span>
         </div>
 
     );
