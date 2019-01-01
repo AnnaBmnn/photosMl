@@ -1,8 +1,10 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
+import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import { TimelineMax } from "gsap";
+import { Draggable, SplitText } from "gsap";
 import LoadingScreen from "../components/LoadingScreen";
 import ScrollingBanner from "../components/ScrollingBanner";
 import BigTitle from "../components/BigTitle";
@@ -18,10 +20,13 @@ class Vietnam extends Component {
 		super(props);
 		this.state = { 
 			isScrolled: false,
-			isLoaded: false
+			isLoaded: false,
+			width: 0, 
+
 		};
 
 		// interactivity event
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 		this.handleScroll = this.handleScroll.bind(this);
 
 		// ref to the DOM node
@@ -97,12 +102,19 @@ class Vietnam extends Component {
 		this.videoUnRef = React.createRef();
 		this.videoDeuxRef = React.createRef();
 		this.videoTroisRef = React.createRef();
+		this.containerNextProjectRef = React.createRef();
+		this.splitTextUnRef = React.createRef();
+		this.splitTextDeuxRef = React.createRef();
+		this.splitTextTroisRef = React.createRef();
+		
 
 		// ref to the animation
 		this.vietnamTimeline = new TimelineMax();
 	}
 
 	componentDidMount() {
+		this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);		
 		window.addEventListener('scroll', this.handleScroll);
 		window.setTimeout(()=> this.setState({isLoaded: true}), 10)
 		// window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
@@ -110,8 +122,12 @@ class Vietnam extends Component {
   	}
 
   	componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
     	window.removeEventListener('scroll', this.handleScroll);
 	}
+	updateWindowDimensions() {
+        this.setState({ middleWidth: window.innerWidth*0.5 });
+    }
 	
 	handleScroll(e){
 		const { isLoaded } = this.props;
@@ -225,6 +241,14 @@ class Vietnam extends Component {
 		const videoUnRef = this.videoUnRef.current;
 		const videoDeuxRef = this.videoDeuxRef.current;
 		const videoTroisRef = this.videoTroisRef.current;
+		const containerNextProjectRef = this.containerNextProjectRef.current;
+		const splitTextUnRef = this.splitTextUnRef.current;
+		const splitTextDeuxRef = this.splitTextDeuxRef.current;
+		const splitTextTroisRef = this.splitTextTroisRef.current;
+		
+		// const mySplitText = new SplitText(splitTextUnRef, {type:"words"});
+		// mySplitText.split({type:"chars, words"});
+
 		const that = this;
 
 		this.vietnamTimeline
@@ -347,20 +371,34 @@ class Vietnam extends Component {
 				videoDeuxRef.play();
 				videoTroisRef.play();
 			}, "-=6" )
+			.add( function(){ 
+				videoUnRef.pause();
+				videoDeuxRef.pause();
+				videoTroisRef.pause();
+			}, "+=4" )
+			.to(containerVideoSeptUnRef, 0.1, {opacity: 0})
+			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
+			.to(containerVideoSeptUnRef, 0.1, {className:"+=displayNone"})
+			.to(containerNextProjectRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(containerNextProjectRef, 6, {transform: "translateY(-55%)"})
+			.staggerFrom(".plitText1", 0.3, {x:0, y: "100%", z:"1px"},0.02, "-=6.8")
+			.staggerFrom(".plitText2", 0.5, {x:0, y: "100%", z:"1px"},0.02, "-=5")
+			.staggerFrom(".plitText3", 1, {x:0, y: "100%", z:"1px"},0.02, "-=2")
 			.pause();
 	}
 
 	render() {
-		const {isLoaded, isScrolled} = this.state;
+		const {isLoaded, isScrolled, width} = this.state;
 		const serie = series.find(serie => serie.slug === "vietnam");
 		const {title, pictures} = serie;
+		const indexImg = width < 1000 ? 1 : 0;
 		console.log(!isLoaded);
 		return (
 			<Layout>
 				{ !isLoaded || isScrolled == 0 ?
 					<LoadingScreen
 						moreClass={"loadingScreen--vietnam"}
-						emoji={"🇻🇳"}
+						src={"static/images/vietnam/drapeau.png"}
 						text={"photographies of my trip in vietnam"}
 					/>
 					:
@@ -383,13 +421,13 @@ class Vietnam extends Component {
 							<FilterImage 
 								className={"vietnam__item--5 opacityNull"} 
 								ref={this.imageDeuxRef} 
-								url={series[1].pictures[4]} 
+								url={series[1].pictures[4][indexImg]} 
 								isParalax={false}
 							/>
 							<FilterImage 
 								className={"vietnam__item--6 opacityNull"} 
 								ref={this.imageTroisRef} 
-								url={series[1].pictures[5]} 
+								url={series[1].pictures[5][indexImg]} 
 								isParalax={false}
 							/>
 							<div className="vietnam__container--mediumTitle " ref={this.containerMediumTitleRef}>
@@ -409,7 +447,7 @@ class Vietnam extends Component {
 							<FilterImage 
 								className={"vietnam__item--7 opacityNull"} 
 								ref={this.imageQuatreRef} 
-								url={series[1].pictures[6]} 
+								url={series[1].pictures[6][indexImg]} 
 								isParalax={false}
 							/>
 						</div>
@@ -417,28 +455,28 @@ class Vietnam extends Component {
 							<FinderImage 
 								className={"opacityNull vietnam__item--31"} 
 								ref={this.imageFinderTroisUnRef} 
-								url={series[1].pictures[7]} 
+								url={series[1].pictures[7][indexImg]} 
 								isParalax={false}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--32"} 
 								ref={this.imageFinderTroisDeuxRef} 
-								url={series[1].pictures[7]} 
+								url={series[1].pictures[7][indexImg]} 
 								isParalax={false}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--33"} 
 								ref={this.imageFinderTroisTroisRef} 
-								url={series[1].pictures[7]} 
+								url={series[1].pictures[7][indexImg]} 
 								isParalax={false}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--34"} 
 								ref={this.imageFinderTroisQuatreRef} 
-								url={series[1].pictures[7]} 
+								url={series[1].pictures[7][indexImg]} 
 								isParalax={false}
 							/>
-							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8]}/>
+							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8][indexImg]}/>
 							<div className="vietnam__containerSunshine">
 								<Sunshines className="sunshines--bottom" ref={this.sunshinesUnRef} />
 								<Sunshines className="sunshines--top" ref={this.sunshinesDeuxRef} />
@@ -448,85 +486,85 @@ class Vietnam extends Component {
 							</div>
 						</div>
 						<div className="container--4 opacityNull" ref={this.containerQuatreRef}> 
-							<img ref={this.imageQuatreUnRef} className={" vietnam__imageEmboite vietnam__image41"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreDeuxRef} className={"opacityNull vietnam__imageEmboite vietnam__image42"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreTroisRef} className={"opacityNull vietnam__imageEmboite vietnam__image43"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreQuatreRef} className={"opacityNull vietnam__imageEmboite vietnam__image44"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreCinqRef} className={"opacityNull vietnam__imageEmboite vietnam__image45"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreSixRef} className={"opacityNull vietnam__imageEmboite vietnam__image46"}  src={series[1].pictures[9]}/>
-							<img ref={this.imageQuatreSeptRef} className={"opacityNull vietnam__imageEmboite vietnam__image47"}  src={series[1].pictures[9]}/>
+							<img ref={this.imageQuatreUnRef} className={" vietnam__imageEmboite vietnam__image41"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreDeuxRef} className={"opacityNull vietnam__imageEmboite vietnam__image42"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreTroisRef} className={"opacityNull vietnam__imageEmboite vietnam__image43"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreQuatreRef} className={"opacityNull vietnam__imageEmboite vietnam__image44"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreCinqRef} className={"opacityNull vietnam__imageEmboite vietnam__image45"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreSixRef} className={"opacityNull vietnam__imageEmboite vietnam__image46"}  src={series[1].pictures[9][indexImg]}/>
+							<img ref={this.imageQuatreSeptRef} className={"opacityNull vietnam__imageEmboite vietnam__image47"}  src={series[1].pictures[9][indexImg]}/>
 						</div>
 						<div className="container--5 opacityNull" ref={this.containerCinqRef}> 
 							<div className={"vietnam__squareColumn"}>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqUnRef} >
-									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}   src={series[1].pictures[10]}/>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}   src={series[1].pictures[10][indexImg]}/>
 								</div>
 								<div className={"vietnam__square "}>
-									<img  className={"vietnam__squareImg "}  src={series[1].pictures[10]}/>
+									<img  className={"vietnam__squareImg "}  src={series[1].pictures[10][indexImg]}/>
 								</div>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqDeuxRef} >
-									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[10]}/>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[10][indexImg]}/>
 								</div>
 							</div>
 							<div className={"vietnam__squareColumn"}>
 								<div className={"vietnam__square"}>
-									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11]}/>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqTroisRef} >
-									<img className={"vietnam__squareImg"}  src={series[1].pictures[11]}/>
+									<img className={"vietnam__squareImg"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
 								<div className={"vietnam__square"}>
-									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11]}/>
+									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
 							</div>
 						</div>
 						<div className="container--6 opacityNull" ref={this.containerSixRef}> 
 							<FilterImage 
 								className={""} 
-								url={series[1].pictures[12]} 
+								url={series[1].pictures[12][indexImg]} 
 								isParalax={false}
 								className={`vietnam__item--61`}
 								ref={this.imageSixUnRef}
 							/>
 							<FilterImage 
-								url={series[1].pictures[13]} 
+								url={series[1].pictures[13][indexImg]} 
 								isParalax={false}
 								className={`vietnam__item--62 opacityNull`}
 								ref={this.imageSixDeuxRef}
 							/>
-							<img ref={this.imageSixTroisRef} className={`vietnam__item--63 opacityNull`}  src={series[1].pictures[14]}/>
+							<img ref={this.imageSixTroisRef} className={`vietnam__item--63 opacityNull`}  src={series[1].pictures[14][indexImg]}/>
 							
 							<Ball text={"xin chào"} ref={this.ballSixUnRef} className={`vietnam__ball--61 opacityNull`} />
 							<Ball text={"xin chào"} ref={this.ballSixDeuxRef} className={`vietnam__ball--62 opacityNull`}  />
 						</div>	
 						<div className="container--7 opacityNull" ref={this.containerSevenRef}> 
 							<FilterImage 
-								url={series[1].pictures[15]} 
+								url={series[1].pictures[15][indexImg]} 
 								isParalax={false}
 								className={`vietnam__item--71`}
 								ref={this.imageSeptUnRef}
 							/>
-							<img ref={this.imageSeptDeuxRef} className={`vietnam__item--72 opacityNull`}  src={series[1].pictures[16]}/>
-							<img ref={this.imageSeptTroisRef} className={`vietnam__item--73 opacityNull`}  src={series[1].pictures[17]}/>
-							<img ref={this.imageSeptQuatreRef} className={`vietnam__item--74 opacityNull`}  src={series[1].pictures[18]}/>
-							<img ref={this.imageSeptCinqRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[19]}/>
+							<img ref={this.imageSeptDeuxRef} className={`vietnam__item--72 opacityNull`}  src={series[1].pictures[16][indexImg]}/>
+							<img ref={this.imageSeptTroisRef} className={`vietnam__item--73 opacityNull`}  src={series[1].pictures[17][indexImg]}/>
+							<img ref={this.imageSeptQuatreRef} className={`vietnam__item--74 opacityNull`}  src={series[1].pictures[18][indexImg]}/>
+							<img ref={this.imageSeptCinqRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[19][indexImg]}/>
 							<div className={`vietnam__vroumContainer`}>
 								<h3 ref={this.vroumSeptUnRef} className={`vietnam__vroum vietnam__vroum--1 opacityNull`}>vroum</h3>
 								<h3 ref={this.vroumSeptDeuxRef} className={`vietnam__vroum vietnam__vroum--2 opacityNull`}>vroum</h3>
 								<h3 ref={this.vroumSeptTroisRef} className={`vietnam__vroum vietnam__vroum--3 opacityNull`}>vroum</h3>
 								<h3 ref={this.vroumSeptQuatreRef} className={`vietnam__vroum vietnam__vroum--4 opacityNull`}>vroum</h3>
 							</div>
-							<img ref={this.imageSeptSixRef} className={`vietnam__item--76 opacityNull`}  src={series[1].pictures[21]}/>
-							<img ref={this.imageSeptSeptRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[20]}/>
-							<img ref={this.imageSeptHuitRef} className={`vietnam__item--78 opacityNull`}  src={series[1].pictures[22]}/>
-							<img ref={this.imageSeptNeufRef} className={`vietnam__item--79 opacityNull`}  src={series[1].pictures[23]}/>
-							<img ref={this.imageSeptDixRef} className={`vietnam__item--710 opacityNull`}  src={series[1].pictures[24]}/>
-							<img ref={this.imageSeptOnzeRef} className={`vietnam__item--711 opacityNull`}  src={series[1].pictures[25]}/>
-							<img ref={this.imageSeptDouzeRef} className={`vietnam__item--712 opacityNull`}  src={series[1].pictures[25]}/>
-							<img ref={this.imageSeptTreizeRef} className={`vietnam__item--713 opacityNull`}  src={series[1].pictures[25]}/>
-							<img ref={this.imageSeptQuatorzeRef} className={`vietnam__item--714 opacityNull`}  src={series[1].pictures[25]}/>
+							<img ref={this.imageSeptSixRef} className={`vietnam__item--76 opacityNull`}  src={series[1].pictures[21][indexImg]}/>
+							<img ref={this.imageSeptSeptRef} className={`vietnam__item--75 opacityNull`}  src={series[1].pictures[20][indexImg]}/>
+							<img ref={this.imageSeptHuitRef} className={`vietnam__item--78 opacityNull`}  src={series[1].pictures[22][indexImg]}/>
+							<img ref={this.imageSeptNeufRef} className={`vietnam__item--79 opacityNull`}  src={series[1].pictures[23][indexImg]}/>
+							<img ref={this.imageSeptDixRef} className={`vietnam__item--710 opacityNull`}  src={series[1].pictures[24][indexImg]}/>
+							<img ref={this.imageSeptOnzeRef} className={`vietnam__item--711 opacityNull`}  src={series[1].pictures[25][indexImg]}/>
+							<img ref={this.imageSeptDouzeRef} className={`vietnam__item--712 opacityNull`}  src={series[1].pictures[25][indexImg]}/>
+							<img ref={this.imageSeptTreizeRef} className={`vietnam__item--713 opacityNull`}  src={series[1].pictures[25][indexImg]}/>
+							<img ref={this.imageSeptQuatorzeRef} className={`vietnam__item--714 opacityNull`}  src={series[1].pictures[25][indexImg]}/>
 							<h2 ref={this.hugeTitleSeptUnRef} className="vietnam__hugeTitle">vietnam</h2>
-							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26]}/>
+							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26][indexImg]}/>
 							<div ref={this.containerVideoSeptUnRef} className={`vietnam__containerVideo opacityNull`}>
 								<div className={`vietnam__video vietnam__video--1`}>
 									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
@@ -540,11 +578,148 @@ class Vietnam extends Component {
 								</div>
 							</div>
 						</div>
+						<div ref={this.containerNextProjectRef} className={`nextProject opacityNull`}>
+							<span className="nextProject__container" ref={this.splitTextUnRef}>
+								<div className="plitText__container"><div className="plitText1">y</div></div>
+								<div className="plitText__container"><div className="plitText1">o</div></div>
+								<div className="plitText__container"><div className="plitText1">u </div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">a</div></div>
+								<div className="plitText__container"><div className="plitText1">r</div></div>
+								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">a</div></div>
+								<div className="plitText__container"><div className="plitText1">t</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">t</div></div>
+								<div className="plitText__container"><div className="plitText1">h</div></div>
+								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<div className="plitText__container"><div className="plitText1">n</div></div>
+								<div className="plitText__container"><div className="plitText1">d</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">o</div></div>
+								<div className="plitText__container"><div className="plitText1">f</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">t</div></div>
+								<div className="plitText__container"><div className="plitText1">h</div></div>
+								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText1">p</div></div>
+								<div className="plitText__container"><div className="plitText1">r</div></div>
+								<div className="plitText__container"><div className="plitText1">o</div></div>
+								<div className="plitText__container"><div className="plitText1">j</div></div>
+								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<div className="plitText__container"><div className="plitText1">c</div></div>
+								<div className="plitText__container"><div className="plitText1">t</div></div>
+							</span>
+							<span  className="nextProject__container" ref={this.splitTextDeuxRef}>
+								<div className="plitText__container"><div className="plitText2">k</div></div>
+								<div className="plitText__container"><div className="plitText2">e</div></div>
+								<div className="plitText__container"><div className="plitText2">e</div></div>
+								<div className="plitText__container"><div className="plitText2">p</div></div>
+								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText2">s</div></div>
+								<div className="plitText__container"><div className="plitText2">c</div></div>
+								<div className="plitText__container"><div className="plitText2">r</div></div>
+								<div className="plitText__container"><div className="plitText2">o</div></div>
+								<div className="plitText__container"><div className="plitText2">l</div></div>
+								<div className="plitText__container"><div className="plitText2">l</div></div>
+								<div className="plitText__container"><div className="plitText2">i</div></div>
+								<div className="plitText__container"><div className="plitText2">n</div></div>
+								<div className="plitText__container"><div className="plitText2">g</div></div>
+								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText2">t</div></div>
+								<div className="plitText__container"><div className="plitText2">h</div></div>
+								<div className="plitText__container"><div className="plitText2">e</div></div>
+								<div className="plitText__container"><div className="plitText2">r</div></div>
+								<div className="plitText__container"><div className="plitText2">e</div></div>
+								<div className="plitText__container"><div className="plitText2">'</div></div>
+								<div className="plitText__container"><div className="plitText2">s</div></div>
+								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText2">n</div></div>
+								<div className="plitText__container"><div className="plitText2">o</div></div>
+								<div className="plitText__container"><div className="plitText2">t</div></div>
+								<div className="plitText__container"><div className="plitText2">h</div></div>
+								<div className="plitText__container"><div className="plitText2">i</div></div>
+								<div className="plitText__container"><div className="plitText2">n</div></div>
+								<div className="plitText__container"><div className="plitText2">g</div></div>
+								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText2">m</div></div>
+								<div className="plitText__container"><div className="plitText2">o</div></div>
+								<div className="plitText__container"><div className="plitText2">r</div></div>
+								<div className="plitText__container"><div className="plitText2">e</div></div>
+							</span>
+							<span ref={this.splitTextTroisRef}  className="nextProject__container">
+								<div className="plitText__container"><div className="plitText3">w</div></div>
+								<div className="plitText__container"><div className="plitText3">e</div></div>
+								<div className="plitText__container"><div className="plitText3">l</div></div>
+								<div className="plitText__container"><div className="plitText3">l</div></div>
+								<div className="plitText__container"><div className="plitText3">,</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">i</div></div>
+								<div className="plitText__container"><div className="plitText3">f</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">y</div></div>
+								<div className="plitText__container"><div className="plitText3">o</div></div>
+								<div className="plitText__container"><div className="plitText3">u</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">w</div></div>
+								<div className="plitText__container"><div className="plitText3">a</div></div>
+								<div className="plitText__container"><div className="plitText3">n</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">o</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">s</div></div>
+								<div className="plitText__container"><div className="plitText3">e</div></div>
+								<div className="plitText__container"><div className="plitText3">e</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">a</div></div>
+								<div className="plitText__container"><div className="plitText3">n</div></div>
+								<div className="plitText__container"><div className="plitText3">o</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">h</div></div>
+								<div className="plitText__container"><div className="plitText3">e</div></div>
+								<div className="plitText__container"><div className="plitText3">r</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">p</div></div>
+								<div className="plitText__container"><div className="plitText3">r</div></div>
+								<div className="plitText__container"><div className="plitText3">o</div></div>
+								<div className="plitText__container"><div className="plitText3">j</div></div>
+								<div className="plitText__container"><div className="plitText3">e</div></div>
+								<div className="plitText__container"><div className="plitText3">c</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">i</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">'</div></div>
+								<div className="plitText__container"><div className="plitText3">s</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<div className="plitText__container"><div className="plitText3">r</div></div>
+								<div className="plitText__container"><div className="plitText3">i</div></div>
+								<div className="plitText__container"><div className="plitText3">g</div></div>
+								<div className="plitText__container"><div className="plitText3">h</div></div>
+								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+								<Link href={"/random"}>
+									<a>
+										<div className="plitText__container"><div className="plitText3">h</div></div>
+										<div className="plitText__container"><div className="plitText3">e</div></div>
+										<div className="plitText__container"><div className="plitText3">r</div></div>
+										<div className="plitText__container"><div className="plitText3">e</div></div>
+										<div className="plitText__container"><div className="plitText3">i</div></div>
+									</a>
+								</Link>
+							</span>
+						</div>
 						<div className="container--1" ref={this.containerUnRef}>
 							<FinderImage 
 								className="vietnam__item--1" 
 								ref={this.imageFinderUnRef} 
-								url={series[1].pictures[1]} 
+								url={series[1].pictures[1][indexImg]} 
 								isParalax={false}
 							/>
 							<BigTitle
@@ -570,16 +745,16 @@ class Vietnam extends Component {
 							<FinderImage 
 								className={"opacityNull vietnam__item--2 isFilter"} 
 								ref={this.imageFinderDeuxRef} 
-								url={series[1].pictures[1]} 
+								url={series[1].pictures[1][indexImg]} 
 								isParalax={false}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--3 isFilter"} 
 								ref={this.imageFinderTroisRef} 
-								url={series[1].pictures[1]} 
+								url={series[1].pictures[1][indexImg]} 
 								isParalax={false}
 							/>
-							<img ref={this.imageUnRef} className={"opacityNull vietnam__item--4"}  src={series[1].pictures[3]}/>
+							<img ref={this.imageUnRef} className={"opacityNull vietnam__item--4"}  src={series[1].pictures[3][indexImg]}/>
 							<div className="vietnam__container--bigTitle opacityNull" ref={this.containerBigTitleRef}>
 								<BigTitle
 									text={"vietnam"}

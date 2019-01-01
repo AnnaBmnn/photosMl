@@ -24,6 +24,10 @@
 
 .loadingScreen__emoji {
     margin: 0px 15px;
+    width: 50px;
+    img {
+        width: 100%;
+    }
     &:nth-of-type(1){
         animation: opacityFirstItemAnimation 1s  linear infinite alternate-reverse;
     }
