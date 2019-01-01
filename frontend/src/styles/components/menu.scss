@@ -38,10 +38,10 @@
     border-radius: 50%;
     transition: transform 0.2s ease-out;
     background-color: #09A1FF;
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
     mix-blend-mode: difference;
-    pointer-events: none;
-    opacity: 0;
+    // pointer-events: none;
+    // opacity: 0;
     isolation: isolate;
 }
 

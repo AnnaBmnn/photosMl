@@ -7,7 +7,6 @@ const series = [
             ["static/images/people/PEOPLE_01.png", "#232525", "#E6B8A0"],
             ["static/images/people/PEOPLE_30.jpg", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_02.png", "#C49988", "#36AFBB"],
-            ["static/images/people/PEOPLE_03.png", "#BCC3D5", "#F28B1C"],
             ["static/images/people/PEOPLE_29.jpg", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_04.png", "#FFFFFF", "#2750DE"],
             ["static/images/people/PEOPLE_05.png", "#E5DFDE", "#D76A58"],
@@ -15,7 +14,6 @@ const series = [
             ["static/images/people/PEOPLE_28.jpg", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_07.png", "#4A443B", "#E5D4BA"],
             ["static/images/people/PEOPLE_08.png", "#58675C", "#12C284"],
-            ["static/images/people/PEOPLE_09.png", "#893843", "#EB6B7C"],
             ["static/images/people/PEOPLE_10.png", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_12.png", "#EDCA83", "#1FBD3E"],
             ["static/images/people/PEOPLE_23.jpg", "#FFFFFF", "#FFFFFF"],
@@ -31,7 +29,6 @@ const series = [
             ["static/images/people/PEOPLE_27.jpg", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_20.jpg", "#202127", "#FFCD2A"],
             ["static/images/people/PEOPLE_21.jpg", "#D8ABA6", "#1F9A84"],
-            ["static/images/people/PEOPLE_22.jpg", "#91A1B1", "#00A295"],
             ["static/images/people/PEOPLE_24.jpg", "#FFFFFF", "#FFFFFF"],
             ["static/images/people/PEOPLE_25.jpg", "#FFFFFF", "#FFFFFF"],
         ]
