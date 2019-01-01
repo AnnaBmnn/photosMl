@@ -7,14 +7,14 @@ class LoadingScreen extends Component {
   }
 
   render() {
-    const { text, emoji, moreClass } = this.props;
+    const { text, src, moreClass } = this.props;
     return(
         <div className={`loadingScreen__container ${moreClass}`}>
             <span className={`loadingScreen__text`}>{ text }</span>
             <div className={`loadingScreen__emojis`}>
-                <div className={`loadingScreen__emoji`}>{emoji}</div>
-                <div className={`loadingScreen__emoji`}>{emoji}</div>
-                <div className={`loadingScreen__emoji`}>{emoji}</div>
+                <div className={`loadingScreen__emoji`}><img src={src} /></div>
+                <div className={`loadingScreen__emoji`}><img src={src} /></div>
+                <div className={`loadingScreen__emoji`}><img src={src} /></div>
             </div>
         </div>
     )
