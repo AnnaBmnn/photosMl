@@ -4,6 +4,8 @@ import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import BackButton from "../components/BackButton.js";
+import GotBored from "../components/GotBored.js";
+
 import { series } from "../static/datas/series";
 
 class Random extends Component {
@@ -57,7 +59,6 @@ class Random extends Component {
 
     handleKeyPress(e) {
         const { height, width, images } = this.state;
-        console.log(height);
         const length = this.pictures.length;
         const top = this.getRandombetweenMinAndMax(0, height)-height*0.25;
         const left = this.getRandombetweenMinAndMax(0, width)-width*0.25;
@@ -100,6 +101,7 @@ class Random extends Component {
             <Layout>
                 <div ref={this.containerRef} className={`random__container`} tabIndex="2" onKeyPress={this.handleKeyPress} >
                     <BackButton/>
+                    <GotBored/>
                     { imagesDiv }
                     <h2 className={`random__title`}>{text}</h2>
                 </div>
