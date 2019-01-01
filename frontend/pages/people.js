@@ -145,7 +145,7 @@ class People extends Component {
                     } 
                 >
                     <BackButton/>
-                    <GotBored/>
+                    <GotBored nextPage={`vietnam`}/>
 
                     <div className={`people__imgContainer`}>
                         <img className={`people__img`} src={photoSrc} />

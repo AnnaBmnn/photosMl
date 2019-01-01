@@ -23,24 +23,25 @@ class GotBored extends Component {
     }
 
     render() {
-        const { isBored}  = this.state;
+        const { isBored }  = this.state;
+        const { nextPage } = this.props
         return(
             isBored ?
                 <Fragment>
                     <div className={`gotBored`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={"/people"}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                     <div className={`gotBored gotBored--2`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={"/people"}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                     <div className={`gotBored gotBored--3`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={"/people"}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                 </Fragment>
             :
