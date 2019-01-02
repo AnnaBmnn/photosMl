@@ -10,11 +10,12 @@ class BackButton extends Component {
   }
 
   render() {
+    const {moreClass} = this.props;
     return(
 
         <Link href={"/"} >
             <a className="backButton__container">
-                <SVGInline className="backButton__svg" svg={ backSvg } />
+                <SVGInline className={`backButton__svg ${moreClass}`} svg={ backSvg } />
             </a>
         </Link>
     )
