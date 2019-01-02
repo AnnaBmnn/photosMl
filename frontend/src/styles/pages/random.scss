@@ -14,6 +14,27 @@
         z-index: 1000;
         padding: 10px;
     }
+    &:after {
+        display: none;
+        content: 
+            url(static/images/random/random_page/random_01.png) 
+            url(static/images/random/random_page/random_01.jpg) 
+            url(static/images/random/random_page/random_02.png) 
+            url(static/images/random/random_page/random_02.jpg) 
+            url(static/images/random/random_page/random_03.jpg) 
+            url(static/images/random/random_page/random_04.jpg) 
+            url(static/images/random/random_page/random_05.jpg) 
+            url(static/images/random/random_page/random_06.jpg) 
+            url(static/images/random/random_page/random_07.jpg) 
+            url(static/images/random/random_page/random_08.jpg) 
+            url(static/images/random/random_page/random_09.png) 
+            url(static/images/random/random_page/random_10.jpg) 
+            url(static/images/random/random_page/random_11.jpg) 
+            url(static/images/random/random_page/random_12.jpg) 
+            url(static/images/random/random_page/random_13.jpg) 
+            url(static/images/random/random_page/random_14.jpg) 
+            ;
+    }
 }
 .random_img {
     position: absolute;

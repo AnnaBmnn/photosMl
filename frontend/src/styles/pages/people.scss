@@ -13,7 +13,38 @@
         cursor: text;
 
     }
-
+    &:after {
+        display: none;
+        content: 
+            url(static/images/people/PEOPLE_01.png) 
+            url(static/images/people/PEOPLE_30.jpg)
+            url(static/images/people/PEOPLE_02.png)
+            url(static/images/people/PEOPLE_29.jpg)
+            url(static/images/people/PEOPLE_04.png)
+            url(static/images/people/PEOPLE_05.png)
+            url(static/images/people/PEOPLE_06.png)
+            url(static/images/people/PEOPLE_28.jpg)
+            url(static/images/people/PEOPLE_07.png)
+            url(static/images/people/PEOPLE_08.png)
+            url(static/images/people/PEOPLE_10.png)
+            url(static/images/people/PEOPLE_12.png)
+            url(static/images/people/PEOPLE_23.jpg)
+            url(static/images/people/PEOPLE_13.jpg)
+            url(static/images/people/PEOPLE_14.jpg)
+            url(static/images/people/PEOPLE_26.jpg)
+            url(static/images/people/PEOPLE_15.jpg)
+            url(static/images/people/PEOPLE_16.jpg)
+            url(static/images/people/PEOPLE_17.jpg)
+            url(static/images/people/PEOPLE_18.jpg)
+            url(static/images/people/PEOPLE_11.png)
+            url(static/images/people/PEOPLE_19.jpg)
+            url(static/images/people/PEOPLE_27.jpg)
+            url(static/images/people/PEOPLE_20.jpg)
+            url(static/images/people/PEOPLE_21.jpg)
+            url(static/images/people/PEOPLE_24.jpg)
+            url(static/images/people/PEOPLE_25.jpg)
+            ;
+    }
     .menu__cursor {
         width: 200px;
         height: 200px;
