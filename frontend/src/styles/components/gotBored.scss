@@ -10,26 +10,47 @@
     border-top: 5px  solid white;
     border-bottom: 5px  solid white;
     z-index: 1000;
+    @include tablet {
+        right: 35px;
+        bottom: 35px;
+    }
 }
 
 .gotBored--2 {
     z-index: 999;
     right: 75px;
     bottom: 75px;
+    @include tablet {
+        right: 24px;
+        bottom: 24px;
+    }
 }
 
 .gotBored--3 {
     z-index: 998;
     right: 50px;
     bottom: 50px;
+    @include tablet {
+        right: 13px;
+        bottom: 13px;
+    }
 }
 
+.gotBored__container--center {
+    @include tablet {
+        font-size: 2.3rem;
+        text-align: center;
+    }
+}
 
 .gotBored__container {
     padding: 17px 15px;
     position: relative;
     border-top: 5px  solid white;
     border-bottom: 5px  solid white;
+    @include tablet {
+        padding: 10px ;
+    }
 }
 
 .gotBored__container--light {
@@ -47,10 +68,17 @@
     color: white;
     font-size: 1.3rem;
     cursor: pointer;
+    @include tablet {
+        font-size: 1.8rem;
+        text-align: center;
+    }
 }
 
 .gotBored__arrow-svg {
     position: absolute;
     right: 18px;
     top: 28px;
+    @include tablet {
+        top: 40px;
+    }
 }
