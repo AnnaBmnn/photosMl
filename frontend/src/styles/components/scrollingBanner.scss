@@ -31,11 +31,53 @@
     }
 }
 
+.scrollingBanner__span {
+    padding-right: 100px;
+    display: inline-block;
+    // background-color: red;
+}
+
 .scrollingBanner--vietnam {
     color: white;
     background-color: $yellow;
     display: flex;
     align-items: center;
+    opacity: 0;
+    animation: opacity 10ms 4s linear 1 forwards;
+    .scrollingBanner__text {
+        padding: 0;
+        width: 2090px;
+        transform-origin: right;
+
+        &:nth-of-type(1){
+            transform: translateX(100%);
+            animation: translateAnimation 30s  linear infinite ;
+        }
+        &:nth-of-type(2){
+            transform: translateX(100%);
+            animation: translateAnimation 30s 10s linear infinite ;
+        }
+        &:nth-of-type(3){
+            transform: translateX(100%);
+            animation: translateAnimation 30s 20s linear infinite ;
+        }
+        @include tablet {
+            width: 1350px;
+            &:nth-of-type(1){
+                transform: translateX(100%);
+                animation: translateAnimation 30s  linear infinite ;
+            }
+            &:nth-of-type(2){
+                transform: translateX(100%);
+                animation: translateAnimation 30s 10s linear infinite ;
+            }
+            &:nth-of-type(3){
+                transform: translateX(100%);
+                animation: translateAnimation 30s 20s linear infinite ;
+            }
+        }
+
+    }
 }
 
 
