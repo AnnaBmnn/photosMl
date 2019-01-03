@@ -380,10 +380,17 @@ class Vietnam extends Component {
 			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(containerVideoSeptUnRef, 0.1, {className:"+=displayNone"})
 			.to(containerNextProjectRef, 0.1, {opacity: 1}, "-=0.1")
-			.to(containerNextProjectRef, 6, {transform: "translateY(-55%)"})
-			.staggerFrom(".plitText1", 0.3, {x:0, y: "100%", z:"1px"},0.02, "-=6.8")
-			.staggerFrom(".plitText2", 0.5, {x:0, y: "100%", z:"1px"},0.02, "-=5")
-			.staggerFrom(".plitText3", 1, {x:0, y: "100%", z:"1px"},0.02, "-=2")
+			// .staggerFrom(".plitText1", 0.2, {x:0, y: "100%", z:"1px"},0.02, "-=9")
+			// .staggerFrom(".plitText2", 0.5, {x:0, y: "100%", z:"1px"},0.02, "-=6.5")
+			// .staggerFrom(".plitText3", 1, {x:0, y: "100%", z:"1px"},0.02, "-=2")
+			.staggerFrom(".plitText1", 0.6, {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText1", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
+			.to(containerNextProjectRef, 0.5, {transform: "translateY(-25%)"})
+			.staggerFrom(".plitText2", 0.6, {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText2", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
+			.to(containerNextProjectRef, 0.5, {transform: "translateY(-55%)"})
+			.staggerFrom(".plitText3", 0.6, {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText3", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
 			.pause();
 	}
 
@@ -710,7 +717,7 @@ class Vietnam extends Component {
 										<div className="plitText__container"><div className="plitText3">e</div></div>
 										<div className="plitText__container"><div className="plitText3">r</div></div>
 										<div className="plitText__container"><div className="plitText3">e</div></div>
-										<div className="plitText__container"><div className="plitText3">i</div></div>
+										<div className="plitText__container"><div className="plitText3">.</div></div>
 									</a>
 								</Link>
 							</span>

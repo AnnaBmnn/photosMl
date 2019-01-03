@@ -5,8 +5,8 @@
     .finderImg__container {
         position: absolute;
         // z-index: 108;
-        width: 500px;
-        height: 330px;
+        width: 865px;
+        height: 500px;
         @include tablet {
             right: unset;
             left: 50%;
@@ -23,37 +23,37 @@
 }
 
 .vietnam__item--31 {
-    right: 15%;
-    bottom: 10%;
+    right: 5%;
+    bottom: 5%;
     @include tablet {
         top: 20%;
     }
 }
 
 .vietnam__item--32 {
-    right: 22%;
-    bottom: 17%;
+    right: 10%;
+    bottom: 10%;
     @include tablet {
         top: 31%;
     }
 }
 .vietnam__item--33 {
-    right: 29%;
-    bottom: 24%;
+    right: 15%;
+    bottom: 15%;
     @include tablet {
         top: 42%;
     }
 }
 .vietnam__item--34 {
-    right: 36%;
-    bottom: 31%;
+    right: 20%;
+    bottom: 20%;
     @include tablet {
         top: 53%;
     }
 }
 
 .vietnam__item--image31 {
-    width: 500px;
+    width: 840px;
     height: auto;
     z-index: 110;
     position: absolute;
