@@ -8,46 +8,25 @@ class Menu extends Component {
     super(props);
     this.state = { 
       hoverElement: false,
-      imgSrc: false,
-      width: 0, 
-      height: 0, 
-      clientX: 0, 
-      clientY: 0
+      imgSrc: false
     };
 
     // interactivity event
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     // ref to the DOM node
     this.menuRef = React.createRef();
-    this.cursorRef = React.createRef();
     this.vietnamRef = React.createRef();
     this.randomRef = React.createRef();
     this.peopleRef = React.createRef();
   }
-
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
-
 
   handleMouseEnter(hoverElement){
     this.setState({hoverElement: hoverElement});
     const homeInfos = hoverElement ? home.find((element)=> {return element.slug === hoverElement}): home[0];
     const newImgSrc = homeInfos.mainImg === false ? imgSrc : homeInfos.mainImg ;
     this.setState({imgSrc: newImgSrc});
-    console.log(this.state.imgSrc);
   }
 
   handleMouseLeave(){
@@ -56,7 +35,7 @@ class Menu extends Component {
   
 
   render() {
-    const { hoverElement, imgSrc, height, width} = this.state;
+    const { hoverElement, imgSrc} = this.state;
     const homeInfos = hoverElement ? home.find((element)=> {return element.slug === hoverElement}): home[0];
     const menuItems = series.map((item, index) => {
       let refItem = null;

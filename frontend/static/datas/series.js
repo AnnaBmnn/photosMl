@@ -125,4 +125,28 @@ const home = [
     }
 ]
 
-export {series, home};
+const homeMobile = [
+    {
+        slug: "people",
+        mainImg: "static/images/people/people_home.png",
+        bgColor: "#FFFFFF",
+        textColor: "#000000",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    },
+    {
+        slug: "vietnam",
+        mainImg: "static/images/vietnam/vietnam14.png",
+        bgColor: "#CE283F",
+        textColor: "#FFFFFF",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    },
+    {
+        slug: "random",
+        mainImg: "static/images/random/random_page/random_home.png",
+        bgColor: "#DECCB9",
+        textColor: "#FFFFFF",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    }
+]
+
+export {series, home, homeMobile};
