@@ -12,10 +12,7 @@ class People extends Component {
           middleWidth: 0, 
           clientX: 0, 
           clientY: 0,
-          indexCurrentImage: 0,
-          cursorColor : "",
-          bgColor : "",
-          photoSrc : ""
+          indexCurrentImage: 0
         };
         
         // interactivity event
@@ -66,10 +63,10 @@ class People extends Component {
         const length = this.pictures.length;
         const clientX = e.clientX;
         const clientY = e.clientY;
-        // this.setState({clientX: clientX, clientY: clientY});
+        this.setState({clientX: clientX, clientY: clientY});
         const direction = this.nextOrPrev();
         let indexNewCurrent;
-
+        console.log(e);
         if(middleWidth> 500) {
             if(direction === "next"){
                 indexNewCurrent = indexCurrentImage + 1;
@@ -80,17 +77,11 @@ class People extends Component {
             indexNewCurrent = (( indexNewCurrent % length) + length) % length;
             indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
             this.setState({indexCurrentImage : indexNewCurrent});
-            // this.setState({cursorColor : this.pictures[indexNewCurrent][2]});
-            // this.setState({bgColor : this.pictures[indexNewCurrent][1]});
-            // this.setState({photoSrc : this.pictures[indexNewCurrent][0]});
         }
     }
 
     componentWillMount(){
         const { indexCurrentImage } = this.state;
-        // this.setState({cursorColor : this.pictures[indexCurrentImage][2]});
-        // this.setState({bgColor : this.pictures[indexCurrentImage][1]});
-        // this.setState({photoSrc : this.pictures[indexCurrentImage][0]});
     }
 
 
@@ -149,7 +140,6 @@ class People extends Component {
     }
 
     render() {
-        // const { clientX, clientY, cursorColor, bgColor, photoSrc, middleWidth } = this.state;
         const { clientX, clientY, middleWidth, indexCurrentImage } = this.state;
         const cursorColor = this.pictures[indexCurrentImage][2];
         const bgColor = this.pictures[indexCurrentImage][1];

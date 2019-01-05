@@ -9,23 +9,72 @@
     padding-left: 100px;
     z-index: 1;
     box-sizing: border-box;
+    transition:  backgroundColor 0.3s ease-in-out;
+    &:after {
+        display: none;
+        content: 
+            url(static/images/people/people_home.png) 
+            url(static/images/vietnam/vietnam14.png) 
+            url(static/images/random/random_page/random_home.png); 
+    }
+}
+
+.menu__img {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    img {
+        width: 400px;
+        height: 400px; 
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(1);
+        transform-origin: bottom;
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+.menu__img--false {
+    &:after {
+        background-color: white;
+        transform: scaleY(1);
+    }
+}
+.menu__img--vietnam {
+    &:after {
+        background-color: $red;
+        transform: scaleY(0);
+    }
+}
+.menu__img--random {
+    &:after {
+        transform: scaleY(0);
+        background-color: #DECCB9;
+    }
+}
+.menu__img--people {
+    &:after {
+        transform: scaleY(0);
+        background-color: #FFFFFF;
+    }
 }
 
 .menu__item {
     z-index: 200;
     position: relative;
     transform-origin: left;
-    margin: 50px 0;
+    margin: 10px 0;
     width: fit-content;
-}
-
-.people__item {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: auto;
+    font-size: 4rem;
 }
 
 .menu__cursor {
@@ -38,27 +87,6 @@
     border-radius: 50%;
     transition: transform 0.2s ease-out;
     background-color: #09A1FF;
-    // backface-visibility: hidden;
     mix-blend-mode: difference;
-    // pointer-events: none;
-    // opacity: 0;
     isolation: isolate;
-}
-
-.isMoving {
-    width: 300px;
-    height: 300px;
-}
-.menuRandom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    opacity: 0;
-    will-change: opacity;
-    img {
-        height: 100%;
-        width: auto;
-        margin-right: 20px;
-    }
 }

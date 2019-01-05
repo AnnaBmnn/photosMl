@@ -21,13 +21,19 @@ class Vietnam extends Component {
 		this.state = { 
 			isScrolled: false,
 			isLoaded: false,
-			width: 0, 
+			middleWidth: 0, 
+			height: 0,
+			clientX: 0, 
+			clientY: 0,
+			isMouseMoving: false
 
 		};
 
 		// interactivity event
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 		this.handleScroll = this.handleScroll.bind(this);
+		this.handleMouseMove = this.handleMouseMove.bind(this);
+
 
 		// ref to the DOM node
 		this.imageFinderUnRef = React.createRef();
@@ -71,6 +77,15 @@ class Vietnam extends Component {
 		this.imageCinqUnRef = React.createRef();
 		this.imageCinqDeuxRef = React.createRef();
 		this.imageCinqTroisRef = React.createRef();
+		this.imageCinqCinqRef = React.createRef();
+		this.imageCinqSixRef = React.createRef();
+		this.imageCinqSeptRef = React.createRef();
+		this.imageCinqHuitRef = React.createRef();
+		this.imageCinqNeufRef = React.createRef();
+		this.finderImageUnRef = React.createRef();
+		this.finderImageDeuxRef = React.createRef();
+		this.finderImageTroisRef = React.createRef();
+		this.finderImageQuatreRef = React.createRef();
 		this.imageSixUnRef = React.createRef();
 		this.imageSixDeuxRef = React.createRef();
 		this.imageSixTroisRef = React.createRef();
@@ -119,14 +134,23 @@ class Vietnam extends Component {
 		window.setTimeout(()=> this.setState({isLoaded: true}), 10)
 		// window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
 		this.initTimeline();		
-  	}
-
+	  }
+	  
+	handleMouseMove(e){
+		const { isMouseMoving } = this.state;
+		const clientX = e.clientX;
+		const clientY = e.clientY;
+		if( isMouseMoving ){
+		  this.setState({clientX: clientX, clientY: clientY})
+		}
+	}
   	componentWillUnmount() {
         window.removeEventListener('resize', this.updateWindowDimensions);
     	window.removeEventListener('scroll', this.handleScroll);
 	}
 	updateWindowDimensions() {
         this.setState({ middleWidth: window.innerWidth*0.5 });
+        this.setState({ height: window.innerHeight });
     }
 	
 	handleScroll(e){
@@ -210,6 +234,15 @@ class Vietnam extends Component {
 		const imageCinqUnRef = this.imageCinqUnRef.current;
 		const imageCinqDeuxRef = this.imageCinqDeuxRef.current;
 		const imageCinqTroisRef = this.imageCinqTroisRef.current;
+		const imageCinqCinqRef = this.imageCinqCinqRef.current;
+		const imageCinqSixRef = this.imageCinqSixRef.current;
+		const imageCinqSeptRef = this.imageCinqSeptRef.current;
+		const imageCinqHuitRef = this.imageCinqHuitRef.current;
+		const imageCinqNeufRef = this.imageCinqNeufRef.current;
+		const finderImageUnRef = this.finderImageUnRef.current;
+		const finderImageDeuxRef = this.finderImageDeuxRef.current;
+		const finderImageTroisRef = this.finderImageTroisRef.current;
+		const finderImageQuatreRef = this.finderImageQuatreRef.current;
 		const imageSixUnRef = this.imageSixUnRef.current;
 		const imageSixDeuxRef = this.imageSixDeuxRef.current;
 		const imageSixTroisRef = this.imageSixTroisRef.current;
@@ -309,6 +342,32 @@ class Vietnam extends Component {
 			.to(containerQuatreRef, 0.1, {opacity: 0})
 			.to(containerQuatreRef, 0.1, {className:"+=displayNone"})
 			.to(containerCinqRef, 0.1, {opacity: 1}, "+=0.1")
+			.to(imageCinqCinqRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageCinqSixRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageCinqCinqRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(imageCinqSixRef, 0.1, {opacity: 0}, "-=0.1")
+
+			.add( function(){ 
+				that.setState({isMouseMoving: true})
+			} )
+			.to(finderImageUnRef,0.1, {opacity: 1}, "+=0.6")
+			.to(finderImageDeuxRef,0.1, {opacity: 1}, "-=0.1")
+			.to(finderImageTroisRef,0.1, {opacity: 1}, "-=0.1")
+			.to(finderImageQuatreRef,0.1, {opacity: 1}, "-=0.1")
+			.to(finderImageUnRef, 0.6, {top: "26%", left: "42%"},"+=0.6")
+			.to(finderImageDeuxRef, 0.5, {top: "21%", right: "8%"}, "-=0.5")
+			.to(finderImageTroisRef, 0.5, {bottom: "33%", right: "9%"}, "-=0.5")
+			.to(finderImageQuatreRef, 0.5, {bottom: "38%", left: "38%"}, "-=0.5")
+			.to(finderImageUnRef, 0.5, {top: "-20%", left: "-10%"},"+=3")
+			.to(finderImageDeuxRef, 0.5, {bottom: "-25%", right: "-150%"}, "-=0.5")
+			.to(finderImageTroisRef, 0.5, {bottom: "-40%", right: "-40%"}, "-=0.5")
+			.to(finderImageQuatreRef, 0.5, {bottom: "-20%", left: "-20%"}, "-=0.5")
+			.add( function(){ 
+				that.setState({isMouseMoving: false})
+			} )
+			.to(imageCinqSeptRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageCinqHuitRef, 0.1, {opacity: 1}, "-=0.1")
+			.to(imageCinqNeufRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageCinqUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageCinqDeuxRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageCinqTroisRef, 0.1, {opacity: 1}, "-=0.1")
@@ -380,9 +439,6 @@ class Vietnam extends Component {
 			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(containerVideoSeptUnRef, 0.1, {className:"+=displayNone"})
 			.to(containerNextProjectRef, 0.1, {opacity: 1}, "-=0.1")
-			// .staggerFrom(".plitText1", 0.2, {x:0, y: "100%", z:"1px"},0.02, "-=9")
-			// .staggerFrom(".plitText2", 0.5, {x:0, y: "100%", z:"1px"},0.02, "-=6.5")
-			// .staggerFrom(".plitText3", 1, {x:0, y: "100%", z:"1px"},0.02, "-=2")
 			.staggerFrom(".plitText1", 0.6, {x:0, y: "100%", z:"1px"},0.02)
 			.staggerTo(".plitText1", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
 			.to(containerNextProjectRef, 0.5, {transform: "translateY(-25%)"})
@@ -395,10 +451,11 @@ class Vietnam extends Component {
 	}
 
 	render() {
-		const {isLoaded, isScrolled, width} = this.state;
+		const {isLoaded, isScrolled, middleWidth, height, clientX, clientY} = this.state;
 		const serie = series.find(serie => serie.slug === "vietnam");
 		const {title, pictures} = serie;
-		const indexImg = width < 1000 ? 1 : 0;
+		const isParalax = middleWidth < 500 ? false : true;
+		const indexImg = middleWidth < 500 ? 1 : 0;
 		console.log(!isLoaded);
 		return (
 			<Layout>
@@ -423,7 +480,7 @@ class Vietnam extends Component {
 				<audio ref={this.audioDeuxRef}  preload="none" src="static/audio/street.m4a" ></audio>
 				<div className={`bigSize ${isLoaded? "": "bigSize--notloaded"}`} ref={this.containerRef}>
 					<BackButton/>
-					<div className="container" ref={this.containerRef}>
+					<div className="container" ref={this.containerRef} onMouseMove={this.handleMouseMove}>
 						<div className="container--2 opacityNull" ref={this.containerDeuxRef}> 
 							<FilterImage 
 								className={"vietnam__item--5 opacityNull"} 
@@ -463,25 +520,25 @@ class Vietnam extends Component {
 								className={"opacityNull vietnam__item--31"} 
 								ref={this.imageFinderTroisUnRef} 
 								url={series[1].pictures[7][indexImg]} 
-								isParalax={false}
+								isParalax={isParalax}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--32"} 
 								ref={this.imageFinderTroisDeuxRef} 
 								url={series[1].pictures[7][indexImg]} 
-								isParalax={false}
+								isParalax={isParalax}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--33"} 
 								ref={this.imageFinderTroisTroisRef} 
 								url={series[1].pictures[7][indexImg]} 
-								isParalax={false}
+								isParalax={isParalax}
 							/>
 							<FinderImage 
 								className={"opacityNull vietnam__item--34"} 
 								ref={this.imageFinderTroisQuatreRef} 
 								url={series[1].pictures[7][indexImg]} 
-								isParalax={false}
+								isParalax={isParalax}
 							/>
 							<img ref={this.imageTroisUnRef} className={"opacityNull vietnam__item--image31"}  src={series[1].pictures[8][indexImg]}/>
 							<div className="vietnam__containerSunshine">
@@ -501,12 +558,71 @@ class Vietnam extends Component {
 							<img ref={this.imageQuatreSixRef} className={"opacityNull vietnam__imageEmboite vietnam__image46"}  src={series[1].pictures[9][indexImg]}/>
 							<img ref={this.imageQuatreSeptRef} className={"opacityNull vietnam__imageEmboite vietnam__image47"}  src={series[1].pictures[9][indexImg]}/>
 						</div>
-						<div className="container--5 opacityNull" ref={this.containerCinqRef}> 
+						<div className="container--5 opacityNull" ref={this.containerCinqRef}>
+							<img src={series[1].pictures[27][indexImg]} ref={this.imageCinqCinqRef} className={"vietnam__imgCinq opacityNull"} />
+							<img src={series[1].pictures[28][indexImg]} ref={this.imageCinqSixRef} className={"vietnam__imgSix opacityNull"}  />
+							<FinderImage 
+								className={"finderImageVietnam finderImageVietnam--1"} 
+								ref={this.finderImageUnRef} 
+								url={series[1].pictures[0][indexImg]} 
+								clientX={clientX}
+								clientY={clientY}
+								signX={"-"}
+								signY={"-"}
+								posX={-50}
+								posY={-30}
+								width={middleWidth*2}
+								height={height}
+								isParalax={isParalax}
+							/>
+							<FinderImage 
+								className={"finderImageVietnam finderImageVietnam--2"} 
+								ref={this.finderImageDeuxRef} 
+								url={series[1].pictures[0][indexImg]} 
+								clientX={clientX}
+								clientY={clientY}
+								signX={"+"}
+								signY={"-"}
+								posX={-50}
+								posY={-30}
+								width={middleWidth*2}
+								height={height}
+								isParalax={isParalax}
+							/>
+							<FinderImage 
+								className={"finderImageVietnam finderImageVietnam--3"} 
+								ref={this.finderImageTroisRef} 
+								url={series[1].pictures[0][indexImg]}
+								signX={"+"}
+								signY={"+"}
+								clientX={clientX}
+								clientY={clientY}
+								posX={-55}
+								posY={-50}
+								width={middleWidth*2}
+								height={height}
+								isParalax={isParalax}
+							/>
+							<FinderImage 
+								className={"finderImageVietnam finderImageVietnam--4"} 
+								ref={this.finderImageQuatreRef} 
+								url={series[1].pictures[0][indexImg]} 
+								clientX={clientX}
+								clientY={clientY}
+								signX={"-"}
+								signY={"+"}
+								posX={-50}
+								posY={-55}
+								width={middleWidth*2}
+								height={height}
+								isParalax={isParalax}
+							/>
 							<div className={"vietnam__squareColumn"}>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqUnRef} >
 									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}   src={series[1].pictures[10][indexImg]}/>
 								</div>
-								<div className={"vietnam__square "}>
+								
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqSeptRef} >
 									<img  className={"vietnam__squareImg "}  src={series[1].pictures[10][indexImg]}/>
 								</div>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqDeuxRef} >
@@ -514,13 +630,13 @@ class Vietnam extends Component {
 								</div>
 							</div>
 							<div className={"vietnam__squareColumn"}>
-								<div className={"vietnam__square"}>
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqHuitRef} >
 									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
 								<div className={"vietnam__square opacityNull"} ref={this.imageCinqTroisRef} >
 									<img className={"vietnam__squareImg"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
-								<div className={"vietnam__square"}>
+								<div className={"vietnam__square opacityNull"} ref={this.imageCinqNeufRef} >
 									<img className={"vietnam__squareImg vietnam__squareImg--mirror"}  src={series[1].pictures[11][indexImg]}/>
 								</div>
 							</div>

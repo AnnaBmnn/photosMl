@@ -5,9 +5,12 @@
     overflow: hidden;
     border-radius: 5px;
     z-index: 100;
-    transition: transform 1s cubic-bezier(.13,1.01,.33,1.11);
+    transition: transform 1.3s cubic-bezier(.13,1.01,.33,1.11);
     box-shadow:  0px 23px 38px 0px rgba(0,0,0,0.3);
-
+    @include tablet {
+        width: 90vw;
+        height: 30vh;
+    }
     img {
         object-fit: cover;
         min-height: 100%;
@@ -44,7 +47,13 @@
     .finderImg__windowBar {
         z-index: 200;
     }
-    .finderImage__bar-svg {
+    .finderImage__bar{
+        top: 0px;
+        height: auto;
+        min-height: unset;
+        left: 0;
+        z-index: 200;
+        height: 23px!important;
         transform: scaleX(3);
     }
     .finderImage__titleBar-svg {
@@ -68,29 +77,29 @@
 
 .finderImageVietnam--1 {
     position: absolute;
-    bottom: 20%;
-    right: 34%;
+    top: -20%;
+    left: -10%;
     z-index: 101;
 }
 
 .finderImageVietnam--2 {
     position: absolute;
-    bottom: 25%;
-    left: 58%;
+    top: -20%;
+    right: -150%;
     z-index: 102;
 }
 
 
 .finderImageVietnam--3 {
     position: absolute;
-    top: 70%;
-    left: 55%;
+    bottom: -40%;
+    right: -40%;
     z-index: 104;
 }
 
 .finderImageVietnam--4 {
     position: absolute;
-    top: 65%;
-    right: 38%;
+    bottom: -20%;
+    left: -20%;
     z-index: 103;
 }

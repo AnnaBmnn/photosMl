@@ -38,9 +38,9 @@ const series = [
         title: "Vietnam",
         slug: "vietnam",
         pictures: [
-            ["static/images/vietnam/vietnam01.png", "static/images/vietnam/vietnam-min/1-min.png"],
-            ["static/images/vietnam/vietnam02.png", "static/images/vietnam/vietnam-min/2-min.png"],
-            ["static/images/vietnam/vietnam03.png", "static/images/vietnam/vietnam-min/3-min.png"],
+            ["static/images/vietnam/vietnam01.png", "static/images/vietnam/vietnam01.png"],
+            ["static/images/vietnam/vietnam02.png", "static/images/vietnam/vietnam-min/1-min.png"],
+            ["static/images/vietnam/vietnam03.png", "static/images/vietnam/vietnam-min/5-min.png"],
             ["static/images/vietnam/vietnam04.png", "static/images/vietnam/vietnam-min/4-min.png"],
             ["static/images/vietnam/vietnam05.png", "static/images/vietnam/vietnam-min/5-min.png"],
             ["static/images/vietnam/vietnam06.png", "static/images/vietnam/vietnam-min/6-min.png"],
@@ -65,6 +65,8 @@ const series = [
             ["static/images/vietnam/vietnam27.png", "static/images/vietnam/vietnam-min/27-min.png"],
             ["static/images/vietnam/vietnam28.png", "static/images/vietnam/vietnam-min/28-min.png"],
             ["static/images/vietnam/vietnam29.png", "static/images/vietnam/vietnam-min/29-min.png"],
+            ["static/images/vietnam/vietnam11.png", "static/images/vietnam/vietnam-min/11-min.png"],
+            ["static/images/vietnam/vietnam12.png", "static/images/vietnam/vietnam-min/12-min.png"]
         ]
     },
     {
@@ -92,4 +94,35 @@ const series = [
     }
 ]
 
-export {series};
+const home = [
+    {
+        slug: false,
+        mainImg: false,
+        bgColor: "#FFFFFF",
+        textColor: "#000000",
+        otherItemColor: "#000000"
+    },
+    {
+        slug: "people",
+        mainImg: "static/images/people/people_home.png",
+        bgColor: "#FFFFFF",
+        textColor: "#000000",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    },
+    {
+        slug: "vietnam",
+        mainImg: "static/images/vietnam/vietnam14.png",
+        bgColor: "#CE283F",
+        textColor: "#FFFFFF",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    },
+    {
+        slug: "random",
+        mainImg: "static/images/random/random_page/random_home.png",
+        bgColor: "#DECCB9",
+        textColor: "#FFFFFF",
+        otherItemColor: "rgba(0,0,0,0.4)"
+    }
+]
+
+export {series, home};

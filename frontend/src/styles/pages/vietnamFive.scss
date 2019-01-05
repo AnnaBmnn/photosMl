@@ -5,6 +5,33 @@
     align-items: center;
     justify-content: center;
 }
+
+.vietnam__imgCinq {
+    position: absolute;
+    top: 7vh;
+    left: 12vw;
+    width: 30vw;
+    height: auto;
+    @include tablet {
+        top: 17vh;
+        left: 8vw;
+        height: 30vh;
+        width: auto;
+    }
+}
+.vietnam__imgSix {
+    position: absolute;
+    bottom: 62vh;
+    right: 12vw;
+    width: 40vw;
+    height: auto;
+    @include tablet {
+        right: 4vw;
+        height: 35vh;
+        width: auto;
+    }
+}
+
 .vietnam__squareColumn {
     display: flex;
     flex-direction: column;

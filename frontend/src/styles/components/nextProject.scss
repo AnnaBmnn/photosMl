@@ -19,7 +19,10 @@
     }
     a {
         color: $yellow;
-        border-bottom: 2px $yellow solid;
+        .plitText3, .plitText2, .plitText1 {
+            border-bottom: 2px $yellow solid;
+
+        }
     }
 }
 

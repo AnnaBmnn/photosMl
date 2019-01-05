@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SVGInline from "react-svg-inline";
-import windowBar from "../static/images/vietnam/window_bar.svg";
 import titleBar from "../static/images/vietnam/title_bar.svg";
 import trafficLight from "../static/images/vietnam/traffic_light.svg";
 
@@ -41,7 +40,7 @@ class FinderImage extends Component {
     return (
         <div ref={innerRef} className={`finderImg__container ${className}`} style={styleImgContainer}>
           <div className="finderImg__windowBar">
-            <SVGInline className="finderImage__bar" svg={ windowBar } />
+            <img className="finderImage__bar"  src="/static/images/vietnam/window.jpg"/>
             <SVGInline className="finderImage__titleBar" svg={ titleBar } />
             <SVGInline className="finderImage__trafficLight" svg={ trafficLight } />
           </div>
