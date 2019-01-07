@@ -13,11 +13,14 @@ class About extends Component {
             lastScroll: 0,
             diffScroll: 0,
             trueHeight: 0,
+            clientX: 0, 
+            clientY: 0,
             disableScroll: false
         };
         
         // interactivity event
         this.handleScroll = this.handleScroll.bind(this);
+        this.handleMouseMove = this.handleMouseMove.bind(this);        
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
 
@@ -33,7 +36,13 @@ class About extends Component {
         window.addEventListener('scroll', () => {
             window.requestAnimationFrame(that.handleScroll);
         }, false);
-  	}
+    }
+      
+    handleMouseMove(e){
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        this.setState({clientX: clientX, clientY: clientY})
+    }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', that.handleScroll);
@@ -41,7 +50,7 @@ class About extends Component {
         
     }
     updateWindowDimensions() {
-        this.setState({trueHeight: that.containerImageRef.current.clientHeight*2});
+        this.setState({trueHeight: this.containerImageRef.current.clientHeight*2});
     }
 	handleScroll(e){
         const {trueHeight, disableScroll} = this.state ;
@@ -71,11 +80,27 @@ class About extends Component {
 	}
 
     render() {
-        const { diffScroll } = this.state;
+        const { clientX, clientY, diffScroll } = this.state;
         return (
             <Layout>
-                <div className="about">
+                <div className="about" onMouseMove={this.handleMouseMove}> 
 					<BackButton/>
+                    <span 
+                        style={
+                        {
+                            transform: `translateX(${clientX-20}px) translateY(${clientY-20}px)`,
+                            backgroundColor: `#2FD870`
+                        }
+                        } 
+                        className={`menu__cursor menu__cursor--about`}
+                        ref={this.cursorRef} 
+                    >
+                        <span className={`cursorText`}>
+                            <span>
+                                {this.innerTextCursor}
+                            </span>
+                        </span>
+                    </span> 
                     <div className="about__explanation animate">
                         This is a collaboration project
                         between interactive designer 
