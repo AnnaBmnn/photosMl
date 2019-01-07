@@ -12,115 +12,105 @@ class About extends Component {
 		this.state = { 
             lastScroll: 0,
             diffScroll: 0,
-            isScrolling: false
-		};
+            trueHeight: 0,
+            disableScroll: false
+        };
+        
         // interactivity event
         this.handleScroll = this.handleScroll.bind(this);
+
+        // ref to the dom
+		this.containerImageRef = React.createRef();
+
     }
 
     componentDidMount() {
-		// window.addEventListener('scroll', this.handleScroll);
-		window.addEventListener('mousewheel', this.handleScroll);
+        const that = this;
+        this.setState({trueHeight: that.containerImageRef.current.clientHeight*2})
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(that.handleScroll);
+        }, false);
   	}
 
     componentWillUnmount() {
-        // window.removeEventListener('scroll', this.handleScroll);
-		window.addEventListener('mousewheel', this.handleScroll);
+        window.removeEventListener('scroll', that.handleScroll);
         
     }
 
 	handleScroll(e){
-        const { lastScroll, isScrolling } = this.state;
-        const scrollY = window.scrollY;
-        const diff = lastScroll - scrollY;
-        this.setState({diffScroll: diff});
-        this.setState({lastScroll: scrollY});
+        const {trueHeight, disableScroll} = this.state ;
+        const scrollPos = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const that = this;
+
+        if (!disableScroll) {
+        
+            if(scrollPos > trueHeight) {
+                window.scrollTo({top: 1});
+                that.setState({disableScroll: true});
+            }
+            if(scrollPos <= 1) {
+                window.scrollTo({top: trueHeight});
+            }
+        }
+
+        if (disableScroll) {
+        const that = this;
+
+          // Disable scroll-jumping for a short time to avoid flickering
+            window.setTimeout(function () {
+                that.setState({disableScroll: false});
+            }, 40);
+        }
 	}
 
     render() {
         const { diffScroll } = this.state;
-        const transformStyle =  { transform: `skewY(${diffScroll*0.3}deg)` }  ;
         return (
             <Layout>
                 <div className="about">
 					<BackButton/>
-
-                    <div className="about__container">
-                        <div className="about__dontTrustTitle animate" style={transformStyle}>don't trust people in the cyber world.</div>
+                    <div className="about__explanation animate">
+                        This is a collaboration project
+                        between interactive designer 
+                        <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name"><span>Marie-Lise Ton</span></a></Link>
+                        and front-end developper
+                        
+                        <Link href={"https://annabaumann.fr"}><a className="about__fullLine about__name"><span>Anna Baumann.</span></a></Link>
                     </div>
-                    <ScrollingBanner
-                        moreClass={`scrollingBanner--about`}
-                        text={"about"}
-                    />
-                    <div className="about__container about__container--2">
-                        <div className="about__explanation animate" style={transformStyle}>
-                            This is a collaboration project
-                            between interactive designer 
-                            <div className="about__fullLine">Marie-Lise Ton</div>
-                            and front-end developper
-                            
-                            <div className="about__fullLine">Anna Baumann.</div>
-                          
-                        </div>
-                        <div className="about__credit">
-                            <div className="about__creditColumn animate" style={transformStyle}>
-                                <div className="about__creditTitle">Socials</div>
-                                <div className="about__creditGroup">
-                                    <div className="about__creditGroupTitle">
-                                        Marie-Lise Ton
-                                    </div>
-                                    <Link href={"https://www.instagram.com/yo.marielise/?hl=fr"} >
-                                        <a target="_blank"  className="about__creditGroupText">
-                                            Instagram
-                                        </a>
-                                    </Link>
-                                    <Link href={"https://www.linkedin.com/in/marieliseton/"} >
-                                        <a className="about__creditGroupText" target="_blank">
-                                            Linkedin
-                                        </a>
-                                    </Link>
-                                </div>
-                                <div className="about__creditGroup">
-                                    <div className="about__creditGroupTitle">
-                                        Anna Baumann
-                                    </div>
-                                    <Link href={"https://www.instagram.com/bannabmnn/"}  >
-                                        <a className="about__creditGroupText" target="_blank">
-                                            Instagram
-                                        </a>
-                                    </Link>
-                                    <Link href={"https://www.linkedin.com/in/anna-baumann-34b56312a/"} >
-                                        <a className="about__creditGroupText" target="_blank">
-                                            Linkedin
-                                        </a>
-                                    </Link>
-                                    <Link href={"https://annabaumann.fr/"} >
-                                        <a className="about__creditGroupText" target="_blank">
-                                            Site 
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="about__creditColumn animate" style={transformStyle}>
-                                <div className="about__creditTitle">Credits</div>
-                                <div className="about__creditGroup">
-                                    <div className="about__creditGroupText">
-                                        Pictures
-                                    </div>
-                                    <div className="about__creditGroupText">
-                                        Marie-Lise Ton
-                                    </div>
-                                </div>
-                                <div className="about__creditGroup">
-                                    <div className="about__creditGroupText">
-                                        Font
-                                    </div>
-                                    <div className="about__creditGroupText">
-                                        Lucas Decroix
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={`about__credit`}>
+                        <div>Photos and Videos by Marie-Lise TON</div>
+                        <div>Fonts by Lucas Descroix</div>
+                    </div>
+                    <div className="about__line">
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                        <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
+                    </div>
+                    <div className="about__container" ref={this.containerImageRef}>
+                        <img src={"static/images/about/ml.png"} />
+                        <img src={"static/images/about/anna.png"} />
+                    </div>
+                    <div className="about__container" >
+                        <img src={"static/images/about/ml.png"} />
+                        <img src={"static/images/about/anna.png"} />
+                    </div>
+                    <div className="about__container" ref={this.containerImageRef}>
+                        <img src={"static/images/about/ml.png"} />
+                        <img src={"static/images/about/anna.png"} />
+                    </div>
+                    <div className="about__container" >
+                        <img src={"static/images/about/ml.png"} />
+                        <img src={"static/images/about/anna.png"} />
                     </div>
 
                     <div className={`scrollingBanner scrollingBanner--about2`}>

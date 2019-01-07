@@ -1,89 +1,71 @@
 .about {
     background-color: $lightYellow;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.about__container {
-    width: 100vw;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about__explanation {
     color: white;
-    background-color: $lightYellow;
-}
-
-.about__container--2 {
-    flex-direction: column;
-    justify-content: space-around;
-    height: unset;
-}
-
-.about__dontTrustTitle {
-    font-size: 3rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -55%, 0);
+    font-size: 1.5rem;
+    width: 60%;
+    text-transform: unset;
     text-align: center;
-    width: 40%;
-    line-height: 50px;
     @include tablet {
         width: 80%;
     }
 }
-
-.about__explanation {
-    font-size: 1.5rem;
-    text-align: left;
-    // text-align: center;
-    width: 60%;
-    text-transform: unset;
-    margin: 100px;
-    @include tablet {
-        margin: 50px 0 100px;
-        width: 80%;
+.about__container {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 45vh 15vw 0 10vw;
+    display: flex;
+    flex-direction: column;
+    &:nth-child(even){
+        align-self: flex-end;
+    }
+    img {
+        width: 350px;
+        height: 440px;
+        &:nth-child(odd){
+            align-self: flex-end;
+        }
     }
 }
 .about__fullLine {
     width: 100%;
     text-align: center;
-    @include tablet {
-        text-align: left;
+}
+.about__name {
+    color: white;
+    display: inline-block;
+    span {
+        border-bottom: solid 1px white;
+    }
+}
+.about__line {
+    font-weight: normal;
+    position: fixed;
+    left: -1vw;
+    top: 10px;
+    font-size: 16px;
+    color: white;
+    width: 105vw;
+    overflow: hidden;
+    height: 20px;
+    span {
+        margin-right: 20px;
     }
 }
 .about__credit {
-    width: 70%;
-    display: flex;
-
-    .about__creditColumn {
-        width: 50%;
-    }
-    .about__creditTitle {
-        font-size: 3rem;
-        margin-bottom: 50px;
-
-    }
-    @include tablet {
-        width: 80%;
-        flex-direction: column;
-        .about__creditColumn {
-            width: 100%;
-        }
-        .about__creditTitle {
-            font-size: 10vw;
-        }
-    }
-}
-.about__creditGroup {
-    font-size: 1rem;
-    margin-bottom: 50px;
-    text-transform: unset;
-}
-
-.about__creditGroupTitle {
-    margin-bottom: 25px;
-    
-}
-
-.about__creditGroupText {
+    text-transform: initial;
+    font-weight: normal;
+    position: fixed;
+    left: 60px;
+    bottom: 70px;
+    font-size: 14px;
     color: white;
-    display: block;
 }
