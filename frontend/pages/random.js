@@ -81,11 +81,13 @@ class Random extends Component {
     render() {
         const { images, width } = this.state;
         const text = width < 1000 ? "Tap Tap Tap" : "Tap a random letter";
+        const indexImgSize = width < 1000 ? 1 : 0;
         const imagesDiv = images.map((_image, index) => {
             return (
                 <img
-                className={ `random_img` } 
-                    src={_image.image}
+                    key={index}
+                    className={ `random_img` } 
+                    src={_image.image[indexImgSize]}
                     style={
                         {
                           transform: `translateX(${_image.left}px) translateY(${_image.top}px)`

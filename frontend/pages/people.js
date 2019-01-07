@@ -141,9 +141,10 @@ class People extends Component {
 
     render() {
         const { clientX, clientY, middleWidth, indexCurrentImage } = this.state;
+        const indexImg = middleWidth < 500 ? 3 : 0;
         const cursorColor = this.pictures[indexCurrentImage][2];
         const bgColor = this.pictures[indexCurrentImage][1];
-        const photoSrc = this.pictures[indexCurrentImage][0];
+        const photoSrc = this.pictures[indexCurrentImage][indexImg];
         const moreClass = bgColor === "#FFFFFF" ? "backButton__svg--black" : "";
         return (
             <Layout>
