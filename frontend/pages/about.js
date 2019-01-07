@@ -18,6 +18,8 @@ class About extends Component {
         
         // interactivity event
         this.handleScroll = this.handleScroll.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
 
         // ref to the dom
 		this.containerImageRef = React.createRef();
@@ -26,7 +28,8 @@ class About extends Component {
 
     componentDidMount() {
         const that = this;
-        this.setState({trueHeight: that.containerImageRef.current.clientHeight*2})
+		this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);		
         window.addEventListener('scroll', () => {
             window.requestAnimationFrame(that.handleScroll);
         }, false);
@@ -34,9 +37,12 @@ class About extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('scroll', that.handleScroll);
+        window.removeEventListener('resize', this.updateWindowDimensions);
         
     }
-
+    updateWindowDimensions() {
+        this.setState({trueHeight: that.containerImageRef.current.clientHeight*2});
+    }
 	handleScroll(e){
         const {trueHeight, disableScroll} = this.state ;
         const scrollPos = window.scrollY;
