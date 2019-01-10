@@ -15,6 +15,14 @@
     from { transform: translate3d(0,0,1px) ; } 
     to { transform: translate3d(-25px, -25px, 1px) ; } 
 }
+@keyframes translateGotBoredTopMobile { 
+    from { transform: translate3d(-11px, -11px, 1px); } 
+    to { transform: translate3d(-22px, -22px, 1px) ; } 
+}
+@keyframes translateGotBoredMiddleMobile { 
+    from { transform: translate3d(0,0,1px) ; } 
+    to { transform: translate3d(-11px, -11px, 1px) ; } 
+}
 
 @keyframes opacity{ 
     0% { opacity: 0 ; } 

@@ -21,11 +21,9 @@
     z-index: 1000;
     animation: 0.15s translateGotBoredMiddle 0.3s linear forwards,
                 0.15s translateGotBoredTop 0.45s linear forwards;
-    // right: 100px;
-    // bottom: 100px;
     @include tablet {
-        // right: 35px;
-        // bottom: 35px;
+        animation: 0.15s translateGotBoredMiddleMobile 0.3s linear forwards,
+        0.15s translateGotBoredTopMobile 0.45s linear forwards;
     }
 }
 
@@ -35,8 +33,8 @@
     // bottom: 75px;
     animation: 0.15s translateGotBoredMiddle 0.3s linear forwards;
     @include tablet {
-        // right: 24px;
-        // bottom: 24px;
+        animation: 0.15s translateGotBoredMiddleMobile 0.3s linear forwards;
+
     }
 }
 
