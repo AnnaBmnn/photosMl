@@ -131,8 +131,7 @@ class Vietnam extends Component {
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
 		window.addEventListener('scroll', this.handleScroll);
-		window.setTimeout(()=> this.setState({isLoaded: true}), 10)
-		// window.setTimeout(()=> this.setState({isLoaded: true}), 4000)
+		window.setTimeout(()=> this.setState({isLoaded: true}), 3000)
 		this.initTimeline();		
 	  }
 	  
@@ -171,11 +170,8 @@ class Vietnam extends Component {
 	playSong(songPlay){
 
 		const {scrollDirection} = this.state;
-		console.log(window);
-		console.log(scrollDirection);
 
 		if( scrollDirection == "bottom"  ){
-			console.log("not reverse");
 			songPlay.playbackRate = 1;
 			const playPromise = songPlay.play();
 			if (playPromise !== undefined) {
@@ -358,10 +354,10 @@ class Vietnam extends Component {
 			.to(finderImageDeuxRef, 0.5, {top: "21%", right: "8%"}, "-=0.5")
 			.to(finderImageTroisRef, 0.5, {bottom: "33%", right: "9%"}, "-=0.5")
 			.to(finderImageQuatreRef, 0.5, {bottom: "38%", left: "38%"}, "-=0.5")
-			.to(finderImageUnRef, 0.5, {top: "-20%", left: "-10%"},"+=3")
-			.to(finderImageDeuxRef, 0.5, {bottom: "-25%", right: "-150%"}, "-=0.5")
-			.to(finderImageTroisRef, 0.5, {bottom: "-40%", right: "-40%"}, "-=0.5")
-			.to(finderImageQuatreRef, 0.5, {bottom: "-20%", left: "-20%"}, "-=0.5")
+			.to(finderImageUnRef, 0.9, {top: "-20%", left: "-10%"},"+=3")
+			.to(finderImageDeuxRef, 0.9, {bottom: "-25%", right: "-150%"}, "-=0.9")
+			.to(finderImageTroisRef, 0.9, {bottom: "-40%", right: "-40%"}, "-=0.9")
+			.to(finderImageQuatreRef, 0.9, {bottom: "-20%", left: "-20%"}, "-=0.9")
 			.add( function(){ 
 				that.setState({isMouseMoving: false})
 			} )
@@ -456,7 +452,6 @@ class Vietnam extends Component {
 		const {title, pictures} = serie;
 		const isParalax = middleWidth < 500 ? false : true;
 		const indexImg = middleWidth < 500 ? 1 : 0;
-		console.log(!isLoaded);
 		return (
 			<Layout>
 				{ !isLoaded || isScrolled == 0 ?

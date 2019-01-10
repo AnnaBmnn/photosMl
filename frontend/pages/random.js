@@ -59,8 +59,9 @@ class Random extends Component {
     handleKeyPress(e) {
         const { height, width, images } = this.state;
         const length = this.pictures.length;
-        const top = this.getRandombetweenMinAndMax(0, height)-height*0.25;
-        const left = this.getRandombetweenMinAndMax(0, width)-width*0.25;
+        console.log(e);
+        const top = e.type == "click" ? e.clientY :this.getRandombetweenMinAndMax(0, height);
+        const left = e.type == "click" ? e.clientX : this.getRandombetweenMinAndMax(0, width);
         const indexImg = Math.floor(this.getRandombetweenMinAndMax(0, length));
         const image = this.pictures[indexImg];
         const newImage = {
@@ -90,7 +91,9 @@ class Random extends Component {
                     src={_image.image[indexImgSize]}
                     style={
                         {
-                          transform: `translateX(${_image.left}px) translateY(${_image.top}px)`
+                            top: `${_image.top}px`,
+                            left: `${_image.left}px`,
+                          transform: `translateX(-50%) translateY(-50%)`
                         }
                     } 
                 />

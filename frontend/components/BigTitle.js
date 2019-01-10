@@ -8,7 +8,6 @@ class BigTitle extends Component {
 
   render() {
     const { text, moreClass, innerRef } = this.props;
-    console.log(moreClass);
     return(
       <h2 className={`bigTitle ${moreClass}`} ref={innerRef} >{text}</h2>
     )
