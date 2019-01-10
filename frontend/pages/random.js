@@ -37,9 +37,9 @@ class Random extends Component {
     }
 
     componentWillUnmount() {
-        const { images } = this.state;
-        images.splice(0, images.length);
         window.removeEventListener('resize', this.updateWindowDimensions);
+        window.removeEventListener('click', this.handleKeyPress);
+
     }
 
     componentDidUpdate() {
@@ -59,7 +59,6 @@ class Random extends Component {
     handleKeyPress(e) {
         const { height, width, images } = this.state;
         const length = this.pictures.length;
-        console.log(e);
         const top = e.type == "click" ? e.clientY :this.getRandombetweenMinAndMax(0, height);
         const left = e.type == "click" ? e.clientX : this.getRandombetweenMinAndMax(0, width);
         const indexImg = Math.floor(this.getRandombetweenMinAndMax(0, length));
@@ -113,4 +112,4 @@ class Random extends Component {
     }
 }
 
-export default PageWrapper(Random);
+export default Random;

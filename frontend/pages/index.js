@@ -8,7 +8,7 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            width: 0, 
+            width: 10001, 
             height: 0
         };
 
@@ -40,4 +40,4 @@ class Index extends Component {
     }
 }
 
-export default PageWrapper(Index);
+export default Index;

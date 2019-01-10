@@ -227,4 +227,4 @@ class People extends Component {
     }
 }
 
-export default PageWrapper(People);
+export default People;

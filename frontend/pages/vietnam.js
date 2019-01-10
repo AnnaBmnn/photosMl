@@ -34,7 +34,9 @@ class Vietnam extends Component {
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleMouseMove = this.handleMouseMove.bind(this);
 
-
+		// timeout
+        this.timeOut = false;
+		
 		// ref to the DOM node
 		this.imageFinderUnRef = React.createRef();
 		this.imageFinderDeuxRef = React.createRef();
@@ -131,7 +133,7 @@ class Vietnam extends Component {
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
 		window.addEventListener('scroll', this.handleScroll);
-		window.setTimeout(()=> this.setState({isLoaded: true}), 3000)
+		this.timeOut = window.setTimeout(()=> this.setState({isLoaded: true}), 0)
 		this.initTimeline();		
 	  }
 	  
@@ -144,8 +146,10 @@ class Vietnam extends Component {
 		}
 	}
   	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+		
         window.removeEventListener('resize', this.updateWindowDimensions);
-    	window.removeEventListener('scroll', this.handleScroll);
+
 	}
 	updateWindowDimensions() {
         this.setState({ middleWidth: window.innerWidth*0.5 });
@@ -999,4 +1003,4 @@ class Vietnam extends Component {
 	}
 }
 
-export default PageWrapper(Vietnam);
+export default Vietnam;
