@@ -18,7 +18,8 @@ class People extends Component {
         // interactivity event
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleMobileClick = this.handleMobileClick.bind(this);
+        this.handleMobileClickPrev = this.handleMobileClickPrev.bind(this);
+        this.handleMobileClickNext = this.handleMobileClickNext.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);        
 
         // ref to the DOM node
@@ -33,29 +34,35 @@ class People extends Component {
         this.innerTextCursor = "";
     }
 
-    handleMobileClick(e){
+    handleMobileClickNext(){
         const { indexCurrentImage } = this.state;
         const length = this.pictures.length;
         let indexNewCurrent;
-        const isPrev = e.path.find(element => element.nodeType > 0 ? element.isEqualNode(this.prevButtonMobile.current): "")? true : false;
-        const isNext = e.path.find(element => element.nodeType > 0 ? element.isEqualNode(this.nextButtonMobile.current): "")? true : false;
+ 
+        indexNewCurrent = indexCurrentImage + 1;
 
-        if(isNext || isPrev){
-            if(isNext){
-                indexNewCurrent = indexCurrentImage + 1;
-            }
-            if(isPrev){
-                indexNewCurrent = indexCurrentImage - 1;
-            }
-    
-            indexNewCurrent = (( indexNewCurrent % length) + length) % length;
-            indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
-            this.setState({indexCurrentImage : indexNewCurrent});
-            this.setState({cursorColor : this.pictures[indexNewCurrent][2]});
-            this.setState({bgColor : this.pictures[indexNewCurrent][1]});
-            this.setState({photoSrc : this.pictures[indexNewCurrent][0]});
-        }
+        indexNewCurrent = (( indexNewCurrent % length) + length) % length;
+        indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
+        this.setState({indexCurrentImage : indexNewCurrent});
+        this.setState({cursorColor : this.pictures[indexNewCurrent][2]});
+        this.setState({bgColor : this.pictures[indexNewCurrent][1]});
+        this.setState({photoSrc : this.pictures[indexNewCurrent][0]});
+    }
 
+    handleMobileClickPrev(){
+        const { indexCurrentImage } = this.state;
+        const length = this.pictures.length;
+        let indexNewCurrent;
+
+        indexNewCurrent = indexCurrentImage - 1;
+        
+
+        indexNewCurrent = (( indexNewCurrent % length) + length) % length;
+        indexNewCurrent < 0 ? indexNewCurrent + Math.abs(length) : indexNewCurrent;
+        this.setState({indexCurrentImage : indexNewCurrent});
+        this.setState({cursorColor : this.pictures[indexNewCurrent][2]});
+        this.setState({bgColor : this.pictures[indexNewCurrent][1]});
+        this.setState({photoSrc : this.pictures[indexNewCurrent][0]});
     }
 
     handleClick(e){
@@ -91,8 +98,6 @@ class People extends Component {
         if(middleWidth >= 500){
             window.addEventListener('click', this.handleClick);
 
-        } else {
-            window.addEventListener('click', this.handleMobileClick);
         }
         
     }
@@ -103,15 +108,11 @@ class People extends Component {
             this.innerTextCursor = this.nextOrPrev();
         }
         if( middleWidth >= 500 && prevState.middleWidth < 500 ){
-            window.removeEventListener('click', this.handleMobileClick);
             window.addEventListener('click', this.handleClick);
 
         }
         if( middleWidth < 500 && prevState.middleWidth >= 500 ){
             window.removeEventListener('click', this.handleClick);
-            window.addEventListener('click', this.handleMobileClick);
-
-
         }
     }
 
@@ -189,7 +190,7 @@ class People extends Component {
                             } 
                             className={`menu__cursor menu__cursor--mobile menu__cursor--prev`}
                             ref={this.prevButtonMobile}
-
+                            onClick={this.handleMobileClickPrev}
                             
                         >
                             <span className={`cursorText`}
@@ -208,6 +209,7 @@ class People extends Component {
                             } 
                             className={`menu__cursor menu__cursor--mobile  menu__cursor--next`}
                             ref={this.nextButtonMobile}
+                            onClick={this.handleMobileClickNext}
                         >
                             <span className={`cursorText`} >
                                 <span>
