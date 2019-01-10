@@ -703,130 +703,188 @@ class Vietnam extends Component {
 						</div>
 						<div ref={this.containerNextProjectRef} className={`nextProject opacityNull`}>
 							<span className="nextProject__container" ref={this.splitTextUnRef}>
-								<div className="plitText__container"><div className="plitText1">y</div></div>
-								<div className="plitText__container"><div className="plitText1">o</div></div>
-								<div className="plitText__container"><div className="plitText1">u </div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">y</div></div>
+									<div className="plitText__container"><div className="plitText1">o</div></div>
+									<div className="plitText__container"><div className="plitText1">u </div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">a</div></div>
-								<div className="plitText__container"><div className="plitText1">r</div></div>
-								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">a</div></div>
+									<div className="plitText__container"><div className="plitText1">r</div></div>
+									<div className="plitText__container"><div className="plitText1">e</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">a</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">a</div></div>
+									<div className="plitText__container"><div className="plitText1">t</div></div>
+								</span>
+								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<span className="plitText__wordContainer">
 								<div className="plitText__container"><div className="plitText1">t</div></div>
+									<div className="plitText__container"><div className="plitText1">h</div></div>
+									<div className="plitText__container"><div className="plitText1">e</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">t</div></div>
-								<div className="plitText__container"><div className="plitText1">h</div></div>
-								<div className="plitText__container"><div className="plitText1">e</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">e</div></div>
+									<div className="plitText__container"><div className="plitText1">n</div></div>
+									<div className="plitText__container"><div className="plitText1">d</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">e</div></div>
-								<div className="plitText__container"><div className="plitText1">n</div></div>
-								<div className="plitText__container"><div className="plitText1">d</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">o</div></div>
+									<div className="plitText__container"><div className="plitText1">f</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">o</div></div>
-								<div className="plitText__container"><div className="plitText1">f</div></div>
-								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">t</div></div>
-								<div className="plitText__container"><div className="plitText1">h</div></div>
-								<div className="plitText__container"><div className="plitText1">e</div></div>
-								<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText1">p</div></div>
-								<div className="plitText__container"><div className="plitText1">r</div></div>
-								<div className="plitText__container"><div className="plitText1">o</div></div>
-								<div className="plitText__container"><div className="plitText1">j</div></div>
-								<div className="plitText__container"><div className="plitText1">e</div></div>
-								<div className="plitText__container"><div className="plitText1">c</div></div>
-								<div className="plitText__container"><div className="plitText1">t</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">t</div></div>
+									<div className="plitText__container"><div className="plitText1">h</div></div>
+									<div className="plitText__container"><div className="plitText1">e</div></div>
+								</span>
+									<div className="plitText__container"><div className="plitText1">&nbsp;</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText1">p</div></div>
+									<div className="plitText__container"><div className="plitText1">r</div></div>
+									<div className="plitText__container"><div className="plitText1">o</div></div>
+									<div className="plitText__container"><div className="plitText1">j</div></div>
+									<div className="plitText__container"><div className="plitText1">e</div></div>
+									<div className="plitText__container"><div className="plitText1">c</div></div>
+									<div className="plitText__container"><div className="plitText1">t</div></div>
+								</span>
 							</span>
 							<span  className="nextProject__container" ref={this.splitTextDeuxRef}>
-								<div className="plitText__container"><div className="plitText2">k</div></div>
-								<div className="plitText__container"><div className="plitText2">e</div></div>
-								<div className="plitText__container"><div className="plitText2">e</div></div>
-								<div className="plitText__container"><div className="plitText2">p</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText2">k</div></div>
+									<div className="plitText__container"><div className="plitText2">e</div></div>
+									<div className="plitText__container"><div className="plitText2">e</div></div>
+									<div className="plitText__container"><div className="plitText2">p</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText2">s</div></div>
-								<div className="plitText__container"><div className="plitText2">c</div></div>
-								<div className="plitText__container"><div className="plitText2">r</div></div>
-								<div className="plitText__container"><div className="plitText2">o</div></div>
-								<div className="plitText__container"><div className="plitText2">l</div></div>
-								<div className="plitText__container"><div className="plitText2">l</div></div>
-								<div className="plitText__container"><div className="plitText2">i</div></div>
-								<div className="plitText__container"><div className="plitText2">n</div></div>
-								<div className="plitText__container"><div className="plitText2">g</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText2">s</div></div>
+									<div className="plitText__container"><div className="plitText2">c</div></div>
+									<div className="plitText__container"><div className="plitText2">r</div></div>
+									<div className="plitText__container"><div className="plitText2">o</div></div>
+									<div className="plitText__container"><div className="plitText2">l</div></div>
+									<div className="plitText__container"><div className="plitText2">l</div></div>
+									<div className="plitText__container"><div className="plitText2">i</div></div>
+									<div className="plitText__container"><div className="plitText2">n</div></div>
+									<div className="plitText__container"><div className="plitText2">g</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText2">t</div></div>
-								<div className="plitText__container"><div className="plitText2">h</div></div>
-								<div className="plitText__container"><div className="plitText2">e</div></div>
-								<div className="plitText__container"><div className="plitText2">r</div></div>
-								<div className="plitText__container"><div className="plitText2">e</div></div>
-								<div className="plitText__container"><div className="plitText2">'</div></div>
-								<div className="plitText__container"><div className="plitText2">s</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText2">t</div></div>
+									<div className="plitText__container"><div className="plitText2">h</div></div>
+									<div className="plitText__container"><div className="plitText2">e</div></div>
+									<div className="plitText__container"><div className="plitText2">r</div></div>
+									<div className="plitText__container"><div className="plitText2">e</div></div>
+									<div className="plitText__container"><div className="plitText2">'</div></div>
+									<div className="plitText__container"><div className="plitText2">s</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText2">n</div></div>
-								<div className="plitText__container"><div className="plitText2">o</div></div>
-								<div className="plitText__container"><div className="plitText2">t</div></div>
-								<div className="plitText__container"><div className="plitText2">h</div></div>
-								<div className="plitText__container"><div className="plitText2">i</div></div>
-								<div className="plitText__container"><div className="plitText2">n</div></div>
-								<div className="plitText__container"><div className="plitText2">g</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText2">n</div></div>
+									<div className="plitText__container"><div className="plitText2">o</div></div>
+									<div className="plitText__container"><div className="plitText2">t</div></div>
+									<div className="plitText__container"><div className="plitText2">h</div></div>
+									<div className="plitText__container"><div className="plitText2">i</div></div>
+									<div className="plitText__container"><div className="plitText2">n</div></div>
+									<div className="plitText__container"><div className="plitText2">g</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText2">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText2">m</div></div>
-								<div className="plitText__container"><div className="plitText2">o</div></div>
-								<div className="plitText__container"><div className="plitText2">r</div></div>
-								<div className="plitText__container"><div className="plitText2">e</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText2">m</div></div>
+									<div className="plitText__container"><div className="plitText2">o</div></div>
+									<div className="plitText__container"><div className="plitText2">r</div></div>
+									<div className="plitText__container"><div className="plitText2">e</div></div>
+								</span>
 							</span>
 							<span ref={this.splitTextTroisRef}  className="nextProject__container">
-								<div className="plitText__container"><div className="plitText3">w</div></div>
-								<div className="plitText__container"><div className="plitText3">e</div></div>
-								<div className="plitText__container"><div className="plitText3">l</div></div>
-								<div className="plitText__container"><div className="plitText3">l</div></div>
-								<div className="plitText__container"><div className="plitText3">,</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">w</div></div>
+									<div className="plitText__container"><div className="plitText3">e</div></div>
+									<div className="plitText__container"><div className="plitText3">l</div></div>
+									<div className="plitText__container"><div className="plitText3">l</div></div>
+									<div className="plitText__container"><div className="plitText3">,</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">i</div></div>
-								<div className="plitText__container"><div className="plitText3">f</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">i</div></div>
+									<div className="plitText__container"><div className="plitText3">f</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">y</div></div>
-								<div className="plitText__container"><div className="plitText3">o</div></div>
-								<div className="plitText__container"><div className="plitText3">u</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">y</div></div>
+									<div className="plitText__container"><div className="plitText3">o</div></div>
+									<div className="plitText__container"><div className="plitText3">u</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">w</div></div>
-								<div className="plitText__container"><div className="plitText3">a</div></div>
-								<div className="plitText__container"><div className="plitText3">n</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">w</div></div>
+									<div className="plitText__container"><div className="plitText3">a</div></div>
+									<div className="plitText__container"><div className="plitText3">n</div></div>
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
-								<div className="plitText__container"><div className="plitText3">o</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+									<div className="plitText__container"><div className="plitText3">o</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">s</div></div>
-								<div className="plitText__container"><div className="plitText3">e</div></div>
-								<div className="plitText__container"><div className="plitText3">e</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">s</div></div>
+									<div className="plitText__container"><div className="plitText3">e</div></div>
+									<div className="plitText__container"><div className="plitText3">e</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">a</div></div>
-								<div className="plitText__container"><div className="plitText3">n</div></div>
-								<div className="plitText__container"><div className="plitText3">o</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
-								<div className="plitText__container"><div className="plitText3">h</div></div>
-								<div className="plitText__container"><div className="plitText3">e</div></div>
-								<div className="plitText__container"><div className="plitText3">r</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">a</div></div>
+									<div className="plitText__container"><div className="plitText3">n</div></div>
+									<div className="plitText__container"><div className="plitText3">o</div></div>
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+									<div className="plitText__container"><div className="plitText3">h</div></div>
+									<div className="plitText__container"><div className="plitText3">e</div></div>
+									<div className="plitText__container"><div className="plitText3">r</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">p</div></div>
-								<div className="plitText__container"><div className="plitText3">r</div></div>
-								<div className="plitText__container"><div className="plitText3">o</div></div>
-								<div className="plitText__container"><div className="plitText3">j</div></div>
-								<div className="plitText__container"><div className="plitText3">e</div></div>
-								<div className="plitText__container"><div className="plitText3">c</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
+
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">p</div></div>
+									<div className="plitText__container"><div className="plitText3">r</div></div>
+									<div className="plitText__container"><div className="plitText3">o</div></div>
+									<div className="plitText__container"><div className="plitText3">j</div></div>
+									<div className="plitText__container"><div className="plitText3">e</div></div>
+									<div className="plitText__container"><div className="plitText3">c</div></div>
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">i</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
-								<div className="plitText__container"><div className="plitText3">'</div></div>
-								<div className="plitText__container"><div className="plitText3">s</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">i</div></div>
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+									<div className="plitText__container"><div className="plitText3">'</div></div>
+									<div className="plitText__container"><div className="plitText3">s</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
-								<div className="plitText__container"><div className="plitText3">r</div></div>
-								<div className="plitText__container"><div className="plitText3">i</div></div>
-								<div className="plitText__container"><div className="plitText3">g</div></div>
-								<div className="plitText__container"><div className="plitText3">h</div></div>
-								<div className="plitText__container"><div className="plitText3">t</div></div>
+								<span className="plitText__wordContainer">
+									<div className="plitText__container"><div className="plitText3">r</div></div>
+									<div className="plitText__container"><div className="plitText3">i</div></div>
+									<div className="plitText__container"><div className="plitText3">g</div></div>
+									<div className="plitText__container"><div className="plitText3">h</div></div>
+									<div className="plitText__container"><div className="plitText3">t</div></div>
+								</span>
 								<div className="plitText__container"><div className="plitText3">&nbsp;</div></div>
+
 								<Link href={"/random"}>
 									<a>
 										<div className="plitText__container"><div className="plitText3">h</div></div>
