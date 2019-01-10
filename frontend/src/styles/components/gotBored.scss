@@ -19,22 +19,36 @@
 
 .gotBored--1 {
     z-index: 1000;
-    animation: 0.15s translateGotBoredMiddle 0.3s linear forwards,
-                0.15s translateGotBoredTop 0.45s linear forwards;
+    animation: 0.30s translateGotBoredTop 0.3s linear forwards;
     @include tablet {
-        animation: 0.15s translateGotBoredMiddleMobile 0.3s linear forwards,
-        0.15s translateGotBoredTopMobile 0.45s linear forwards;
+        animation: 0.30s translateGotBoredTopMobile 0.3s linear forwards;
     }
+    &.willClose {
+        transform: translate3d(-50px, -50px, 1px) ;
+        animation: 0.30s translateGotBoredTopReverse 0.3s linear forwards;
+        @include tablet {
+            transform: translate3d(-22px, -22px, 1px) ;
+            animation: 0.30s translateGotBoredTopMobileReverse 0.3s linear forwards;
+        }
+    }
+
 }
 
 .gotBored--2 {
     z-index: 999;
-    // right: 75px;
-    // bottom: 75px;
     animation: 0.15s translateGotBoredMiddle 0.3s linear forwards;
     @include tablet {
         animation: 0.15s translateGotBoredMiddleMobile 0.3s linear forwards;
 
+    }
+    &.willClose {
+        transform: translate3d(-25px, -25px, 1px) ;
+        animation: 0.15s translateGotBoredMiddleReverse 0.45s linear forwards;
+        @include tablet {
+            transform: translate3d(-11px, -11px, 1px) ;
+            animation: 0.15s translateGotBoredMiddleMobileReverse 0.45s linear forwards;
+    
+        }
     }
 }
 
@@ -88,4 +102,8 @@
     @include tablet {
         top: 40px;
     }
+}
+
+.gotBored__close {
+    cursor: pointer;
 }

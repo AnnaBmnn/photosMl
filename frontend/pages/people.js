@@ -66,8 +66,7 @@ class People extends Component {
         this.setState({clientX: clientX, clientY: clientY});
         const direction = this.nextOrPrev();
         let indexNewCurrent;
-        console.log(e);
-        if(middleWidth> 500) {
+        if(e.target.id !== "Red" && middleWidth> 500){
             if(direction === "next"){
                 indexNewCurrent = indexCurrentImage + 1;
             }
