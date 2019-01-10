@@ -1,7 +1,5 @@
 .gotBored {
     position: fixed;
-    right: 100px;
-    bottom: 100px;
     background-color: #313131;
     font-size: 1.8rem;
     color: white;
@@ -9,31 +7,42 @@
     border-right: 10px  solid white;
     border-top: 5px  solid white;
     border-bottom: 5px  solid white;
+    cursor: auto;
     z-index: 1000;
-    @include tablet {
-        right: 35px;
-        bottom: 35px;
-    }
-}
-
-.gotBored--2 {
-    z-index: 999;
-    right: 75px;
-    bottom: 75px;
-    @include tablet {
-        right: 24px;
-        bottom: 24px;
-    }
-}
-
-.gotBored--3 {
-    z-index: 998;
     right: 50px;
     bottom: 50px;
     @include tablet {
         right: 13px;
         bottom: 13px;
     }
+}
+
+.gotBored--1 {
+    z-index: 1000;
+    animation: 0.15s translateGotBoredMiddle 0.3s linear forwards,
+                0.15s translateGotBoredTop 0.45s linear forwards;
+    // right: 100px;
+    // bottom: 100px;
+    @include tablet {
+        // right: 35px;
+        // bottom: 35px;
+    }
+}
+
+.gotBored--2 {
+    z-index: 999;
+    // right: 75px;
+    // bottom: 75px;
+    animation: 0.15s translateGotBoredMiddle 0.3s linear forwards;
+    @include tablet {
+        // right: 24px;
+        // bottom: 24px;
+    }
+}
+
+.gotBored--3 {
+    z-index: 998;
+
 }
 
 .gotBored__container--center {

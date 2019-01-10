@@ -15,7 +15,7 @@ class GotBored extends Component {
     }
 
     componentDidMount(){
-        this.timeOut = window.setTimeout(()=> this.setState({isBored: true}),60000)
+        this.timeOut = window.setTimeout(()=> this.setState({isBored: true}),100)
     }
 
     componentWillUnmount(){
@@ -28,7 +28,7 @@ class GotBored extends Component {
         return(
             isBored ?
                 <Fragment>
-                    <div className={`gotBored`}>
+                    <div className={`gotBored gotBored--1`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container gotBored__container--center`}>get bored ?</div>
                         <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>

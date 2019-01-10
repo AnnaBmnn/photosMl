@@ -45,7 +45,7 @@ class About extends Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', that.handleScroll);
+        window.removeEventListener('scroll', this.handleScroll);
         window.removeEventListener('resize', this.updateWindowDimensions);
         
     }

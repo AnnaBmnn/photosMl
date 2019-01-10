@@ -7,6 +7,14 @@
     from { transform: rotateZ(0deg) ; } 
     to { transform: rotateZ(360deg) ; } 
 }
+@keyframes translateGotBoredTop { 
+    from { transform: translate3d(-25px, -25px, 1px); } 
+    to { transform: translate3d(-50px, -50px, 1px) ; } 
+}
+@keyframes translateGotBoredMiddle { 
+    from { transform: translate3d(0,0,1px) ; } 
+    to { transform: translate3d(-25px, -25px, 1px) ; } 
+}
 
 @keyframes opacity{ 
     0% { opacity: 0 ; } 
