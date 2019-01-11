@@ -29,6 +29,8 @@ class Vietnam extends Component {
 
 		};
 
+		this.lastScroll = 0;
+		this.direction = "bottom";
 		// interactivity event
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 		this.handleScroll = this.handleScroll.bind(this);
@@ -119,6 +121,9 @@ class Vietnam extends Component {
 		this.videoUnRef = React.createRef();
 		this.videoDeuxRef = React.createRef();
 		this.videoTroisRef = React.createRef();
+		this.videoQuatreRef = React.createRef();
+		this.videoCinqRef = React.createRef();
+		this.videoSixRef = React.createRef();
 		this.containerNextProjectRef = React.createRef();
 		this.splitTextUnRef = React.createRef();
 		this.splitTextDeuxRef = React.createRef();
@@ -133,7 +138,7 @@ class Vietnam extends Component {
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
 		window.addEventListener('scroll', this.handleScroll);
-		this.timeOut = window.setTimeout(()=> this.setState({isLoaded: true}), 0)
+		this.timeOut = window.setTimeout(()=> this.setState({isLoaded: true}), 10)
 		this.initTimeline();		
 	  }
 	  
@@ -158,8 +163,10 @@ class Vietnam extends Component {
 	
 	handleScroll(e){
 		const { isLoaded } = this.props;
-		const { lastScroll } = this.state;
 		const scroll = window.scrollY;
+		this.direction = this.lastScroll - scroll < 0 ? "bottom" : "top";
+		this.lastScroll = scroll;
+
 		if( scroll !== 0 ){
 			this.setState({isScrolled: true});
 		}
@@ -173,9 +180,8 @@ class Vietnam extends Component {
 
 	playSong(songPlay){
 
-		const {scrollDirection} = this.state;
 
-		if( scrollDirection == "bottom"  ){
+		if( this.direction == "bottom"  ){
 			songPlay.playbackRate = 1;
 			const playPromise = songPlay.play();
 			if (playPromise !== undefined) {
@@ -186,7 +192,7 @@ class Vietnam extends Component {
 				.catch(error => {
 				  // Auto-play was prevented
 				  // Show paused UI.
-				  console.log(error);
+				  console.log(error.message);
 	  
 				});
 			  }
@@ -274,13 +280,10 @@ class Vietnam extends Component {
 		const videoUnRef = this.videoUnRef.current;
 		const videoDeuxRef = this.videoDeuxRef.current;
 		const videoTroisRef = this.videoTroisRef.current;
+		const videoQuatreRef = this.videoQuatreRef.current;
+		const videoCinqRef = this.videoCinqRef.current;
+		const videoSixRef = this.videoSixRef.current;
 		const containerNextProjectRef = this.containerNextProjectRef.current;
-		const splitTextUnRef = this.splitTextUnRef.current;
-		const splitTextDeuxRef = this.splitTextDeuxRef.current;
-		const splitTextTroisRef = this.splitTextTroisRef.current;
-		
-		// const mySplitText = new SplitText(splitTextUnRef, {type:"words"});
-		// mySplitText.split({type:"chars, words"});
 
 		const that = this;
 
@@ -333,12 +336,12 @@ class Vietnam extends Component {
 			.to(containerTroisRef, 0.1, {opacity: 0})
 			.to(containerTroisRef, 0.1, {className:"+=displayNone"})
 			.to(containerQuatreRef, 0.1, {opacity: 1}, "+=0.1")
-			.to(imageQuatreDeuxRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageQuatreTroisRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageQuatreQuatreRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageQuatreCinqRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageQuatreSixRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageQuatreSeptRef, 0.1, {opacity: 1}, "+=0.6")
+			.to(imageQuatreDeuxRef, 0.1, {opacity: 1}, "+=1")
+			.to(imageQuatreTroisRef, 0.1, {opacity: 1}, "+=1")
+			.to(imageQuatreQuatreRef, 0.1, {opacity: 1}, "+=1")
+			.to(imageQuatreCinqRef, 0.1, {opacity: 1}, "+=1")
+			.to(imageQuatreSixRef, 0.1, {opacity: 1}, "+=1")
+			.to(imageQuatreSeptRef, 0.1, {opacity: 1}, "+=1")
 			.to(containerQuatreRef, 0.1, {opacity: 0})
 			.to(containerQuatreRef, 0.1, {className:"+=displayNone"})
 			.to(containerCinqRef, 0.1, {opacity: 1}, "+=0.1")
@@ -354,14 +357,14 @@ class Vietnam extends Component {
 			.to(finderImageDeuxRef,0.1, {opacity: 1}, "-=0.1")
 			.to(finderImageTroisRef,0.1, {opacity: 1}, "-=0.1")
 			.to(finderImageQuatreRef,0.1, {opacity: 1}, "-=0.1")
-			.to(finderImageUnRef, 0.6, {top: "26%", left: "42%"},"+=0.6")
-			.to(finderImageDeuxRef, 0.5, {top: "21%", right: "8%"}, "-=0.5")
-			.to(finderImageTroisRef, 0.5, {bottom: "33%", right: "9%"}, "-=0.5")
-			.to(finderImageQuatreRef, 0.5, {bottom: "38%", left: "38%"}, "-=0.5")
-			.to(finderImageUnRef, 0.9, {top: "-20%", left: "-10%"},"+=3")
-			.to(finderImageDeuxRef, 0.9, {bottom: "-25%", right: "-150%"}, "-=0.9")
-			.to(finderImageTroisRef, 0.9, {bottom: "-40%", right: "-40%"}, "-=0.9")
-			.to(finderImageQuatreRef, 0.9, {bottom: "-20%", left: "-20%"}, "-=0.9")
+			.to(finderImageUnRef, 1, {top: "26%", left: "42%"},"+=0.6")
+			.to(finderImageDeuxRef, 1, {top: "21%", right: "8%"}, "-=0.9")
+			.to(finderImageTroisRef, 1, {bottom: "33%", right: "9%"}, "-=0.9")
+			.to(finderImageQuatreRef, 1, {bottom: "38%", left: "38%"}, "-=0.9")
+			.to(finderImageUnRef, 1, {top: "-20%", left: "-10%"},"+=3.5")
+			.to(finderImageDeuxRef, 1, {bottom: "-25%", right: "-150%"}, "-=0.9")
+			.to(finderImageTroisRef, 1, {bottom: "-40%", right: "-40%"}, "-=0.9")
+			.to(finderImageQuatreRef, 1, {bottom: "-20%", left: "-20%"}, "-=0.9")
 			.add( function(){ 
 				that.setState({isMouseMoving: false})
 			} )
@@ -424,16 +427,22 @@ class Vietnam extends Component {
 			.to(hugeTitleSeptUnRef, 6, {transform: "scaleY(14) scaleX(3.5) translateX(-150%)"}, "+=0.6")
 			.to(imageSeptQuinzeRef, 0.1, {opacity: 1}, "-=1.2")
 			.to(containerVideoSeptUnRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-100%, 0px, 1px"}, "+=0.6")
+			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-50%, 0px, 1px"}, "+=0.6")
 			.add( function(){ 
 				videoUnRef.play();
 				videoDeuxRef.play();
 				videoTroisRef.play();
+				videoQuatreRef.play();
+				videoCinqRef.play();
+				videoSixRef.play();
 			}, "-=6" )
 			.add( function(){ 
 				videoUnRef.pause();
 				videoDeuxRef.pause();
 				videoTroisRef.pause();
+				videoQuatreRef.pause();
+				videoCinqRef.pause();
+				videoSixRef.pause();
 			}, "+=4" )
 			.to(containerVideoSeptUnRef, 0.1, {opacity: 0})
 			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
@@ -689,14 +698,23 @@ class Vietnam extends Component {
 							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26][indexImg]}/>
 							<div ref={this.containerVideoSeptUnRef} className={`vietnam__containerVideo opacityNull`}>
 								<div className={`vietnam__video vietnam__video--1`}>
-									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video   webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--2`}>
-									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 
 								</div>
 								<div className={`vietnam__video vietnam__video--3`}>
-									<video muted webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} autoPlay src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef}  src="static/images/vietnam/vietnamVideo01.mp4" />
+								</div>
+								<div className={`vietnam__video vietnam__video--4`}>
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoQuatreRef}src="static/images/vietnam/vietnamVideo01.mp4" />
+								</div>
+								<div className={`vietnam__video vietnam__video--5`}>
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoCinqRef}src="static/images/vietnam/vietnamVideo01.mp4" />
+								</div>
+								<div className={`vietnam__video vietnam__video--6`}>
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoSixRef}  src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 							</div>
 						</div>

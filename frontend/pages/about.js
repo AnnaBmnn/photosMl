@@ -13,9 +13,11 @@ class About extends Component {
             lastScroll: 0,
             diffScroll: 0,
             trueHeight: 0,
+            width: 0,
             clientX: 0, 
             clientY: 0,
-            disableScroll: false
+            disableScroll: false,
+
         };
         
         // interactivity event
@@ -50,7 +52,10 @@ class About extends Component {
         
     }
     updateWindowDimensions() {
-        this.setState({trueHeight: this.containerImageRef.current.clientHeight*2});
+        this.setState({
+            trueHeight: this.containerImageRef.current.clientHeight*2,
+            width: window.innerWidth
+        });
     }
 	handleScroll(e){
         const {trueHeight, disableScroll} = this.state ;
@@ -70,9 +75,9 @@ class About extends Component {
         }
 
         if (disableScroll) {
-        const that = this;
+            const that = this;
 
-          // Disable scroll-jumping for a short time to avoid flickering
+            // Disable scroll-jumping for a short time to avoid flickering
             window.setTimeout(function () {
                 that.setState({disableScroll: false});
             }, 40);
@@ -80,27 +85,32 @@ class About extends Component {
 	}
 
     render() {
-        const { clientX, clientY, diffScroll } = this.state;
+        const { clientX, clientY, width } = this.state;
         return (
             <Layout>
                 <div className="about" onMouseMove={this.handleMouseMove}> 
 					<BackButton/>
-                    <span 
-                        style={
-                        {
-                            transform: `translateX(${clientX-20}px) translateY(${clientY-20}px)`,
-                            backgroundColor: `#2FD870`
-                        }
-                        } 
-                        className={`menu__cursor menu__cursor--about`}
-                        ref={this.cursorRef} 
-                    >
-                        <span className={`cursorText`}>
-                            <span>
-                                {this.innerTextCursor}
+                    {  width > 1000 ?
+                        <span 
+                            style={
+                            {
+                                transform: `translateX(${clientX-20}px) translateY(${clientY-20}px)`,
+                                backgroundColor: `#2FD870`
+                            }
+                            } 
+                            className={`menu__cursor menu__cursor--about`}
+                            ref={this.cursorRef} 
+                        >
+                            <span className={`cursorText`}>
+                                <span>
+                                    {this.innerTextCursor}
+                                </span>
                             </span>
                         </span>
-                    </span> 
+                        :
+                        ""
+                    }
+ 
                     <div className="about__explanation animate">
                         This is a collaboration project
                         between interactive designer 

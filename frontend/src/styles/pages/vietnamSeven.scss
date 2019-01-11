@@ -224,7 +224,7 @@
 
 .vietnam__containerVideo {
     position: absolute;
-    width: 100vw;
+    width: 150vw;
     height: 100vh;
     top: 0;
     left: 0;
@@ -239,6 +239,12 @@
     }
 }
 .vietnam__video--2 {
+    align-self: flex-end;
+}
+.vietnam__video--4 {
+    align-self: flex-end;
+}
+.vietnam__video--6 {
     align-self: flex-end;
 }
 .vietnam__video {
