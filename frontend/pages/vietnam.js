@@ -157,7 +157,8 @@ class Vietnam extends Component {
 
 	}
 	updateWindowDimensions() {
-        this.setState({ middleWidth: window.innerWidth*0.5 });
+		const newWidth = window.innerHeight;
+		this.setState({ middleWidth: newWidth });
         this.setState({ height: window.innerHeight });
     }
 	
@@ -180,7 +181,6 @@ class Vietnam extends Component {
 
 	playSong(songPlay){
 
-
 		if( this.direction == "bottom"  ){
 			songPlay.playbackRate = 1;
 			const playPromise = songPlay.play();
@@ -201,16 +201,17 @@ class Vietnam extends Component {
 
 	initTimeline() {
 		const { middleWidth } = this.state;
-		
-		const speedAnimation = middleWidth < 500 ? 0.3 : 0.6 ;
-		const y1 = middleWidth < 500 ? "20%" : "26%";
-		const x1 = middleWidth < 500 ? "50%" : "42%" ;
-		const y2 = middleWidth < 500 ? "25%" : "21%" ;
-		const x2 = middleWidth < 500 ? "-20%" : "8%" ;
-		const y3 = middleWidth < 500 ? "40%" : "33%" ;
-		const x3 = middleWidth < 500 ? "-20%" : "9%" ;
-		const y4 = middleWidth < 500 ? "50%" : "38%" ;
-		const x4 = middleWidth < 500 ?"47%" : "29%" ;
+		const speedAnimation = window.innerWidth < 1000 ? 0.3 : 0.6 ;
+		const y1 = window.innerWidth < 1000 ? "20%" : "26%";
+		const x1 = window.innerWidth < 1000 ? "50%" : "42%" ;
+		const y2 = window.innerWidth < 1000 ? "25%" : "21%" ;
+		const x2 = window.innerWidth < 1000 ? "-20%" : "8%" ;
+		const y3 = window.innerWidth < 1000 ? "40%" : "33%" ;
+		const x3 = window.innerWidth < 1000 ? "-20%" : "9%" ;
+		const y4 = window.innerWidth < 1000 ? "50%" : "38%" ;
+		const x4 = window.innerWidth < 1000 ?"47%" : "36%" ;
+
+
 
 		const containerUnRef = this.containerUnRef.current;
 		const containerDeuxRef = this.containerDeuxRef.current;
