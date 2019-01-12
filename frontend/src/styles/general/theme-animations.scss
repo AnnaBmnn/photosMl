@@ -74,6 +74,35 @@
 }
 
 @keyframes translateAnimation { 
-    from { transform: translateX(100%) ; } 
-    to { transform: translateX(-100%) ; } 
+    from { transform: translateX(0) ; } 
+    to { transform: translateX(-100vw) ; } 
 }
+@keyframes translateAnimationSecond { 
+    from { transform: translateX(100vw) ; } 
+    to { transform: translateX(0vw) ; } 
+}
+@keyframes translateAnimationMobile { 
+    from { transform: translateX(0) ; } 
+    to { transform: translateX(-200vw) ; } 
+}
+@keyframes translateAnimationSecondMobile { 
+    from { transform: translateX(200vw) ; } 
+    to { transform: translateX(0vw) ; } 
+}
+@keyframes translateAnimationSmaller { 
+    from { transform: translateX(0) ; } 
+    to { transform: translateX(-300vw) ; } 
+}
+@keyframes translateAnimationSecondSmaller { 
+    from { transform: translateX(300vw) ; } 
+    to { transform: translateX(0vw) ; } 
+}
+
+@keyframes translateIt { 
+    0% { transform: translateY(0) ; } 
+    50% { transform: translateY(-100%) ; } 
+    51% { transform: translateY(100%) ; } 
+    100% { transform: translateY(0%) ; } 
+}
+
+

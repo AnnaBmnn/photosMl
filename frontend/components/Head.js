@@ -12,6 +12,7 @@ class Header extends Component {
         return (
             <div>
                 <Head>
+                    
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
                     <meta
                         name="viewport" 

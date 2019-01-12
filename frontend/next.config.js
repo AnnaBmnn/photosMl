@@ -14,7 +14,19 @@ module.exports = {
     ,
       {
         test: /\.css$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader']
+        use: ['babel-loader', 'raw-loader', 'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')({}),
+                require('cssnano')({ preset: 'default' })
+              ],
+              minimize: true
+            }
+          }
+        ]
       }
     ,
     

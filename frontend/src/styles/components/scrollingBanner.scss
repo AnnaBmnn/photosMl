@@ -10,7 +10,7 @@
 .scrollingBanner__text {
     position: absolute;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.5vw;
     padding: 0px 15px;
     min-width: 100vw;
 
@@ -32,7 +32,6 @@
 }
 
 .scrollingBanner__span {
-    padding-right: 100px;
     display: inline-block;
     // background-color: red;
 }
@@ -46,98 +45,72 @@
     animation: opacity 10ms 4s linear 1 forwards;
     .scrollingBanner__text {
         padding: 0;
-        width: 2090px;
-        transform-origin: right;
-
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
         &:nth-of-type(1){
-            transform: translateX(100%);
+            width: 100vw;
             animation: translateAnimation 30s  linear infinite ;
         }
         &:nth-of-type(2){
-            transform: translateX(100%);
-            animation: translateAnimation 30s 10s linear infinite ;
+            width: 100vw;
+            animation: translateAnimationSecond 30s  linear infinite ;
         }
-        &:nth-of-type(3){
-            transform: translateX(100%);
-            animation: translateAnimation 30s 20s linear infinite ;
+        font-size: 2.3rem;
+        @media  (max-width: 1400px) {
+            font-size: 2.5vw;
         }
         @include tablet {
-            width: 1350px;
-            &:nth-of-type(1){
-                transform: translateX(100%);
-                animation: translateAnimation 30s  linear infinite ;
-            }
-            &:nth-of-type(2){
-                transform: translateX(100%);
-                animation: translateAnimation 30s 10s linear infinite ;
-            }
-            &:nth-of-type(3){
-                transform: translateX(100%);
-                animation: translateAnimation 30s 20s linear infinite ;
-            }
-        }
+            font-size: 2.5vw;
 
+        }
+        @media  (max-width: 400px) {
+            font-size: 1.2rem;
+        }
     }
 }
 
-
-.scrollingBanner--about {
-    color: white;
-    background-color: $lightYellow;
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: 30vh;
-    .scrollingBanner__text {
-        font-size: 12vw;
-        span {
-            padding: 0 44vw 0 0;
-        }
-
-        &:nth-of-type(1){
-            transform: translateX(100%);
-            animation: translateAnimation 21s  linear infinite ;
-        }
-        &:nth-of-type(2){
-            transform: translateX(100%);
-            animation: translateAnimation 21s 7s linear infinite ;
-        }
-        &:nth-of-type(3){
-            transform: translateX(100%);
-            animation: translateAnimation 21s 14s linear infinite ;
-        }
-    }
-    @include tablet {
-        .scrollingBanner__text {
-            font-size: 20vw;
-            width: 200vw;
-
-        }
-    }
-}
 
 .scrollingBanner--about2 {
     background-color: #2C2728;
     height: 40px;
     .scrollingBanner__text {
-        color: white;
-        font-size: 15px;
-        margin-top: 7px;
+        padding: 0;
+        width: 100vw;
+        height: 100%;
+        align-items: center;
         display: flex;
         justify-content: space-around;
-        width: 150vw;
+        font-size: 1vw;
+        margin-bottom: 7px;
+        color: white;
         &:nth-of-type(1){
-            transform: translateX(100%);
+            
             animation: translateAnimation 30s  linear infinite ;
         }
         &:nth-of-type(2){
-            transform: translateX(100%);
-            animation: translateAnimation 30s 15s linear infinite ;
+            animation: translateAnimationSecond 30s linear infinite ;
+        }
+        @include tablet {
+            width: 200vw;
+            font-size: 0.8rem;
+            &:nth-of-type(1){
+                animation: translateAnimationMobile 30s  linear infinite ;
+            }
+            &:nth-of-type(2){
+                animation: translateAnimationSecondMobile 30s linear infinite ;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            width: 300vw;
+            font-size: 0.8rem;
+            &:nth-of-type(1){
+                animation: translateAnimationSmaller 30s  linear infinite ;
+            }
+            &:nth-of-type(2){
+                animation: translateAnimationSecondSmaller 30s linear infinite ;
+            }
         }
     }
-    @include tablet {
-        .scrollingBanner__text {
-            width: 330vw;
-        }
-    }
+
 }

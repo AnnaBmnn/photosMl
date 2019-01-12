@@ -192,7 +192,7 @@ class Vietnam extends Component {
 				.catch(error => {
 				  // Auto-play was prevented
 				  // Show paused UI.
-				  console.log(error.message);
+				//   console.log(error.message);
 	  
 				});
 			  }
@@ -200,6 +200,10 @@ class Vietnam extends Component {
 	}
 
 	initTimeline() {
+		const { middleWidth } = this.state;
+		
+		const speedAnimation = middleWidth < 500 ? 0.3 : 0.6 ;
+
 		const containerUnRef = this.containerUnRef.current;
 		const containerDeuxRef = this.containerDeuxRef.current;
 		const containerTroisRef = this.containerTroisRef.current;
@@ -448,14 +452,14 @@ class Vietnam extends Component {
 			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(containerVideoSeptUnRef, 0.1, {className:"+=displayNone"})
 			.to(containerNextProjectRef, 0.1, {opacity: 1}, "-=0.1")
-			.staggerFrom(".plitText1", 0.6, {x:0, y: "100%", z:"1px"},0.02)
-			.staggerTo(".plitText1", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
+			.staggerFrom(".plitText1", speedAnimation , {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText1", speedAnimation , {x:0, y: "-100%", z:"1px"},0.02, "+=1")
 			.to(containerNextProjectRef, 0.5, {transform: "translateY(-25%)"})
-			.staggerFrom(".plitText2", 0.6, {x:0, y: "100%", z:"1px"},0.02)
-			.staggerTo(".plitText2", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
+			.staggerFrom(".plitText2", speedAnimation , {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText2", speedAnimation , {x:0, y: "-100%", z:"1px"},0.02, "+=1")
 			.to(containerNextProjectRef, 0.5, {transform: "translateY(-55%)"})
-			.staggerFrom(".plitText3", 0.6, {x:0, y: "100%", z:"1px"},0.02)
-			.staggerTo(".plitText3", 0.6, {x:0, y: "-100%", z:"1px"},0.02, "+=1")
+			.staggerFrom(".plitText3", speedAnimation , {x:0, y: "100%", z:"1px"},0.02)
+			.staggerTo(".plitText3", speedAnimation , {x:0, y: "-100%", z:"1px"},0.02, "+=1")
 			.pause();
 	}
 

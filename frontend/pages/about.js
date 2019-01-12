@@ -113,7 +113,17 @@ class About extends Component {
  
                     <div className="about__explanation animate">
                         This is a collaboration project
-                        between interactive designer 
+                         
+                        between interactive designer
+                        <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name notVisible"><span>Marie-Lise Ton</span></a></Link>
+                        and front-end developper
+                        
+                        <Link href={"https://annabaumann.fr"}><a className="about__fullLine about__name notVisible"><span>Anna Baumann.</span></a></Link>
+                    </div>
+                    <div className="about__explanation about__upon">
+                        This is a collaboration project
+                         
+                        between interactive designer
                         <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name"><span>Marie-Lise Ton</span></a></Link>
                         and front-end developper
                         

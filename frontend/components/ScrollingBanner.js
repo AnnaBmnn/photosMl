@@ -19,10 +19,6 @@ class ScrollingBanner extends Component {
                         <span  className={`scrollingBanner__span`}>{text}</span>
                         <span  className={`scrollingBanner__span`}> {text}</span>
                     </div> 
-                    <div className={`scrollingBanner__text`}>
-                        <span  className={`scrollingBanner__span`}>{text}</span>
-                        <span  className={`scrollingBanner__span`}>{text}</span>
-                    </div> 
                 </Fragment>
 
                 :
@@ -35,14 +31,6 @@ class ScrollingBanner extends Component {
                     </div>
                 </Fragment>
             }
-            { moreClass === "scrollingBanner--about" ?
-                <div className={`scrollingBanner__text`}>
-                    <span>{text}</span>
-                </div> 
-                :
-                ""
-            }
-
             
         </div>
     )

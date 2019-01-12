@@ -13,4 +13,7 @@
     .backButton__svg--black g {
         fill: rgb(0,0,0);
     }
+    @include tablet {
+        left: 20px;
+    }
 }

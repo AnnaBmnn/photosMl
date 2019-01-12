@@ -31,6 +31,7 @@
         align-self: flex-end;
     }
     img {
+        z-index: 500;
         width: 350px;
         height: 440px;
         &:nth-child(odd){
@@ -51,9 +52,6 @@
 .about__name {
     color: white;
     display: inline-block;
-    span {
-        border-bottom: solid 1px white;
-    }
 }
 .about__line {
     font-weight: normal;
@@ -77,4 +75,41 @@
     bottom: 70px;
     font-size: 14px;
     color: white;
+    @include tablet {
+        left: 20px;
+    }
+}
+
+.about__upon {
+    z-index: 600;
+    color: transparent;
+    a {
+        color: white;
+    }
+
+}
+.about__name {
+    color: white;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+
+    span  {
+        display: inline-block;
+        position: static;
+    }
+    &:hover {
+        > span {
+            animation: translateIt 0.2s linear 1; 
+        }
+    }
+}
+.notVisible {
+    span {
+        color: transparent;
+        border-bottom: 1px solid white;
+    }
+}
+.menu__cursor--about {
+    z-index: 550;
 }
