@@ -203,6 +203,14 @@ class Vietnam extends Component {
 		const { middleWidth } = this.state;
 		
 		const speedAnimation = middleWidth < 500 ? 0.3 : 0.6 ;
+		const y1 = middleWidth < 500 ? "20%" : "26%";
+		const x1 = middleWidth < 500 ? "50%" : "42%" ;
+		const y2 = middleWidth < 500 ? "25%" : "21%" ;
+		const x2 = middleWidth < 500 ? "-20%" : "8%" ;
+		const y3 = middleWidth < 500 ? "40%" : "33%" ;
+		const x3 = middleWidth < 500 ? "-20%" : "9%" ;
+		const y4 = middleWidth < 500 ? "50%" : "38%" ;
+		const x4 = middleWidth < 500 ?"47%" : "29%" ;
 
 		const containerUnRef = this.containerUnRef.current;
 		const containerDeuxRef = this.containerDeuxRef.current;
@@ -361,10 +369,10 @@ class Vietnam extends Component {
 			.to(finderImageDeuxRef,0.1, {opacity: 1}, "-=0.1")
 			.to(finderImageTroisRef,0.1, {opacity: 1}, "-=0.1")
 			.to(finderImageQuatreRef,0.1, {opacity: 1}, "-=0.1")
-			.to(finderImageUnRef, 1, {top: "26%", left: "42%"},"+=0.6")
-			.to(finderImageDeuxRef, 1, {top: "21%", right: "8%"}, "-=0.9")
-			.to(finderImageTroisRef, 1, {bottom: "33%", right: "9%"}, "-=0.9")
-			.to(finderImageQuatreRef, 1, {bottom: "38%", left: "38%"}, "-=0.9")
+			.to(finderImageUnRef, 1, {top: y1, left: x1},"+=0.6")
+			.to(finderImageDeuxRef, 1, {top: y2, right: x2}, "-=0.9")
+			.to(finderImageTroisRef, 1, {bottom: y3, right: x3}, "-=0.9")
+			.to(finderImageQuatreRef, 1, {bottom: y4, left: x4}, "-=0.9")
 			.to(finderImageUnRef, 1, {top: "-20%", left: "-10%"},"+=3.5")
 			.to(finderImageDeuxRef, 1, {bottom: "-25%", right: "-150%"}, "-=0.9")
 			.to(finderImageTroisRef, 1, {bottom: "-40%", right: "-40%"}, "-=0.9")
@@ -383,11 +391,11 @@ class Vietnam extends Component {
 			.to(containerSixRef, 0.1, {opacity: 1}, "+=0.1")
 			.to(imageSixDeuxRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageSixUnRef, 0.1, {className: "+=isFilter"}, "-=0.1")
-			.to(imageSixDeuxRef, 0.1, {className: "+=isFilter"}, "+=0.6")
+			.to(imageSixDeuxRef, 0.1, {className: "+=isFilter"}, "+=01")
 			.to(imageSixTroisRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(ballSixUnRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(ballSixDeuxRef, 0.1, {opacity: 1}, "-=0.1")
-			.to(containerSixRef, 0.1, {opacity: 0}, "+=0.6")
+			.to(containerSixRef, 0.1, {opacity: 0}, "+=3")
 			.to(containerSixRef, 0.1, {className:"+=displayNone"})
 			.to(containerSevenRef, 0.1, {opacity: 1}, "-=0.1")
 			.to(imageSeptDeuxRef, 0.1, {opacity: 1}, "+=0.6")
@@ -424,14 +432,10 @@ class Vietnam extends Component {
 			.to(imageSeptDouzeRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageSeptTreizeRef, 0.1, {opacity: 1}, "+=0.6")
 			.to(imageSeptQuatorzeRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(imageSeptDouzeRef, 0.1, {opacity: 0}, "+=0.6")
-			.to(imageSeptTreizeRef, 0.1, {opacity: 0}, "-=0.1")
-			.to(imageSeptQuatorzeRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(imageSeptOnzeRef, 0.1, {className:"+=fullHeight"}, "-=0.1")
 			.to(hugeTitleSeptUnRef, 6, {transform: "scaleY(14) scaleX(3.5) translateX(-150%)"}, "+=0.6")
 			.to(imageSeptQuinzeRef, 0.1, {opacity: 1}, "-=1.2")
 			.to(containerVideoSeptUnRef, 0.1, {opacity: 1}, "+=0.6")
-			.to(containerVideoSeptUnRef, 6, {transform: "translate3d(-50%, 0px, 1px"}, "+=0.6")
 			.add( function(){ 
 				videoUnRef.play();
 				videoDeuxRef.play();
@@ -440,6 +444,8 @@ class Vietnam extends Component {
 				videoCinqRef.play();
 				videoSixRef.play();
 			}, "-=6" )
+			.to(containerVideoSeptUnRef, 2, {transform: "translate3d(-25%, 0px, 1px"}, "+=0.6")
+
 			.add( function(){ 
 				videoUnRef.pause();
 				videoDeuxRef.pause();
@@ -447,7 +453,7 @@ class Vietnam extends Component {
 				videoQuatreRef.pause();
 				videoCinqRef.pause();
 				videoSixRef.pause();
-			}, "+=4" )
+			}, "+=0.1" )
 			.to(containerVideoSeptUnRef, 0.1, {opacity: 0})
 			.to(containerSevenRef, 0.1, {opacity: 0}, "-=0.1")
 			.to(containerVideoSeptUnRef, 0.1, {className:"+=displayNone"})

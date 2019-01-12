@@ -148,20 +148,20 @@ class About extends Component {
                         <span>DON’T TRUST PEOPLE IN THE CYBER WORLD</span>
                     </div>
                     <div className="about__container" ref={this.containerImageRef}>
-                        <img src={"static/images/about/ml.png"} />
-                        <img src={"static/images/about/anna.png"} />
+                        <img src={"static/images/about/marie_l.gif"} />
+                        <img src={"static/images/about/anna_b.gif"} />
                     </div>
                     <div className="about__container" >
-                        <img src={"static/images/about/ml.png"} />
-                        <img src={"static/images/about/anna.png"} />
+                        <img src={"static/images/about/marie_l.gif"} />
+                        <img src={"static/images/about/anna_b.gif"} />
                     </div>
                     <div className="about__container" ref={this.containerImageRef}>
-                        <img src={"static/images/about/ml.png"} />
-                        <img src={"static/images/about/anna.png"} />
+                        <img src={"static/images/about/marie_l.gif"} />
+                        <img src={"static/images/about/anna_b.gif"} />
                     </div>
                     <div className="about__container" >
-                        <img src={"static/images/about/ml.png"} />
-                        <img src={"static/images/about/anna.png"} />
+                        <img src={"static/images/about/marie_l.gif"} />
+                        <img src={"static/images/about/anna_b.gif"} />
                     </div>
 
                     <div className={`scrollingBanner scrollingBanner--about2`}>

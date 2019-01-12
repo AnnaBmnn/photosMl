@@ -11,7 +11,7 @@ class Header extends Component {
 
         return (
             <div>
-                <Head>
+                <Head lang="en">
                     
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
                     <meta
