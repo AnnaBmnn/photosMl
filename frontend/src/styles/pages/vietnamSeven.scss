@@ -167,6 +167,7 @@
 }
 .fullHeight {
     @include tablet {
+        z-index: 20;
         height: 100vh;
         width: auto;
         top: 0;

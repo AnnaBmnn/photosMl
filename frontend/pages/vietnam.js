@@ -708,23 +708,23 @@ class Vietnam extends Component {
 							<img ref={this.imageSeptQuinzeRef} className={`vietnam__item--715 opacityNull`}  src={series[1].pictures[26][indexImg]}/>
 							<div ref={this.containerVideoSeptUnRef} className={`vietnam__containerVideo opacityNull`}>
 								<div className={`vietnam__video vietnam__video--1`}>
-									<video   webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video   webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" muted={middleWidth < 500 ? true: false} ref={this.videoUnRef} src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--2`}>
-									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoDeuxRef} muted={middleWidth < 500 ? true: false}  src="static/images/vietnam/vietnamVideo01.mp4" />
 
 								</div>
 								<div className={`vietnam__video vietnam__video--3`}>
-									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef}  src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoTroisRef} muted={middleWidth < 500 ? true: false}  src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--4`}>
-									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoQuatreRef}src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoQuatreRef} muted={middleWidth < 500 ? true: false}  src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--5`}>
-									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoCinqRef}src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoCinqRef} muted={middleWidth < 500 ? true: false}  src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 								<div className={`vietnam__video vietnam__video--6`}>
-									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoSixRef}  src="static/images/vietnam/vietnamVideo01.mp4" />
+									<video  webkit-playsinline={"true"} playsInline={true} loop={true} autoPlay="" ref={this.videoSixRef} muted={middleWidth < 500 ? true: false}  src="static/images/vietnam/vietnamVideo01.mp4" />
 								</div>
 							</div>
 						</div>

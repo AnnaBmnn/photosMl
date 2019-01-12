@@ -18,7 +18,7 @@
 
 .menuMobile__about {
     position: absolute;
-    bottom: 65px;
+    bottom: 20px;
     left: 20px;
     font-weight: 600;
     font-size: 18px!important;
@@ -26,7 +26,7 @@
 
 .menuMobile__numerotation {
     position: absolute;
-    bottom: 65px;
+    bottom: 20px;
     right: 20px;
     font-weight: 600;
     font-size: 18px!important;
@@ -42,8 +42,8 @@
         height: 100%;
     }
     img {
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
     }
 }
 
