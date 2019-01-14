@@ -40,9 +40,7 @@ class About extends Component {
 
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
-        window.addEventListener('scroll', () => {
-            window.requestAnimationFrame(that.handleScroll);
-        }, false);
+        window.addEventListener('scroll', this.handleScroll ,false);
     }
       
     handleMouseMove(e){
