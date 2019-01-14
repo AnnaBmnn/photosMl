@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import MenuMobile from "../components/MenuMobile.js";
+import ReactGA from 'react-ga';
+
 
 class Index extends Component {
     constructor(props) {
@@ -14,9 +16,12 @@ class Index extends Component {
 
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
-
+    initializeReactGA() {
+        ReactGA.pageview('/home');
+    }
     componentDidMount() {
         this.updateWindowDimensions();
+        this.initializeReactGA();
         window.addEventListener('resize', this.updateWindowDimensions);
     }
 

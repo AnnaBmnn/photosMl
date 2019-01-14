@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import Head from "next/head";
 import stylesheet from '../src/styles/style.scss'
+import ReactGA from 'react-ga';
 
 class Header extends Component {
     constructor() {
         super();
     }
-
+    initializeReactGA() {
+        ReactGA.initialize('UA-132384836-1');
+    }
+    componentDidMount(){
+        this.initializeReactGA();
+    }
     render() {
 
         return (
             <div>
                 <Head lang="en">
-                    
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
                     <meta
                         name="viewport" 
@@ -29,7 +34,9 @@ class Header extends Component {
                     <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5"/>
                     <meta name="msapplication-TileColor" content="#da532c"/>
                     <meta name="theme-color" content="#ffffff"></meta>
+
                 </Head>
+
             </div>
         );
     }

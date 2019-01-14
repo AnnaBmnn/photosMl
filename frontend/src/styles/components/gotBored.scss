@@ -59,8 +59,9 @@
 
 .gotBored__container--center {
     @include tablet {
-        font-size: 2.3rem;
+        font-size: 1.3rem;
         text-align: center;
+
     }
 }
 
@@ -73,6 +74,13 @@
         padding: 10px ;
     }
 }
+
+.gotBored__container--second {
+    @include tablet {
+        padding: 10px 10px 16px 10px;
+    }
+}
+
 
 .gotBored__container--light {
     padding: 5px 7px;
@@ -90,8 +98,13 @@
     font-size: 1.3rem;
     cursor: pointer;
     @include tablet {
-        font-size: 1.8rem;
+        line-height: 1.3rem;
+        font-size: 1.3rem;
         text-align: center;
+        span {
+            line-height: 1.3rem;
+
+        }
     }
 }
 
@@ -100,10 +113,15 @@
     right: 18px;
     top: 28px;
     @include tablet {
-        top: 40px;
+        top: 30px;
     }
 }
-
+.goToLineMobile {
+    @include tablet {
+        display: block;
+        text-align: left;
+    } 
+}
 .gotBored__close {
     cursor: pointer;
 }

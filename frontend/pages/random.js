@@ -1,10 +1,8 @@
 import Layout from "../components/Layout.js";
 import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
-import Link from "next/link";
-import PageWrapper from "../components/PageWrapper.js";
 import BackButton from "../components/BackButton.js";
 import GotBored from "../components/GotBored.js";
+import ReactGA from 'react-ga';
 
 import { series } from "../static/datas/series";
 
@@ -29,8 +27,12 @@ class Random extends Component {
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
-
+    initializeReactGA() {
+        ReactGA.pageview('/random');
+    }
     componentDidMount() {
+        this.initializeReactGA();
+
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
         this.containerRef.current.focus();

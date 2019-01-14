@@ -13,6 +13,7 @@ import FilterImage from "../components/FilterImage";
 import BackButton from "../components/BackButton.js";
 import Sunshines from "../components/Sunshines.js";
 import Ball from "../components/Ball.js";
+import ReactGA from 'react-ga'
 
 
 class Vietnam extends Component {
@@ -133,8 +134,11 @@ class Vietnam extends Component {
 		// ref to the animation
 		this.vietnamTimeline = new TimelineMax();
 	}
-
+    initializeReactGA() {
+        ReactGA.pageview('/vietnam');
+    }
 	componentDidMount() {
+        this.initializeReactGA();
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
 		window.addEventListener('scroll', this.handleScroll);

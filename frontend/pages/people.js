@@ -4,6 +4,7 @@ import PageWrapper from "../components/PageWrapper.js";
 import { series } from "../static/datas/series";
 import BackButton from "../components/BackButton.js";
 import GotBored from "../components/GotBored.js";
+import ReactGA from 'react-ga';
 
 class People extends Component {
     constructor(props) {
@@ -32,6 +33,10 @@ class People extends Component {
         this.serie = series.find(serie => serie.slug === "people");
         this.pictures = this.serie.pictures;
         this.innerTextCursor = "";
+    }
+
+    initializeReactGA() {
+        ReactGA.pageview('/people');
     }
 
     handleMobileClickNext(){
@@ -92,6 +97,7 @@ class People extends Component {
 
 
     componentDidMount() {
+        this.initializeReactGA();
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
         const { middleWidth } = this.state;

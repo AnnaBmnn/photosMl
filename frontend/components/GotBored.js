@@ -18,7 +18,7 @@ class GotBored extends Component {
     }
 
     componentDidMount(){
-        this.timeOutFirst = window.setTimeout(()=> this.setState({isBored: true}),60000)
+        this.timeOutFirst = window.setTimeout(()=> this.setState({isBored: true}),100)
     }
 
     handleClickClose(){
@@ -59,17 +59,17 @@ class GotBored extends Component {
                             </svg>
                         </div>
                         <div className={`gotBored__container gotBored__container--center`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container gotBored__container--second`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next  <span className="goToLineMobile">project</span> <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                     <div className={`gotBored gotBored--2 ${isBored}`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container gotBored__container--center`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container gotBored__container--second`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next <span className="goToLineMobile">project</span> <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                     <div className={`gotBored gotBored--3 ${isBored}`}>
                         <div className={`gotBored__container gotBored__container--light`}><SVGInline className={`gotBored__light`} svg={ trafficLight } /></div>
                         <div className={`gotBored__container gotBored__container--center`}>get bored ?</div>
-                        <div className={`gotBored__container`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next project <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
+                        <div className={`gotBored__container gotBored__container--second`}><Link href={`/${nextPage}`}><a className={`gotBored__link`}>next <span className="goToLineMobile">project</span> <SVGInline className={`gotBored__arrow`} svg={ arrow } /></a></Link></div>
                     </div>
                 </Fragment>
             :

@@ -4,6 +4,7 @@ import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import ScrollingBanner from "../components/ScrollingBanner";
 import BackButton from "../components/BackButton.js";
+import ReactGA from 'react-ga'
 
 
 class About extends Component {
@@ -30,9 +31,13 @@ class About extends Component {
 		this.containerImageRef = React.createRef();
 
     }
-
+    initializeReactGA() {
+        ReactGA.pageview('/about');
+    }
     componentDidMount() {
         const that = this;
+        this.initializeReactGA();
+
 		this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);		
         window.addEventListener('scroll', () => {
@@ -116,7 +121,7 @@ class About extends Component {
                          
                         between interactive designer
                         <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name notVisible"><span>Marie-Lise Ton</span></a></Link>
-                        and front-end developper
+                        and front-end developer
                         
                         <Link href={"https://annabaumann.fr"}><a className="about__fullLine about__name notVisible"><span>Anna Baumann.</span></a></Link>
                     </div>
@@ -125,7 +130,7 @@ class About extends Component {
                          
                         between interactive designer
                         <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name"><span>Marie-Lise Ton</span></a></Link>
-                        and front-end developper
+                        and front-end developer
                         
                         <Link href={"https://annabaumann.fr"}><a className="about__fullLine about__name"><span>Anna Baumann.</span></a></Link>
                     </div>
