@@ -120,7 +120,7 @@ class About extends Component {
                         This is a collaboration project
                          
                         between interactive designer
-                        <Link href={"https://www.instagram.com/yo.marielise/"}><a className="about__fullLine about__name notVisible"><span>Marie-Lise Ton</span></a></Link>
+                        <Link href={"https://www.linkedin.com/in/marieliseton/"}><a className="about__fullLine about__name notVisible"><span>Marie-Lise Ton</span></a></Link>
                         and front-end developer
                         
                         <Link href={"https://annabaumann.fr"}><a className="about__fullLine about__name notVisible"><span>Anna Baumann.</span></a></Link>
