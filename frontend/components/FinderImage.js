@@ -6,7 +6,6 @@ import trafficLight from "../static/images/vietnam/traffic_light.svg";
 class FinderImage extends Component {
   constructor(props) {
     super(props);
-
   }
 
   paralaxImage(){

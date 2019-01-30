@@ -68,7 +68,7 @@ class About extends Component {
 
         if (!disableScroll) {
         
-            if(scrollPos > trueHeight) {
+            if(scrollPos > trueHeight-60) {
                 window.scrollTo({top: 1});
                 that.setState({disableScroll: true});
             }

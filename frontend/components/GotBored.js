@@ -18,12 +18,12 @@ class GotBored extends Component {
     }
 
     componentDidMount(){
-        this.timeOutFirst = window.setTimeout(()=> this.setState({isBored: true}),100)
+        this.timeOutFirst = window.setTimeout(()=> this.setState({isBored: true}),60000)
     }
 
     handleClickClose(){
         this.setState({isBored: "willClose"});
-        this.timeOutSecond = window.setTimeout(()=> this.setState({isBored: false}),900)
+        this.timeOutSecond = window.setTimeout(()=> this.setState({isBored: false}),3000)
     }
 
     componentWillUnmount(){
