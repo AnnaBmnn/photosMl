@@ -25,8 +25,21 @@ class Header extends Component {
                     />
                     <meta charSet="utf-8" />
                     <title>
-                        PHOTOS
+                        YO YO YO
                     </title>
+                    <meta name="title" content="YO YO YO !"/>
+                    <meta name="description" content="Simplistic and playful photos portfolio "/>
+                    <meta property="og:type" content="website"/>
+                    <meta property="og:url" content="https://yoyoyo.photos/"/>
+                    <meta property="og:title" content="YO YO YO !"/>
+                    <meta property="og:description" content="Simplistic and playful photos portfolio "/>
+                    <meta property="og:image" content="https://yoyoyo.photos/static/vignette.png"/>
+
+                    <meta property="twitter:card" content="summary_large_image" />
+                    <meta property="twitter:url" content="https://yoyoyo.photos/" />
+                    <meta property="twitter:title" content="YO YO YO !" />
+                    <meta property="twitter:description" content="Simplistic and playful photos portfolio " />
+                    <meta property="twitter:image" content="https://yoyoyo.photos/static/vignette.png" />
                     <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-touch-icon.png"/>
                     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png"/>
                     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png"/>

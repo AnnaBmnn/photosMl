@@ -33,7 +33,7 @@ class Vietnam extends Component {
 		this.lastScroll = 0;
 		this.direction = "bottom";
 		// interactivity event
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+		this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleMouseMove = this.handleMouseMove.bind(this);
 
